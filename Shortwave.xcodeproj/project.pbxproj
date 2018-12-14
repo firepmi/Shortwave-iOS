@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FCE620F121C3AD550043F27B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE620F021C3AD550043F27B /* AppDelegate.swift */; };
+		FCE620F321C3AD550043F27B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE620F221C3AD550043F27B /* ViewController.swift */; };
+		FCE620F621C3AD550043F27B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE620F421C3AD550043F27B /* Main.storyboard */; };
+		FCE620F821C3AD690043F27B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE620F721C3AD690043F27B /* Assets.xcassets */; };
+		FCE620FB21C3AD690043F27B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE620F921C3AD690043F27B /* LaunchScreen.storyboard */; };
+		FCE6210621C3AD6A0043F27B /* ShortwaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6210521C3AD6A0043F27B /* ShortwaveTests.swift */; };
+		FCE6211121C3AD6A0043F27B /* ShortwaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6211021C3AD6A0043F27B /* ShortwaveUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCE6210221C3AD6A0043F27B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCE620E521C3AD540043F27B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCE620EC21C3AD540043F27B;
+			remoteInfo = Shortwave;
+		};
+		FCE6210D21C3AD6A0043F27B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCE620E521C3AD540043F27B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCE620EC21C3AD540043F27B;
+			remoteInfo = Shortwave;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FCE620ED21C3AD540043F27B /* Shortwave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shortwave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE620F021C3AD550043F27B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCE620F221C3AD550043F27B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCE620F521C3AD550043F27B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCE620F721C3AD690043F27B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCE620FA21C3AD690043F27B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCE620FC21C3AD690043F27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE6210121C3AD6A0043F27B /* ShortwaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShortwaveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE6210521C3AD6A0043F27B /* ShortwaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortwaveTests.swift; sourceTree = "<group>"; };
+		FCE6210721C3AD6A0043F27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE6210C21C3AD6A0043F27B /* ShortwaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShortwaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE6211021C3AD6A0043F27B /* ShortwaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortwaveUITests.swift; sourceTree = "<group>"; };
+		FCE6211221C3AD6A0043F27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCE620EA21C3AD540043F27B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE620FE21C3AD6A0043F27B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE6210921C3AD6A0043F27B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCE620E421C3AD540043F27B = {
+			isa = PBXGroup;
+			children = (
+				FCE620EF21C3AD540043F27B /* Shortwave */,
+				FCE6210421C3AD6A0043F27B /* ShortwaveTests */,
+				FCE6210F21C3AD6A0043F27B /* ShortwaveUITests */,
+				FCE620EE21C3AD540043F27B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCE620EE21C3AD540043F27B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCE620ED21C3AD540043F27B /* Shortwave.app */,
+				FCE6210121C3AD6A0043F27B /* ShortwaveTests.xctest */,
+				FCE6210C21C3AD6A0043F27B /* ShortwaveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCE620EF21C3AD540043F27B /* Shortwave */ = {
+			isa = PBXGroup;
+			children = (
+				FCE620F021C3AD550043F27B /* AppDelegate.swift */,
+				FCE620F221C3AD550043F27B /* ViewController.swift */,
+				FCE620F421C3AD550043F27B /* Main.storyboard */,
+				FCE620F721C3AD690043F27B /* Assets.xcassets */,
+				FCE620F921C3AD690043F27B /* LaunchScreen.storyboard */,
+				FCE620FC21C3AD690043F27B /* Info.plist */,
+			);
+			path = Shortwave;
+			sourceTree = "<group>";
+		};
+		FCE6210421C3AD6A0043F27B /* ShortwaveTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6210521C3AD6A0043F27B /* ShortwaveTests.swift */,
+				FCE6210721C3AD6A0043F27B /* Info.plist */,
+			);
+			path = ShortwaveTests;
+			sourceTree = "<group>";
+		};
+		FCE6210F21C3AD6A0043F27B /* ShortwaveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6211021C3AD6A0043F27B /* ShortwaveUITests.swift */,
+				FCE6211221C3AD6A0043F27B /* Info.plist */,
+			);
+			path = ShortwaveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCE620EC21C3AD540043F27B /* Shortwave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCE6211521C3AD6A0043F27B /* Build configuration list for PBXNativeTarget "Shortwave" */;
+			buildPhases = (
+				FCE620E921C3AD540043F27B /* Sources */,
+				FCE620EA21C3AD540043F27B /* Frameworks */,
+				FCE620EB21C3AD540043F27B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shortwave;
+			productName = Shortwave;
+			productReference = FCE620ED21C3AD540043F27B /* Shortwave.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCE6210021C3AD6A0043F27B /* ShortwaveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCE6211821C3AD6A0043F27B /* Build configuration list for PBXNativeTarget "ShortwaveTests" */;
+			buildPhases = (
+				FCE620FD21C3AD6A0043F27B /* Sources */,
+				FCE620FE21C3AD6A0043F27B /* Frameworks */,
+				FCE620FF21C3AD6A0043F27B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCE6210321C3AD6A0043F27B /* PBXTargetDependency */,
+			);
+			name = ShortwaveTests;
+			productName = ShortwaveTests;
+			productReference = FCE6210121C3AD6A0043F27B /* ShortwaveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FCE6210B21C3AD6A0043F27B /* ShortwaveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCE6211B21C3AD6A0043F27B /* Build configuration list for PBXNativeTarget "ShortwaveUITests" */;
+			buildPhases = (
+				FCE6210821C3AD6A0043F27B /* Sources */,
+				FCE6210921C3AD6A0043F27B /* Frameworks */,
+				FCE6210A21C3AD6A0043F27B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCE6210E21C3AD6A0043F27B /* PBXTargetDependency */,
+			);
+			name = ShortwaveUITests;
+			productName = ShortwaveUITests;
+			productReference = FCE6210C21C3AD6A0043F27B /* ShortwaveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCE620E521C3AD540043F27B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Mobile World";
+				TargetAttributes = {
+					FCE620EC21C3AD540043F27B = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					FCE6210021C3AD6A0043F27B = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = FCE620EC21C3AD540043F27B;
+					};
+					FCE6210B21C3AD6A0043F27B = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = FCE620EC21C3AD540043F27B;
+					};
+				};
+			};
+			buildConfigurationList = FCE620E821C3AD540043F27B /* Build configuration list for PBXProject "Shortwave" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCE620E421C3AD540043F27B;
+			productRefGroup = FCE620EE21C3AD540043F27B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCE620EC21C3AD540043F27B /* Shortwave */,
+				FCE6210021C3AD6A0043F27B /* ShortwaveTests */,
+				FCE6210B21C3AD6A0043F27B /* ShortwaveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCE620EB21C3AD540043F27B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE620FB21C3AD690043F27B /* LaunchScreen.storyboard in Resources */,
+				FCE620F821C3AD690043F27B /* Assets.xcassets in Resources */,
+				FCE620F621C3AD550043F27B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE620FF21C3AD6A0043F27B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE6210A21C3AD6A0043F27B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCE620E921C3AD540043F27B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE620F321C3AD550043F27B /* ViewController.swift in Sources */,
+				FCE620F121C3AD550043F27B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE620FD21C3AD6A0043F27B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE6210621C3AD6A0043F27B /* ShortwaveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE6210821C3AD6A0043F27B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE6211121C3AD6A0043F27B /* ShortwaveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCE6210321C3AD6A0043F27B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCE620EC21C3AD540043F27B /* Shortwave */;
+			targetProxy = FCE6210221C3AD6A0043F27B /* PBXContainerItemProxy */;
+		};
+		FCE6210E21C3AD6A0043F27B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCE620EC21C3AD540043F27B /* Shortwave */;
+			targetProxy = FCE6210D21C3AD6A0043F27B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCE620F421C3AD550043F27B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCE620F521C3AD550043F27B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCE620F921C3AD690043F27B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCE620FA21C3AD690043F27B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCE6211321C3AD6A0043F27B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCE6211421C3AD6A0043F27B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCE6211621C3AD6A0043F27B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7W32SR7FW;
+				INFOPLIST_FILE = Shortwave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.Shortwave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCE6211721C3AD6A0043F27B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7W32SR7FW;
+				INFOPLIST_FILE = Shortwave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.Shortwave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FCE6211921C3AD6A0043F27B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7W32SR7FW;
+				INFOPLIST_FILE = ShortwaveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.ShortwaveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shortwave.app/Shortwave";
+			};
+			name = Debug;
+		};
+		FCE6211A21C3AD6A0043F27B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7W32SR7FW;
+				INFOPLIST_FILE = ShortwaveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.ShortwaveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shortwave.app/Shortwave";
+			};
+			name = Release;
+		};
+		FCE6211C21C3AD6A0043F27B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7W32SR7FW;
+				INFOPLIST_FILE = ShortwaveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.ShortwaveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Shortwave;
+			};
+			name = Debug;
+		};
+		FCE6211D21C3AD6A0043F27B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7W32SR7FW;
+				INFOPLIST_FILE = ShortwaveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.ShortwaveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Shortwave;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCE620E821C3AD540043F27B /* Build configuration list for PBXProject "Shortwave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE6211321C3AD6A0043F27B /* Debug */,
+				FCE6211421C3AD6A0043F27B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE6211521C3AD6A0043F27B /* Build configuration list for PBXNativeTarget "Shortwave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE6211621C3AD6A0043F27B /* Debug */,
+				FCE6211721C3AD6A0043F27B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE6211821C3AD6A0043F27B /* Build configuration list for PBXNativeTarget "ShortwaveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE6211921C3AD6A0043F27B /* Debug */,
+				FCE6211A21C3AD6A0043F27B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE6211B21C3AD6A0043F27B /* Build configuration list for PBXNativeTarget "ShortwaveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE6211C21C3AD6A0043F27B /* Debug */,
+				FCE6211D21C3AD6A0043F27B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCE620E521C3AD540043F27B /* Project object */;
+}
