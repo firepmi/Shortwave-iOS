@@ -10,8 +10,8 @@ import UIKit
 import MessageUI
 import SafariServices
 import DeviceKit
-import Firebase
-import FirebaseAuth
+//import Firebase
+//import FirebaseAuth
 import StoreKit
 
 class SettingsViewController: UITableViewController, MFMailComposeViewControllerDelegate {
@@ -254,13 +254,11 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
         }
     }
     func onLogOut() {
-        do {
-            try Auth.auth().signOut()
-            dismiss(animated: true, completion: nil)
-        }
-        catch let error as NSError {
-            print("Error sign out%@",error)
-        }
+        Globals.token = ""
+        let defaults: UserDefaults = UserDefaults.standard
+        defaults.set("", forKey: "email")
+        defaults.set("", forKey: "token")
+        dismiss(animated: true, completion: nil)
     }
     func onPrivacyPolicy(){
         let vc = storyboard?.instantiateViewController(withIdentifier: "privacy")

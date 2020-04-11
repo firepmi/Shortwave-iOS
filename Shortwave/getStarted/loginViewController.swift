@@ -7,67 +7,58 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
+import Alamofire
+import SwiftyJSON
 
 class loginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
     @IBOutlet weak var loginButton: UIButton!
-//    @IBOutlet weak var registerButton: UIButton!
+    let defaults: UserDefaults = UserDefaults.standard
     
     @IBAction func onLogin(_ sender: Any) {
         if emailTextField.text == "" || passwordTextField.text == "" {
             alert(message: "Can not leave empty fields")
             return
         }
-//        FirebaseApp.configure()
 
-//        performSegue(withIdentifier: "loginToMain", sender: nil)
         let alertIndicator = UIAlertController(title: "Please Wait...", message: "\n\n", preferredStyle: UIAlertController.Style.alert)
         let activityView = UIActivityIndicatorView(style: .gray)
         activityView.center = CGPoint(x: 139.5, y: 75.5)
         activityView.startAnimating()
         alertIndicator.view.addSubview(activityView)
         present(alertIndicator, animated: true, completion: nil)
-        
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (_, error) in
-            // ...
-            alertIndicator.dismiss(animated: true, completion: nil)
-            if(error == nil) {
-                if (Auth.auth().currentUser?.isEmailVerified)! {
-                    self.performSegue(withIdentifier: "loginToMain", sender: nil)
-                }
-                else {
-                    Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
-                        if error == nil {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
-                                let alert = UIAlertController(title: "Login", message: "We sent verification link to your email. Please verify your account and try again.",
-                                                              preferredStyle: UIAlertController.Style.alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                                self.present(alert, animated: true, completion: nil)
-                            }
+        defaults.set(emailTextField.text, forKey: "email")
+        let loginUrl = Globals.adminUrl + "/api/login"
+        Alamofire.request(loginUrl, method: .post, parameters: ["email": emailTextField.text!, "password":passwordTextField.text!],encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    alertIndicator.dismiss(animated: false, completion: nil)
+                })
+                                        
+                switch response.result {
+                case .success(_):
+                    if let result = response.result.value {
+                        let json = JSON(result)
+                        if json["success"].boolValue {
+                            Globals.token = json["token"].stringValue
+                            self.defaults.set(self.emailTextField.text, forKey: "email")
+                            self.defaults.set(Globals.token, forKey: "token")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                                self.performSegue(withIdentifier: "loginToMain", sender: nil)
+                            })
+                            
                         }
                         else {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
-                                let alert = UIAlertController(title: "Verification Error", message: error?.localizedDescription,
-                                                              preferredStyle: UIAlertController.Style.alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                                self.present(alert, animated: true, completion: nil)
-                            }
+                            self.alert(message: json["message"].stringValue)
                         }
-                    })
+                    }
+                    else {
+                        self.alert(message: "Loading Data failure!")
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self.alert(message: "Loading Data failure!")
                 }
-            } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
-                    let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription,
-                                                  preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
-                
-            }
         }
     }
     func alert(message: String) {
@@ -113,10 +104,12 @@ class loginViewController: UIViewController, UITextFieldDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        let user = Auth.auth().currentUser
-        if user != nil {
-            print( user!.email! )
-            self.performSegue(withIdentifier: "loginToMain", sender: nil)
+        if let token = defaults.string(forKey: "token") {
+            if token != "" {
+                Globals.token = token
+                Globals.email = defaults.string(forKey: "email")!
+                self.performSegue(withIdentifier: "loginToMain", sender: nil)
+            }
         }
     }
     override func didReceiveMemoryWarning() {
@@ -139,7 +132,6 @@ class loginViewController: UIViewController, UITextFieldDelegate {
         } else {
             animateViewMoving(up: true, moveValue: 60)
         }
-
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {

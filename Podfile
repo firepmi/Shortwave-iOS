@@ -6,12 +6,12 @@ target 'Shortwave' do
   use_frameworks!
 
   # Pods for Shortwave
-pod 'Firebase'
-pod 'Firebase/Auth'
-pod 'Firebase/Database'
-pod 'Firebase/Core'
-pod 'Firebase/Storage'
-pod 'Firebase/RemoteConfig'
+#pod 'Firebase'
+#pod 'Firebase/Auth'
+#pod 'Firebase/Database'
+#pod 'Firebase/Core'
+#pod 'Firebase/Storage'
+#pod 'Firebase/RemoteConfig'
 pod 'MarqueeLabel/Swift'
 pod 'DeviceKit'
 pod 'SwiftReorder'

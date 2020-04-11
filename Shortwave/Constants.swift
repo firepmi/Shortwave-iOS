@@ -45,11 +45,15 @@ enum Constants {
 struct Globals {
 //    public static let apiUrl = "http://ec2-52-15-147-184.us-east-2.compute.amazonaws.com";
     public static let apiUrl = "http://24.22.30.62:8083";
+    public static let adminUrl = "http://192.168.1.238:3000";
     public static var authKey = "YWRtaW46YWRtaW4xMjM="
     public static var serverUrl = ""
     public static var serverTitle = ""
     public static var username = "admin"
     public static var password = "admin123"
+    public static var email = ""
+    public static var userPassword = ""
+    public static var token = ""
     public static var isPro = false
     public static var products = [SKProduct]()
     public static var isNew = false

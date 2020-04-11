@@ -194,43 +194,15 @@ class AudioBookListViewController: UIViewController {
 
                 case .failure(let error):
                     print(error.localizedDescription)
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-//                        alertIndicator.dismiss(animated: false, completion: nil)
-//                    })
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-////                        alertIndicator.dismiss(animated: false){
-//                            let alert = UIAlertController(title: "Loading Data", message: "There is not data for " + key, preferredStyle: UIAlertController.Style.alert)
-//                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-//                            }))
-//                            self.present(alert, animated: true);
-////                        }
-//                    })
-
                 }
         }
     }
-//    @objc func changeListview(){
-//        if type == 0 {
-//            tableView.isHidden = false
-//            collectionView.isHidden = true
-//            navigationItem.rightBarButtonItem?.title = "GridView"
-//            type = 1
-//        }
-//        else {
-//            tableView.isHidden = true
-//            collectionView.isHidden = false
-//            navigationItem.rightBarButtonItem?.title = "ListView"
-//            type = 0
-//        }
-//    }
-    
+
     func alertDownloadDialog(index:Int){
         let alert = UIAlertController(title: "Download Book", message: "Book Details: \(bookArray[index]["title"].stringValue)\nFilesize: \(bookArray[index]["filesize"].stringValue)",
             preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Add to download queue", style: .default, handler: { (UIAlertAction) in
-//            self.startDownload(audioUrl: Globals.serverUrl+"download/\(self.bookArray[index]["id"].stringValue)/\(self.bookArray[index]["format"].stringValue.lowercased())/\(self.bookArray[index]["id"].stringValue).\(self.bookArray[index]["format"].stringValue.lowercased())",
-//                filename: "\(self.bookArray[index]["id"].stringValue) \(self.bookArray[index]["title"].stringValue).\(self.bookArray[index]["format"].stringValue.lowercased())")
             let code = Globals.onAddBookToQueue(book: self.bookArray[index])
             switch code {
             case 0:
@@ -248,66 +220,7 @@ class AudioBookListViewController: UIViewController {
         }))
         self.present(alert, animated: true)
     }
-    /*
-    func onCheckAudioId(id:Int, index:Int){
-//        alertDownloadDialog(index: index)        
-        let filename = "\(self.bookArray[index]["id"].stringValue) \(self.bookArray[index]["title"].stringValue).\(self.bookArray[index]["format"].stringValue.lowercased())"
-        let fileUrl = Globals.getSaveFileUrl(fileName: filename)
-        let title = self.bookArray[index]["title"].stringValue
-        let author = self.bookArray[index]["author"].stringValue        
-        if Globals.isExist(fileUrl: fileUrl.path, title: title, author: author) {
-            let alert = UIAlertController(title: "Duplicated book", message: "Found duplicated book for \(filename), Do you want skip this file?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (UIAlertAction) in
-                
-            }))
-            alert.addAction(UIAlertAction(title: "Download again", style: .default, handler: { (UIAlertAction) in
-                self.alertDownloadDialog(index: index)
-            }))
-            
-            self.present(alert, animated: true)
-        }
-        else {
-            alertDownloadDialog(index: index)
-        }
-        / Disabled for temporerly, Don't delete it!
-        let alertIndicator = UIAlertController(title: "Please Wait...", message: "\n\n", preferredStyle: UIAlertController.Style.alert)
-        let activityView = UIActivityIndicatorView(style: .gray)
-        activityView.center = CGPoint(x: 139.5, y: 75.5)
-        activityView.startAnimating()
-        
-        alertIndicator.view.addSubview(activityView)
-        present(alertIndicator, animated: false, completion: nil)
-        
-        ref = Database.database().reference()
-        let user = Auth.auth().currentUser
-
-        ref.child("products").child((user?.uid)!).child("weekly").queryOrdered(byChild: "product")/*.queryEqual(toValue: id)*/.observeSingleEvent(of: .value) { (snapshot) in
-            alertIndicator.dismiss(animated: false, completion: nil)
-            for snap in snapshot.children {
-                for child in (snap as! DataSnapshot).children {
-                    for grand in (child as! DataSnapshot).children {
-            //                        print((grand as! DataSnapshot).value!)
-                        if ((grand as! DataSnapshot).value as! Int ) == id {
-                            let alert = UIAlertController(title: "Download Book", message: "You already downloaded this book before, do you want download this again?",
-                                preferredStyle: UIAlertController.Style.alert)
-                            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-                                self.updatedWeek = 0
-                                self.alertDownloadDialog(index: index)
-                            }))
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                                self.present(alert, animated: true)
-                            }
-                            return
-                        }
-                    }
-                }
-            }
-            self.onCheckAvailableCount(id: id, index: index)
-            
-        }
- 
-    }*/
+    
     var updatedWeek = 0
     var updatedId = 0
     var updatedAudioID = 0
@@ -423,69 +336,7 @@ class AudioBookListViewController: UIViewController {
                 }
         }
     }
-    /*
-    func startDownload(audioUrl:String, filename:String) -> Void {
-        print(audioUrl)
-        let fileUrl = Globals.getSaveFileUrl(fileName: filename)
-        
-        hud.textLabel.text = "Downloading..."
-        hud.detailTextLabel.text = nil
-        hud.progress = 0
-        hud.indicatorView = JGProgressHUDPieIndicatorView()
-        hud.vibrancyEnabled = true
-        hud.show(in: view)
-        let button = UIButton(frame: CGRect(x: hud.contentView.frame.width - 40, y: 10, width: 30, height: 30))
-        button.setImage(UIImage(named: "icon_close.png"), for: .normal)
-        button.addTarget(self, action: #selector(cancelDownload), for: .touchUpInside)
-        hud.contentView.addSubview(button)
-        Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: URL(string: audioUrl), mainDocumentURL: nil)
-        
-        downloadRequest = Alamofire.SessionManager.default.request(audioUrl, headers: [
-            "Authorization":"Basic \(Globals.authKey)"])
-            .authenticate(user: Globals.username, password: Globals.password)
-            .downloadProgress { progress in
-                self.hud.progress = Float(progress.fractionCompleted)
-                self.hud.detailTextLabel.text = String.init(format: "%d%% Completed", Int(progress.fractionCompleted*100))
-            }
-            .response { response in
-                
-                    if let data = response.data {
-                        do {
-                            try data.write(to: fileUrl, options: .atomic)
-
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                                UIView.animate(withDuration: 0.1, animations: {
-                                    self.hud.textLabel.text = "Success"
-                                    self.hud.detailTextLabel.text = nil
-                                    self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
-                                })
-                                
-                                self.hud.dismiss(afterDelay: 1.0)
-                            }
-                            
-                            self.onUpdateInfo()
-                        }
-                        catch {
-                            print(error)
-                        }
-                    }
-                    else{
-                        self.hud.dismiss()
-                        let alert = UIAlertController(title: "Download", message: "Download failure!",
-                                                      preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-                            
-                        }))
-                        self.present(alert, animated: true);
-                    }
-        }
-        
-    }
-    @objc func cancelDownload(sender: UIButton){
-        hud.dismiss()
-        downloadRequest.cancel()
-    }
-    */
+    
     @objc func onCheckItem(_ sender:UIButton){
         let position = sender.convert(CGPoint.zero, to: collectionView)
         let indexPath = collectionView.indexPathForItem(at: position)
