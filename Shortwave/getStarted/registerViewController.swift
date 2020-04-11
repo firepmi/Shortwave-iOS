@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
-import FirebaseDatabase
+import Alamofire
+import SwiftyJSON
 
 class registerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var fullnameTextField: UITextField!
@@ -24,7 +23,6 @@ class registerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var checkButton: UIButton!
     
     var alertIndicator: UIAlertController!
-    var ref: DatabaseReference!
     var checked = false
     
     override func viewDidLoad() {
@@ -129,40 +127,39 @@ class registerViewController: UIViewController, UITextFieldDelegate {
         alertIndicator.view.addSubview(activityView)
         present(alertIndicator, animated: true, completion: nil)
         
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (_, error) in
-            if error == nil {
-                print("You have successfully signed up")
-                self.saveData()
-//                self.performSegue(withIdentifier: "SignupToTerms", sender: nil)
-                self.dismiss(animated: true, completion: nil)
-
-            } else {
-                self.alertIndicator.dismiss(animated: true, completion: nil)
-                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
-
-                self.present(alertController, animated: true, completion: nil)
-            }
+        let registerUrl = Globals.adminUrl + "/api/register"
+        Alamofire.request(registerUrl, method: .post, parameters: [
+            "email": emailTextField.text!,
+            "password":passwordTextField.text!,
+            "password2":confirmTextField.text!,
+            "name":usernameTextField.text!,
+        ],encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    self.alertIndicator.dismiss(animated: false, completion: nil)
+                })
+                                        
+                switch response.result {
+                case .success(_):
+                    if let result = response.result.value {
+                        let json = JSON(result)
+                        if json["success"].boolValue {
+                            self.alertSucess()
+                        }
+                        else {
+                            self.alert(message: json["message"].stringValue)
+                        }
+                    }
+                    else {
+                        self.alert(message: "Loading Data failure!")
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self.alert(message: "Loading Data failure!")
+                }
         }
+        
     }
    
-    func saveData() {
-        alertIndicator.dismiss(animated: true, completion: nil)
-        ref = Database.database().reference()
-        let user = Auth.auth().currentUser
-        ref.child("profile").child((user?.uid)!).child("full_name")
-            .setValue(fullnameTextField.text)
-        ref.child("profile").child((user?.uid)!).child("email")
-            .setValue(emailTextField.text)
-        
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        ref.child("products").child((user?.uid)!).child("purchased_date")
-            .setValue(dateFormatter.string(from: date))
-    }
     func alert(message: String) {
         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
             let alert = UIAlertController(title: "Register", message: message, preferredStyle: .alert)
