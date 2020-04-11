@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Shortwave
 
 class ShortwaveTests: XCTestCase {
 

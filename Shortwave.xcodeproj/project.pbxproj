@@ -3,10 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		327C3B499174B7393DD3FECF /* Pods_Shortwave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5841DCB821CF1246128219FC /* Pods_Shortwave.framework */; };
+		5A356A9721F3EB6DB6368BD7 /* Pods_ShortwaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508CD9928B5D33566DB67357 /* Pods_ShortwaveUITests.framework */; };
+		5E4439F449A6DD21203FC11B /* Pods_ShortwaveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2135F2CD1154B5E55C44C30F /* Pods_ShortwaveTests.framework */; };
+		FC005D1822F3165200AFA10C /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC005D1722F3165200AFA10C /* PrivacyViewController.swift */; };
+		FC005D1B22F3333600AFA10C /* btn_check_off.png in Resources */ = {isa = PBXBuildFile; fileRef = FC005D1922F3333400AFA10C /* btn_check_off.png */; };
+		FC005D1C22F3333600AFA10C /* btn_check_on.png in Resources */ = {isa = PBXBuildFile; fileRef = FC005D1A22F3333500AFA10C /* btn_check_on.png */; };
+		FC182B8E21C4068800306998 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC182B8D21C4068800306998 /* GoogleService-Info.plist */; };
+		FC52D7AD22467CCD00A954EB /* SortByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52D7AC22467CCD00A954EB /* SortByViewController.swift */; };
+		FC5E21252305C7C0002B16EB /* termsofservice.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FC5E21242305C7BF002B16EB /* termsofservice.pdf */; };
+		FC6BE5A723879C6A00486271 /* icon_check_on.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5A523879C6900486271 /* icon_check_on.png */; };
+		FC6BE5A823879C6A00486271 /* icon_check_off.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5A623879C6900486271 /* icon_check_off.png */; };
+		FC6BE5AC23882DB900486271 /* icon_deselect_all.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5A923882DB700486271 /* icon_deselect_all.png */; };
+		FC6BE5AD23882DB900486271 /* icon_download.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5AA23882DB800486271 /* icon_download.png */; };
+		FC6BE5AE23882DB900486271 /* icon_select_all.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5AB23882DB900486271 /* icon_select_all.png */; };
+		FC6BE5B023884BA300486271 /* DownloadBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6BE5AF23884BA300486271 /* DownloadBooksViewController.swift */; };
+		FC771F8523D176F10097CA9F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC771F8423D176F10097CA9F /* ForgotPasswordViewController.swift */; };
+		FC78FEE821F8E042009CFD30 /* AudioBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78FEE721F8E042009CFD30 /* AudioBookListViewController.swift */; };
+		FC8EC97E2329DDD100B8D8F5 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8EC97D2329DDD100B8D8F5 /* SubscriptionViewController.swift */; };
+		FC996E00237423FE0020EDF5 /* icon_close_white.png in Resources */ = {isa = PBXBuildFile; fileRef = FC996DFF237423FB0020EDF5 /* icon_close_white.png */; };
+		FC996E022374252E0020EDF5 /* CustomDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC996E012374252E0020EDF5 /* CustomDialogViewController.swift */; };
+		FC9E0CA624221E69005C9E8E /* icon_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9E0CA524221E69005C9E8E /* icon_delete.png */; };
+		FCBD10CD237DCB8E00A7196C /* icon_check.png in Resources */ = {isa = PBXBuildFile; fileRef = FCBD10CC237DCB8E00A7196C /* icon_check.png */; };
+		FCC408F32271114400725E98 /* ImageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC408F22271114400725E98 /* ImageViewManager.swift */; };
+		FCC5E20622DFA7D2009BD3DC /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5E20422DFA7D1009BD3DC /* IAPHelper.swift */; };
+		FCC5E20722DFA7D2009BD3DC /* SubscriptionProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5E20522DFA7D1009BD3DC /* SubscriptionProducts.swift */; };
+		FCCA1D2822C5A04C00B24CE4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCA1D2722C5A04B00B24CE4 /* StoreKit.framework */; };
+		FCD77FD3227CFCFB00A70D48 /* icon_close.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD77FD2227CFCFB00A70D48 /* icon_close.png */; };
+		FCE0FD1821C435F0003DA154 /* ColorCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0FD1721C435F0003DA154 /* ColorCube.swift */; };
 		FCE620F121C3AD550043F27B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE620F021C3AD550043F27B /* AppDelegate.swift */; };
 		FCE620F321C3AD550043F27B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE620F221C3AD550043F27B /* ViewController.swift */; };
 		FCE620F621C3AD550043F27B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE620F421C3AD550043F27B /* Main.storyboard */; };
@@ -14,6 +42,74 @@
 		FCE620FB21C3AD690043F27B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE620F921C3AD690043F27B /* LaunchScreen.storyboard */; };
 		FCE6210621C3AD6A0043F27B /* ShortwaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6210521C3AD6A0043F27B /* ShortwaveTests.swift */; };
 		FCE6211121C3AD6A0043F27B /* ShortwaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6211021C3AD6A0043F27B /* ShortwaveUITests.swift */; };
+		FCE6212C21C3BD3A0043F27B /* icon_sound_wave.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6212421C3BD380043F27B /* icon_sound_wave.png */; };
+		FCE6212D21C3BD3A0043F27B /* icon_files.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6212521C3BD390043F27B /* icon_files.png */; };
+		FCE6212E21C3BD3A0043F27B /* icon_folder_green.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6212621C3BD390043F27B /* icon_folder_green.png */; };
+		FCE6212F21C3BD3A0043F27B /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6212721C3BD390043F27B /* icon_settings.png */; };
+		FCE6213021C3BD3A0043F27B /* bg_black.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FCE6212821C3BD390043F27B /* bg_black.jpeg */; };
+		FCE6213121C3BD3A0043F27B /* icon_source_item.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6212921C3BD3A0043F27B /* icon_source_item.png */; };
+		FCE6213221C3BD3A0043F27B /* icon_folder_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6212A21C3BD3A0043F27B /* icon_folder_yellow.png */; };
+		FCE6213321C3BD3A0043F27B /* icon_source.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6212B21C3BD3A0043F27B /* icon_source.png */; };
+		FCE6213A21C3C0AE0043F27B /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE6213921C3C0AE0043F27B /* Player.storyboard */; };
+		FCE6213C21C3C2190043F27B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6213B21C3C2190043F27B /* Constants.swift */; };
+		FCE6213F21C3C23B0043F27B /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6213E21C3C23B0043F27B /* SourceViewController.swift */; };
+		FCE6214221C3C2560043F27B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6214121C3C2560043F27B /* Common.swift */; };
+		FCE6214721C3C2D10043F27B /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6214521C3C2D10043F27B /* registerViewController.swift */; };
+		FCE6214821C3C2D10043F27B /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6214621C3C2D10043F27B /* loginViewController.swift */; };
+		FCE6214A21C3C2FA0043F27B /* VoiceOverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6214921C3C2FA0043F27B /* VoiceOverService.swift */; };
+		FCE6215021C3C34C0043F27B /* ImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6214D21C3C34B0043F27B /* ImportManager.swift */; };
+		FCE6215121C3C34C0043F27B /* ImportOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6214E21C3C34B0043F27B /* ImportOperation.swift */; };
+		FCE6215221C3C34C0043F27B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6214F21C3C34C0043F27B /* DataManager.swift */; };
+		FCE6215921C3C3860043F27B /* BookCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6215421C3C3850043F27B /* BookCellView.swift */; };
+		FCE6215A21C3C3860043F27B /* AddCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE6215521C3C3850043F27B /* AddCellView.xib */; };
+		FCE6215B21C3C3860043F27B /* BookCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE6215621C3C3850043F27B /* BookCellView.xib */; };
+		FCE6215C21C3C3860043F27B /* ItemProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6215721C3C3850043F27B /* ItemProgress.swift */; };
+		FCE6215D21C3C3860043F27B /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6215821C3C3860043F27B /* AddButton.swift */; };
+		FCE6216021C3C3CB0043F27B /* MiniPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6215F21C3C3CB0043F27B /* MiniPlayerViewController.swift */; };
+		FCE6216521C3C4050043F27B /* BaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6216121C3C4040043F27B /* BaseListViewController.swift */; };
+		FCE6216621C3C4050043F27B /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6216221C3C4040043F27B /* LibraryViewController.swift */; };
+		FCE6216721C3C4050043F27B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6216321C3C4040043F27B /* RootViewController.swift */; };
+		FCE6216821C3C4050043F27B /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6216421C3C4040043F27B /* PlaylistViewController.swift */; };
+		FCE6216E21C3C4260043F27B /* SleepTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6216A21C3C4250043F27B /* SleepTimer.swift */; };
+		FCE6216F21C3C4260043F27B /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6216B21C3C4250043F27B /* PlayerViewController.swift */; };
+		FCE6217021C3C4260043F27B /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6216C21C3C4250043F27B /* PlayerManager.swift */; };
+		FCE6217121C3C4260043F27B /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6216D21C3C4260043F27B /* ChaptersViewController.swift */; };
+		FCE6217721C3C4440043F27B /* PlayerJumpIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6217321C3C4430043F27B /* PlayerJumpIcon.swift */; };
+		FCE6217821C3C4440043F27B /* ProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6217421C3C4430043F27B /* ProgressSlider.swift */; };
+		FCE6217921C3C4440043F27B /* ArtworkControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6217521C3C4430043F27B /* ArtworkControl.swift */; };
+		FCE6217A21C3C4440043F27B /* ArtworkControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE6217621C3C4440043F27B /* ArtworkControl.xib */; };
+		FCE6217F21C3C4630043F27B /* PlayerControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6217C21C3C4630043F27B /* PlayerControlsViewController.swift */; };
+		FCE6218021C3C4630043F27B /* PlayerMetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6217D21C3C4630043F27B /* PlayerMetaViewController.swift */; };
+		FCE6218121C3C4630043F27B /* PlayerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6217E21C3C4630043F27B /* PlayerContainerViewController.swift */; };
+		FCE6218721C3C48C0043F27B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6218421C3C48C0043F27B /* SettingsViewController.swift */; };
+		FCE6218821C3C48C0043F27B /* SkipDurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6218521C3C48C0043F27B /* SkipDurationViewController.swift */; };
+		FCE6219921C3C5080043F27B /* Playlist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6218A21C3C5050043F27B /* Playlist+CoreDataProperties.swift */; };
+		FCE6219A21C3C5080043F27B /* Library+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6218B21C3C5060043F27B /* Library+CoreDataClass.swift */; };
+		FCE6219B21C3C5080043F27B /* Library+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6218C21C3C5060043F27B /* Library+CoreDataProperties.swift */; };
+		FCE6219C21C3C5080043F27B /* Chapter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6218D21C3C5060043F27B /* Chapter+CoreDataClass.swift */; };
+		FCE6219D21C3C5080043F27B /* LibraryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6218E21C3C5060043F27B /* LibraryItem+CoreDataProperties.swift */; };
+		FCE6219E21C3C5080043F27B /* BookPlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCE6218F21C3C5060043F27B /* BookPlayer.xcdatamodeld */; };
+		FCE6219F21C3C5080043F27B /* Chapter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6219121C3C5060043F27B /* Chapter+CoreDataProperties.swift */; };
+		FCE621A021C3C5080043F27B /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6219221C3C5070043F27B /* Book+CoreDataProperties.swift */; };
+		FCE621A121C3C5080043F27B /* ArtworkColors+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6219321C3C5070043F27B /* ArtworkColors+CoreDataClass.swift */; };
+		FCE621A221C3C5080043F27B /* ArtworkColors+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6219421C3C5070043F27B /* ArtworkColors+CoreDataProperties.swift */; };
+		FCE621A321C3C5080043F27B /* Playlist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6219521C3C5070043F27B /* Playlist+CoreDataClass.swift */; };
+		FCE621A421C3C5080043F27B /* LibraryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6219621C3C5080043F27B /* LibraryItem+CoreDataClass.swift */; };
+		FCE621A521C3C5080043F27B /* FileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6219721C3C5080043F27B /* FileItem.swift */; };
+		FCE621A621C3C5080043F27B /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6219821C3C5080043F27B /* Book+CoreDataClass.swift */; };
+		FCE621AF21C3C5490043F27B /* Notification+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621A821C3C5480043F27B /* Notification+BookPlayer.swift */; };
+		FCE621B021C3C5490043F27B /* UIColor+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621A921C3C5480043F27B /* UIColor+BookPlayer.swift */; };
+		FCE621B121C3C5490043F27B /* UIImage+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621AA21C3C5480043F27B /* UIImage+BookPlayer.swift */; };
+		FCE621B221C3C5490043F27B /* IndexPath+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621AB21C3C5480043F27B /* IndexPath+BookPlayer.swift */; };
+		FCE621B321C3C5490043F27B /* UIColor+Sweetercolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621AC21C3C5480043F27B /* UIColor+Sweetercolor.swift */; };
+		FCE621B421C3C5490043F27B /* UIViewController+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621AD21C3C5490043F27B /* UIViewController+BookPlayer.swift */; };
+		FCE621B521C3C5490043F27B /* UIView+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621AE21C3C5490043F27B /* UIView+BookPlayer.swift */; };
+		FCE621B921C3C5660043F27B /* rubberBandDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621B721C3C5660043F27B /* rubberBandDistance.swift */; };
+		FCE621BA21C3C5660043F27B /* limitPanAngle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621B821C3C5660043F27B /* limitPanAngle.swift */; };
+		FCE621BE21C3C5890043F27B /* BPArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621BC21C3C5890043F27B /* BPArtworkView.swift */; };
+		FCE621BF21C3C5890043F27B /* BPMarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE621BD21C3C5890043F27B /* BPMarqueeLabel.swift */; };
+		FCE621C121C3C5A10043F27B /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = FCE621C021C3C5A10043F27B /* Credits.html */; };
+		FCFEC4F823A54EB300C8E067 /* SkipDownloadDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFEC4F723A54EB300C8E067 /* SkipDownloadDialogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +129,54 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FCE0FD1321C42D8D003DA154 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2135F2CD1154B5E55C44C30F /* Pods_ShortwaveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShortwaveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		508CD9928B5D33566DB67357 /* Pods_ShortwaveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShortwaveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5841DCB821CF1246128219FC /* Pods_Shortwave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shortwave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59AE77FA61F97A2777E88C0B /* Pods-Shortwave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shortwave.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shortwave/Pods-Shortwave.debug.xcconfig"; sourceTree = "<group>"; };
+		5D6692BC3F6AFFFE2BCB4CF6 /* Pods-ShortwaveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortwaveTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortwaveTests/Pods-ShortwaveTests.release.xcconfig"; sourceTree = "<group>"; };
+		79E81D3F8E033385A1559F44 /* Pods-Shortwave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shortwave.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shortwave/Pods-Shortwave.release.xcconfig"; sourceTree = "<group>"; };
+		AA2DF94FB6AA4EE6E901AA18 /* Pods-ShortwaveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortwaveUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortwaveUITests/Pods-ShortwaveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B91010C360E20D534E8A5E5D /* Pods-ShortwaveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortwaveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortwaveUITests/Pods-ShortwaveUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EFA77FB35D22CB1CC95C318E /* Pods-ShortwaveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortwaveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortwaveTests/Pods-ShortwaveTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FC005D1722F3165200AFA10C /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		FC005D1922F3333400AFA10C /* btn_check_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_check_off.png; sourceTree = "<group>"; };
+		FC005D1A22F3333500AFA10C /* btn_check_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_check_on.png; sourceTree = "<group>"; };
+		FC182B8D21C4068800306998 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC52D7AC22467CCD00A954EB /* SortByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByViewController.swift; sourceTree = "<group>"; };
+		FC5E21242305C7BF002B16EB /* termsofservice.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = termsofservice.pdf; sourceTree = "<group>"; };
+		FC6BE5A523879C6900486271 /* icon_check_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check_on.png; sourceTree = "<group>"; };
+		FC6BE5A623879C6900486271 /* icon_check_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check_off.png; sourceTree = "<group>"; };
+		FC6BE5A923882DB700486271 /* icon_deselect_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_deselect_all.png; sourceTree = "<group>"; };
+		FC6BE5AA23882DB800486271 /* icon_download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_download.png; sourceTree = "<group>"; };
+		FC6BE5AB23882DB900486271 /* icon_select_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_select_all.png; sourceTree = "<group>"; };
+		FC6BE5AF23884BA300486271 /* DownloadBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadBooksViewController.swift; sourceTree = "<group>"; };
+		FC771F8423D176F10097CA9F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		FC78FEE721F8E042009CFD30 /* AudioBookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookListViewController.swift; sourceTree = "<group>"; };
+		FC8EC97D2329DDD100B8D8F5 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		FC996DFF237423FB0020EDF5 /* icon_close_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_close_white.png; sourceTree = "<group>"; };
+		FC996E012374252E0020EDF5 /* CustomDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDialogViewController.swift; sourceTree = "<group>"; };
+		FC9E0CA524221E69005C9E8E /* icon_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_delete.png; sourceTree = "<group>"; };
+		FCBD10CC237DCB8E00A7196C /* icon_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check.png; sourceTree = "<group>"; };
+		FCC408F22271114400725E98 /* ImageViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewManager.swift; sourceTree = "<group>"; };
+		FCC5E20422DFA7D1009BD3DC /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		FCC5E20522DFA7D1009BD3DC /* SubscriptionProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionProducts.swift; sourceTree = "<group>"; };
+		FCCA1D2722C5A04B00B24CE4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FCD77FD2227CFCFB00A70D48 /* icon_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_close.png; sourceTree = "<group>"; };
+		FCE0FD1721C435F0003DA154 /* ColorCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCube.swift; sourceTree = "<group>"; };
 		FCE620ED21C3AD540043F27B /* Shortwave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shortwave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE620F021C3AD550043F27B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE620F221C3AD550043F27B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +190,75 @@
 		FCE6210C21C3AD6A0043F27B /* ShortwaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShortwaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE6211021C3AD6A0043F27B /* ShortwaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortwaveUITests.swift; sourceTree = "<group>"; };
 		FCE6211221C3AD6A0043F27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE6212021C3B2F60043F27B /* Shortwave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shortwave.entitlements; sourceTree = "<group>"; };
+		FCE6212421C3BD380043F27B /* icon_sound_wave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sound_wave.png; sourceTree = "<group>"; };
+		FCE6212521C3BD390043F27B /* icon_files.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_files.png; sourceTree = "<group>"; };
+		FCE6212621C3BD390043F27B /* icon_folder_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_folder_green.png; sourceTree = "<group>"; };
+		FCE6212721C3BD390043F27B /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
+		FCE6212821C3BD390043F27B /* bg_black.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_black.jpeg; sourceTree = "<group>"; };
+		FCE6212921C3BD3A0043F27B /* icon_source_item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_source_item.png; sourceTree = "<group>"; };
+		FCE6212A21C3BD3A0043F27B /* icon_folder_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_folder_yellow.png; sourceTree = "<group>"; };
+		FCE6212B21C3BD3A0043F27B /* icon_source.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_source.png; sourceTree = "<group>"; };
+		FCE6213921C3C0AE0043F27B /* Player.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		FCE6213B21C3C2190043F27B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FCE6213E21C3C23B0043F27B /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
+		FCE6214121C3C2560043F27B /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		FCE6214521C3C2D10043F27B /* registerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
+		FCE6214621C3C2D10043F27B /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		FCE6214921C3C2FA0043F27B /* VoiceOverService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceOverService.swift; sourceTree = "<group>"; };
+		FCE6214D21C3C34B0043F27B /* ImportManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportManager.swift; sourceTree = "<group>"; };
+		FCE6214E21C3C34B0043F27B /* ImportOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportOperation.swift; sourceTree = "<group>"; };
+		FCE6214F21C3C34C0043F27B /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		FCE6215421C3C3850043F27B /* BookCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCellView.swift; sourceTree = "<group>"; };
+		FCE6215521C3C3850043F27B /* AddCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCellView.xib; sourceTree = "<group>"; };
+		FCE6215621C3C3850043F27B /* BookCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCellView.xib; sourceTree = "<group>"; };
+		FCE6215721C3C3850043F27B /* ItemProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemProgress.swift; sourceTree = "<group>"; };
+		FCE6215821C3C3860043F27B /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		FCE6215F21C3C3CB0043F27B /* MiniPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerViewController.swift; sourceTree = "<group>"; };
+		FCE6216121C3C4040043F27B /* BaseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseListViewController.swift; sourceTree = "<group>"; };
+		FCE6216221C3C4040043F27B /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		FCE6216321C3C4040043F27B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		FCE6216421C3C4040043F27B /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		FCE6216A21C3C4250043F27B /* SleepTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepTimer.swift; sourceTree = "<group>"; };
+		FCE6216B21C3C4250043F27B /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		FCE6216C21C3C4250043F27B /* PlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		FCE6216D21C3C4260043F27B /* ChaptersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
+		FCE6217321C3C4430043F27B /* PlayerJumpIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerJumpIcon.swift; sourceTree = "<group>"; };
+		FCE6217421C3C4430043F27B /* ProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSlider.swift; sourceTree = "<group>"; };
+		FCE6217521C3C4430043F27B /* ArtworkControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkControl.swift; sourceTree = "<group>"; };
+		FCE6217621C3C4440043F27B /* ArtworkControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtworkControl.xib; sourceTree = "<group>"; };
+		FCE6217C21C3C4630043F27B /* PlayerControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControlsViewController.swift; sourceTree = "<group>"; };
+		FCE6217D21C3C4630043F27B /* PlayerMetaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMetaViewController.swift; sourceTree = "<group>"; };
+		FCE6217E21C3C4630043F27B /* PlayerContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerContainerViewController.swift; sourceTree = "<group>"; };
+		FCE6218421C3C48C0043F27B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FCE6218521C3C48C0043F27B /* SkipDurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkipDurationViewController.swift; sourceTree = "<group>"; };
+		FCE6218A21C3C5050043F27B /* Playlist+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Playlist+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FCE6218B21C3C5060043F27B /* Library+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Library+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FCE6218C21C3C5060043F27B /* Library+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Library+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FCE6218D21C3C5060043F27B /* Chapter+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chapter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FCE6218E21C3C5060043F27B /* LibraryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FCE6219021C3C5060043F27B /* Audiobook Player.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Audiobook Player.xcdatamodel"; sourceTree = "<group>"; };
+		FCE6219121C3C5060043F27B /* Chapter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chapter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FCE6219221C3C5070043F27B /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FCE6219321C3C5070043F27B /* ArtworkColors+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArtworkColors+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FCE6219421C3C5070043F27B /* ArtworkColors+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArtworkColors+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FCE6219521C3C5070043F27B /* Playlist+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Playlist+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FCE6219621C3C5080043F27B /* LibraryItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FCE6219721C3C5080043F27B /* FileItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileItem.swift; sourceTree = "<group>"; };
+		FCE6219821C3C5080043F27B /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FCE621A821C3C5480043F27B /* Notification+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+BookPlayer.swift"; sourceTree = "<group>"; };
+		FCE621A921C3C5480043F27B /* UIColor+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BookPlayer.swift"; sourceTree = "<group>"; };
+		FCE621AA21C3C5480043F27B /* UIImage+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BookPlayer.swift"; sourceTree = "<group>"; };
+		FCE621AB21C3C5480043F27B /* IndexPath+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndexPath+BookPlayer.swift"; sourceTree = "<group>"; };
+		FCE621AC21C3C5480043F27B /* UIColor+Sweetercolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Sweetercolor.swift"; sourceTree = "<group>"; };
+		FCE621AD21C3C5490043F27B /* UIViewController+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+BookPlayer.swift"; sourceTree = "<group>"; };
+		FCE621AE21C3C5490043F27B /* UIView+BookPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BookPlayer.swift"; sourceTree = "<group>"; };
+		FCE621B721C3C5660043F27B /* rubberBandDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rubberBandDistance.swift; sourceTree = "<group>"; };
+		FCE621B821C3C5660043F27B /* limitPanAngle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = limitPanAngle.swift; sourceTree = "<group>"; };
+		FCE621BC21C3C5890043F27B /* BPArtworkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPArtworkView.swift; sourceTree = "<group>"; };
+		FCE621BD21C3C5890043F27B /* BPMarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPMarqueeLabel.swift; sourceTree = "<group>"; };
+		FCE621C021C3C5A10043F27B /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		FCFEC4F723A54EB300C8E067 /* SkipDownloadDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipDownloadDialogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +266,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327C3B499174B7393DD3FECF /* Pods_Shortwave.framework in Frameworks */,
+				FCCA1D2822C5A04C00B24CE4 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E4439F449A6DD21203FC11B /* Pods_ShortwaveTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +283,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A356A9721F3EB6DB6368BD7 /* Pods_ShortwaveUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B8C94E1B9F5C843B33128DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59AE77FA61F97A2777E88C0B /* Pods-Shortwave.debug.xcconfig */,
+				79E81D3F8E033385A1559F44 /* Pods-Shortwave.release.xcconfig */,
+				EFA77FB35D22CB1CC95C318E /* Pods-ShortwaveTests.debug.xcconfig */,
+				5D6692BC3F6AFFFE2BCB4CF6 /* Pods-ShortwaveTests.release.xcconfig */,
+				AA2DF94FB6AA4EE6E901AA18 /* Pods-ShortwaveUITests.debug.xcconfig */,
+				B91010C360E20D534E8A5E5D /* Pods-ShortwaveUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B897144D8C9A314B4EE999E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCCA1D2722C5A04B00B24CE4 /* StoreKit.framework */,
+				5841DCB821CF1246128219FC /* Pods_Shortwave.framework */,
+				2135F2CD1154B5E55C44C30F /* Pods_ShortwaveTests.framework */,
+				508CD9928B5D33566DB67357 /* Pods_ShortwaveUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC005D1422F305DB00AFA10C /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				FC5E21242305C7BF002B16EB /* termsofservice.pdf */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		FCC5E20322DFA741009BD3DC /* subscription */ = {
+			isa = PBXGroup;
+			children = (
+				FCC5E20422DFA7D1009BD3DC /* IAPHelper.swift */,
+				FCC5E20522DFA7D1009BD3DC /* SubscriptionProducts.swift */,
+			);
+			path = subscription;
+			sourceTree = "<group>";
+		};
 		FCE620E421C3AD540043F27B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +338,8 @@
 				FCE6210421C3AD6A0043F27B /* ShortwaveTests */,
 				FCE6210F21C3AD6A0043F27B /* ShortwaveUITests */,
 				FCE620EE21C3AD540043F27B /* Products */,
+				9B8C94E1B9F5C843B33128DB /* Pods */,
+				B897144D8C9A314B4EE999E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +356,32 @@
 		FCE620EF21C3AD540043F27B /* Shortwave */ = {
 			isa = PBXGroup;
 			children = (
+				FC005D1422F305DB00AFA10C /* resource */,
+				FCE6212321C3BD1C0043F27B /* images */,
+				FCE6212021C3B2F60043F27B /* Shortwave.entitlements */,
 				FCE620F021C3AD550043F27B /* AppDelegate.swift */,
+				FCC5E20322DFA741009BD3DC /* subscription */,
+				FCE6213D21C3C22B0043F27B /* source */,
+				FCE6214021C3C2460043F27B /* module */,
+				FCE6214321C3C26E0043F27B /* getStarted */,
+				FCE6214421C3C2990043F27B /* Services */,
+				FCE6214B21C3C3130043F27B /* Library */,
+				FCE6216921C3C4160043F27B /* Player */,
+				FCE6218221C3C47B0043F27B /* Settings */,
+				FCE6218921C3C4D40043F27B /* Models */,
+				FCE621A721C3C5160043F27B /* Extensions */,
+				FCE621B621C3C5580043F27B /* Utils */,
+				FCE621BB21C3C5760043F27B /* Views */,
 				FCE620F221C3AD550043F27B /* ViewController.swift */,
+				FCE0FD1721C435F0003DA154 /* ColorCube.swift */,
+				FCE6213B21C3C2190043F27B /* Constants.swift */,
+				FC182B8D21C4068800306998 /* GoogleService-Info.plist */,
 				FCE620F421C3AD550043F27B /* Main.storyboard */,
+				FCE6213921C3C0AE0043F27B /* Player.storyboard */,
 				FCE620F721C3AD690043F27B /* Assets.xcassets */,
 				FCE620F921C3AD690043F27B /* LaunchScreen.storyboard */,
 				FCE620FC21C3AD690043F27B /* Info.plist */,
+				FCE621C021C3C5A10043F27B /* Credits.html */,
 			);
 			path = Shortwave;
 			sourceTree = "<group>";
@@ -125,6 +404,214 @@
 			path = ShortwaveUITests;
 			sourceTree = "<group>";
 		};
+		FCE6212321C3BD1C0043F27B /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FC9E0CA524221E69005C9E8E /* icon_delete.png */,
+				FC6BE5A923882DB700486271 /* icon_deselect_all.png */,
+				FC6BE5AA23882DB800486271 /* icon_download.png */,
+				FC6BE5AB23882DB900486271 /* icon_select_all.png */,
+				FCBD10CC237DCB8E00A7196C /* icon_check.png */,
+				FC996DFF237423FB0020EDF5 /* icon_close_white.png */,
+				FC005D1922F3333400AFA10C /* btn_check_off.png */,
+				FC005D1A22F3333500AFA10C /* btn_check_on.png */,
+				FCD77FD2227CFCFB00A70D48 /* icon_close.png */,
+				FCE6212621C3BD390043F27B /* icon_folder_green.png */,
+				FCE6212A21C3BD3A0043F27B /* icon_folder_yellow.png */,
+				FCE6212921C3BD3A0043F27B /* icon_source_item.png */,
+				FCE6212421C3BD380043F27B /* icon_sound_wave.png */,
+				FCE6212821C3BD390043F27B /* bg_black.jpeg */,
+				FCE6212521C3BD390043F27B /* icon_files.png */,
+				FCE6212721C3BD390043F27B /* icon_settings.png */,
+				FCE6212B21C3BD3A0043F27B /* icon_source.png */,
+				FC6BE5A623879C6900486271 /* icon_check_off.png */,
+				FC6BE5A523879C6900486271 /* icon_check_on.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		FCE6213D21C3C22B0043F27B /* source */ = {
+			isa = PBXGroup;
+			children = (
+				FC996E012374252E0020EDF5 /* CustomDialogViewController.swift */,
+				FCFEC4F723A54EB300C8E067 /* SkipDownloadDialogViewController.swift */,
+				FCE6213E21C3C23B0043F27B /* SourceViewController.swift */,
+				FC52D7AC22467CCD00A954EB /* SortByViewController.swift */,
+				FC78FEE721F8E042009CFD30 /* AudioBookListViewController.swift */,
+				FC6BE5AF23884BA300486271 /* DownloadBooksViewController.swift */,
+				FCC408F22271114400725E98 /* ImageViewManager.swift */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		FCE6214021C3C2460043F27B /* module */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6214121C3C2560043F27B /* Common.swift */,
+			);
+			path = module;
+			sourceTree = "<group>";
+		};
+		FCE6214321C3C26E0043F27B /* getStarted */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6214621C3C2D10043F27B /* loginViewController.swift */,
+				FCE6214521C3C2D10043F27B /* registerViewController.swift */,
+				FC771F8423D176F10097CA9F /* ForgotPasswordViewController.swift */,
+			);
+			path = getStarted;
+			sourceTree = "<group>";
+		};
+		FCE6214421C3C2990043F27B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6214921C3C2FA0043F27B /* VoiceOverService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FCE6214B21C3C3130043F27B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6214C21C3C33D0043F27B /* FileManagement */,
+				FCE6216121C3C4040043F27B /* BaseListViewController.swift */,
+				FCE6216221C3C4040043F27B /* LibraryViewController.swift */,
+				FCE6216421C3C4040043F27B /* PlaylistViewController.swift */,
+				FCE6216321C3C4040043F27B /* RootViewController.swift */,
+				FCE6215321C3C3600043F27B /* Views */,
+				FCE6215E21C3C3A00043F27B /* Containers */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		FCE6214C21C3C33D0043F27B /* FileManagement */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6214F21C3C34C0043F27B /* DataManager.swift */,
+				FCE6214D21C3C34B0043F27B /* ImportManager.swift */,
+				FCE6214E21C3C34B0043F27B /* ImportOperation.swift */,
+			);
+			path = FileManagement;
+			sourceTree = "<group>";
+		};
+		FCE6215321C3C3600043F27B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6215821C3C3860043F27B /* AddButton.swift */,
+				FCE6215421C3C3850043F27B /* BookCellView.swift */,
+				FCE6215721C3C3850043F27B /* ItemProgress.swift */,
+				FCE6215521C3C3850043F27B /* AddCellView.xib */,
+				FCE6215621C3C3850043F27B /* BookCellView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCE6215E21C3C3A00043F27B /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6215F21C3C3CB0043F27B /* MiniPlayerViewController.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		FCE6216921C3C4160043F27B /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6216C21C3C4250043F27B /* PlayerManager.swift */,
+				FCE6216B21C3C4250043F27B /* PlayerViewController.swift */,
+				FCE6216A21C3C4250043F27B /* SleepTimer.swift */,
+				FCE6216D21C3C4260043F27B /* ChaptersViewController.swift */,
+				FCE6217221C3C42F0043F27B /* Views */,
+				FCE6217B21C3C4500043F27B /* Containers */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		FCE6217221C3C42F0043F27B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6217521C3C4430043F27B /* ArtworkControl.swift */,
+				FCE6217621C3C4440043F27B /* ArtworkControl.xib */,
+				FCE6217321C3C4430043F27B /* PlayerJumpIcon.swift */,
+				FCE6217421C3C4430043F27B /* ProgressSlider.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCE6217B21C3C4500043F27B /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6217E21C3C4630043F27B /* PlayerContainerViewController.swift */,
+				FCE6217C21C3C4630043F27B /* PlayerControlsViewController.swift */,
+				FCE6217D21C3C4630043F27B /* PlayerMetaViewController.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		FCE6218221C3C47B0043F27B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6218421C3C48C0043F27B /* SettingsViewController.swift */,
+				FCE6218521C3C48C0043F27B /* SkipDurationViewController.swift */,
+				FC005D1722F3165200AFA10C /* PrivacyViewController.swift */,
+				FC8EC97D2329DDD100B8D8F5 /* SubscriptionViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FCE6218921C3C4D40043F27B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCE6219321C3C5070043F27B /* ArtworkColors+CoreDataClass.swift */,
+				FCE6219421C3C5070043F27B /* ArtworkColors+CoreDataProperties.swift */,
+				FCE6219821C3C5080043F27B /* Book+CoreDataClass.swift */,
+				FCE6219221C3C5070043F27B /* Book+CoreDataProperties.swift */,
+				FCE6218F21C3C5060043F27B /* BookPlayer.xcdatamodeld */,
+				FCE6218D21C3C5060043F27B /* Chapter+CoreDataClass.swift */,
+				FCE6219121C3C5060043F27B /* Chapter+CoreDataProperties.swift */,
+				FCE6219721C3C5080043F27B /* FileItem.swift */,
+				FCE6218B21C3C5060043F27B /* Library+CoreDataClass.swift */,
+				FCE6218C21C3C5060043F27B /* Library+CoreDataProperties.swift */,
+				FCE6219621C3C5080043F27B /* LibraryItem+CoreDataClass.swift */,
+				FCE6218E21C3C5060043F27B /* LibraryItem+CoreDataProperties.swift */,
+				FCE6219521C3C5070043F27B /* Playlist+CoreDataClass.swift */,
+				FCE6218A21C3C5050043F27B /* Playlist+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FCE621A721C3C5160043F27B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FCE621A821C3C5480043F27B /* Notification+BookPlayer.swift */,
+				FCE621AB21C3C5480043F27B /* IndexPath+BookPlayer.swift */,
+				FCE621A921C3C5480043F27B /* UIColor+BookPlayer.swift */,
+				FCE621AC21C3C5480043F27B /* UIColor+Sweetercolor.swift */,
+				FCE621AA21C3C5480043F27B /* UIImage+BookPlayer.swift */,
+				FCE621AE21C3C5490043F27B /* UIView+BookPlayer.swift */,
+				FCE621AD21C3C5490043F27B /* UIViewController+BookPlayer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FCE621B621C3C5580043F27B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FCE621B721C3C5660043F27B /* rubberBandDistance.swift */,
+				FCE621B821C3C5660043F27B /* limitPanAngle.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FCE621BB21C3C5760043F27B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCE621BD21C3C5890043F27B /* BPMarqueeLabel.swift */,
+				FCE621BC21C3C5890043F27B /* BPArtworkView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +619,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCE6211521C3AD6A0043F27B /* Build configuration list for PBXNativeTarget "Shortwave" */;
 			buildPhases = (
+				E148C63A095B0123F0AC3FE2 /* [CP] Check Pods Manifest.lock */,
 				FCE620E921C3AD540043F27B /* Sources */,
 				FCE620EA21C3AD540043F27B /* Frameworks */,
 				FCE620EB21C3AD540043F27B /* Resources */,
+				FCE0FD1321C42D8D003DA154 /* Embed Frameworks */,
+				434B41C3D93F868C53ED5029 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +639,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCE6211821C3AD6A0043F27B /* Build configuration list for PBXNativeTarget "ShortwaveTests" */;
 			buildPhases = (
+				9A5B6BA7E0A65A8BA341160F /* [CP] Check Pods Manifest.lock */,
 				FCE620FD21C3AD6A0043F27B /* Sources */,
 				FCE620FE21C3AD6A0043F27B /* Frameworks */,
 				FCE620FF21C3AD6A0043F27B /* Resources */,
@@ -167,6 +658,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCE6211B21C3AD6A0043F27B /* Build configuration list for PBXNativeTarget "ShortwaveUITests" */;
 			buildPhases = (
+				C2B3067DB71B9F53C4FA71B1 /* [CP] Check Pods Manifest.lock */,
 				FCE6210821C3AD6A0043F27B /* Sources */,
 				FCE6210921C3AD6A0043F27B /* Frameworks */,
 				FCE6210A21C3AD6A0043F27B /* Resources */,
@@ -193,13 +685,30 @@
 				TargetAttributes = {
 					FCE620EC21C3AD540043F27B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					FCE6210021C3AD6A0043F27B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = FCE620EC21C3AD540043F27B;
 					};
 					FCE6210B21C3AD6A0043F27B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = FCE620EC21C3AD540043F27B;
 					};
 				};
@@ -229,9 +738,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE6213221C3BD3A0043F27B /* icon_folder_yellow.png in Resources */,
 				FCE620FB21C3AD690043F27B /* LaunchScreen.storyboard in Resources */,
+				FCE621C121C3C5A10043F27B /* Credits.html in Resources */,
+				FCE6215B21C3C3860043F27B /* BookCellView.xib in Resources */,
+				FCE6215A21C3C3860043F27B /* AddCellView.xib in Resources */,
+				FC996E00237423FE0020EDF5 /* icon_close_white.png in Resources */,
+				FC6BE5AD23882DB900486271 /* icon_download.png in Resources */,
+				FCE6212D21C3BD3A0043F27B /* icon_files.png in Resources */,
+				FCE6213021C3BD3A0043F27B /* bg_black.jpeg in Resources */,
+				FCE6213A21C3C0AE0043F27B /* Player.storyboard in Resources */,
+				FC6BE5AE23882DB900486271 /* icon_select_all.png in Resources */,
 				FCE620F821C3AD690043F27B /* Assets.xcassets in Resources */,
 				FCE620F621C3AD550043F27B /* Main.storyboard in Resources */,
+				FC9E0CA624221E69005C9E8E /* icon_delete.png in Resources */,
+				FCE6213321C3BD3A0043F27B /* icon_source.png in Resources */,
+				FCE6212F21C3BD3A0043F27B /* icon_settings.png in Resources */,
+				FC182B8E21C4068800306998 /* GoogleService-Info.plist in Resources */,
+				FCE6212E21C3BD3A0043F27B /* icon_folder_green.png in Resources */,
+				FC6BE5AC23882DB900486271 /* icon_deselect_all.png in Resources */,
+				FC5E21252305C7C0002B16EB /* termsofservice.pdf in Resources */,
+				FCE6213121C3BD3A0043F27B /* icon_source_item.png in Resources */,
+				FC6BE5A823879C6A00486271 /* icon_check_off.png in Resources */,
+				FC005D1B22F3333600AFA10C /* btn_check_off.png in Resources */,
+				FCE6217A21C3C4440043F27B /* ArtworkControl.xib in Resources */,
+				FCE6212C21C3BD3A0043F27B /* icon_sound_wave.png in Resources */,
+				FCD77FD3227CFCFB00A70D48 /* icon_close.png in Resources */,
+				FCBD10CD237DCB8E00A7196C /* icon_check.png in Resources */,
+				FC6BE5A723879C6A00486271 /* icon_check_on.png in Resources */,
+				FC005D1C22F3333600AFA10C /* btn_check_on.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +786,165 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		434B41C3D93F868C53ED5029 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shortwave/Pods-Shortwave-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shortwave/Pods-Shortwave-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shortwave/Pods-Shortwave-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A5B6BA7E0A65A8BA341160F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShortwaveTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2B3067DB71B9F53C4FA71B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShortwaveUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E148C63A095B0123F0AC3FE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shortwave-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FCE620E921C3AD540043F27B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE621B121C3C5490043F27B /* UIImage+BookPlayer.swift in Sources */,
+				FCE6216821C3C4050043F27B /* PlaylistViewController.swift in Sources */,
+				FCE621A521C3C5080043F27B /* FileItem.swift in Sources */,
+				FCC5E20722DFA7D2009BD3DC /* SubscriptionProducts.swift in Sources */,
+				FCE621B921C3C5660043F27B /* rubberBandDistance.swift in Sources */,
+				FCE6219F21C3C5080043F27B /* Chapter+CoreDataProperties.swift in Sources */,
+				FCE6217721C3C4440043F27B /* PlayerJumpIcon.swift in Sources */,
+				FC78FEE821F8E042009CFD30 /* AudioBookListViewController.swift in Sources */,
+				FCE6214821C3C2D10043F27B /* loginViewController.swift in Sources */,
+				FCE6215D21C3C3860043F27B /* AddButton.swift in Sources */,
+				FCE621B221C3C5490043F27B /* IndexPath+BookPlayer.swift in Sources */,
+				FCE621BF21C3C5890043F27B /* BPMarqueeLabel.swift in Sources */,
+				FCE6217921C3C4440043F27B /* ArtworkControl.swift in Sources */,
+				FCE6219E21C3C5080043F27B /* BookPlayer.xcdatamodeld in Sources */,
+				FCFEC4F823A54EB300C8E067 /* SkipDownloadDialogViewController.swift in Sources */,
+				FCE6219B21C3C5080043F27B /* Library+CoreDataProperties.swift in Sources */,
+				FCE6216721C3C4050043F27B /* RootViewController.swift in Sources */,
+				FC52D7AD22467CCD00A954EB /* SortByViewController.swift in Sources */,
+				FCC5E20622DFA7D2009BD3DC /* IAPHelper.swift in Sources */,
 				FCE620F321C3AD550043F27B /* ViewController.swift in Sources */,
+				FCE6219D21C3C5080043F27B /* LibraryItem+CoreDataProperties.swift in Sources */,
+				FC6BE5B023884BA300486271 /* DownloadBooksViewController.swift in Sources */,
+				FCE6213F21C3C23B0043F27B /* SourceViewController.swift in Sources */,
+				FCE6219C21C3C5080043F27B /* Chapter+CoreDataClass.swift in Sources */,
+				FCE621A621C3C5080043F27B /* Book+CoreDataClass.swift in Sources */,
+				FCE6217021C3C4260043F27B /* PlayerManager.swift in Sources */,
+				FCE6216621C3C4050043F27B /* LibraryViewController.swift in Sources */,
+				FCE6215021C3C34C0043F27B /* ImportManager.swift in Sources */,
+				FC771F8523D176F10097CA9F /* ForgotPasswordViewController.swift in Sources */,
+				FCE6219A21C3C5080043F27B /* Library+CoreDataClass.swift in Sources */,
+				FCE621B021C3C5490043F27B /* UIColor+BookPlayer.swift in Sources */,
+				FCE6217121C3C4260043F27B /* ChaptersViewController.swift in Sources */,
+				FCE6215121C3C34C0043F27B /* ImportOperation.swift in Sources */,
+				FCE0FD1821C435F0003DA154 /* ColorCube.swift in Sources */,
+				FCE6217821C3C4440043F27B /* ProgressSlider.swift in Sources */,
+				FCE621A221C3C5080043F27B /* ArtworkColors+CoreDataProperties.swift in Sources */,
+				FCE6218821C3C48C0043F27B /* SkipDurationViewController.swift in Sources */,
+				FCE6216E21C3C4260043F27B /* SleepTimer.swift in Sources */,
 				FCE620F121C3AD550043F27B /* AppDelegate.swift in Sources */,
+				FC8EC97E2329DDD100B8D8F5 /* SubscriptionViewController.swift in Sources */,
+				FCE6218021C3C4630043F27B /* PlayerMetaViewController.swift in Sources */,
+				FCE6214A21C3C2FA0043F27B /* VoiceOverService.swift in Sources */,
+				FCE621A121C3C5080043F27B /* ArtworkColors+CoreDataClass.swift in Sources */,
+				FC996E022374252E0020EDF5 /* CustomDialogViewController.swift in Sources */,
+				FCE6216021C3C3CB0043F27B /* MiniPlayerViewController.swift in Sources */,
+				FCE6218721C3C48C0043F27B /* SettingsViewController.swift in Sources */,
+				FCE621B321C3C5490043F27B /* UIColor+Sweetercolor.swift in Sources */,
+				FCE621BE21C3C5890043F27B /* BPArtworkView.swift in Sources */,
+				FCE621A421C3C5080043F27B /* LibraryItem+CoreDataClass.swift in Sources */,
+				FCE6215921C3C3860043F27B /* BookCellView.swift in Sources */,
+				FCE621AF21C3C5490043F27B /* Notification+BookPlayer.swift in Sources */,
+				FCE6214721C3C2D10043F27B /* registerViewController.swift in Sources */,
+				FCE621BA21C3C5660043F27B /* limitPanAngle.swift in Sources */,
+				FCE6218121C3C4630043F27B /* PlayerContainerViewController.swift in Sources */,
+				FCE6215221C3C34C0043F27B /* DataManager.swift in Sources */,
+				FCE621A321C3C5080043F27B /* Playlist+CoreDataClass.swift in Sources */,
+				FCE6214221C3C2560043F27B /* Common.swift in Sources */,
+				FCE6217F21C3C4630043F27B /* PlayerControlsViewController.swift in Sources */,
+				FCE6216F21C3C4260043F27B /* PlayerViewController.swift in Sources */,
+				FCE6216521C3C4050043F27B /* BaseListViewController.swift in Sources */,
+				FC005D1822F3165200AFA10C /* PrivacyViewController.swift in Sources */,
+				FCC408F32271114400725E98 /* ImageViewManager.swift in Sources */,
+				FCE621B521C3C5490043F27B /* UIView+BookPlayer.swift in Sources */,
+				FCE6219921C3C5080043F27B /* Playlist+CoreDataProperties.swift in Sources */,
+				FCE621B421C3C5490043F27B /* UIViewController+BookPlayer.swift in Sources */,
+				FCE6213C21C3C2190043F27B /* Constants.swift in Sources */,
+				FCE621A021C3C5080043F27B /* Book+CoreDataProperties.swift in Sources */,
+				FCE6215C21C3C3860043F27B /* ItemProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,42 +1117,67 @@
 		};
 		FCE6211621C3AD6A0043F27B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59AE77FA61F97A2777E88C0B /* Pods-Shortwave.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Shortwave/Shortwave.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = J7W32SR7FW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Shortwave/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.Shortwave;
+				MACH_O_TYPE = mh_execute;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		FCE6211721C3AD6A0043F27B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79E81D3F8E033385A1559F44 /* Pods-Shortwave.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Shortwave/Shortwave.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = J7W32SR7FW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Shortwave/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.Shortwave;
+				MACH_O_TYPE = mh_execute;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		FCE6211921C3AD6A0043F27B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFA77FB35D22CB1CC95C318E /* Pods-ShortwaveTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -479,7 +1191,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.ShortwaveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shortwave.app/Shortwave";
 			};
@@ -487,6 +1199,7 @@
 		};
 		FCE6211A21C3AD6A0043F27B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D6692BC3F6AFFFE2BCB4CF6 /* Pods-ShortwaveTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -500,7 +1213,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.ShortwaveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shortwave.app/Shortwave";
 			};
@@ -508,6 +1221,7 @@
 		};
 		FCE6211C21C3AD6A0043F27B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA2DF94FB6AA4EE6E901AA18 /* Pods-ShortwaveUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -520,7 +1234,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.ShortwaveUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Shortwave;
 			};
@@ -528,6 +1242,7 @@
 		};
 		FCE6211D21C3AD6A0043F27B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B91010C360E20D534E8A5E5D /* Pods-ShortwaveUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,7 +1255,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shortwave.m4bplayer.ShortwaveUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Shortwave;
 			};
@@ -586,6 +1301,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCE6218F21C3C5060043F27B /* BookPlayer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCE6219021C3C5060043F27B /* Audiobook Player.xcdatamodel */,
+			);
+			currentVersion = FCE6219021C3C5060043F27B /* Audiobook Player.xcdatamodel */;
+			path = BookPlayer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FCE620E521C3AD540043F27B /* Project object */;
 }
