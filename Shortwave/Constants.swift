@@ -45,7 +45,8 @@ enum Constants {
 struct Globals {
 //    public static let apiUrl = "http://ec2-52-15-147-184.us-east-2.compute.amazonaws.com";
     public static let apiUrl = "http://24.22.30.62:8083";
-    public static let adminUrl = "http://192.168.1.238:3000";
+//    public static let adminUrl = "http://24.22.30.62:5000";
+    public static let adminUrl = "http://192.168.1.238:5000";
     public static var authKey = "YWRtaW46YWRtaW4xMjM="
     public static var serverUrl = ""
     public static var serverTitle = ""
@@ -215,6 +216,7 @@ struct Globals {
                         print("sync download completed genre file")
                         try data.write(to: fileUrl!, options: .atomic)
                         updateAudoDownloadBookIndex(genre: bookData.genre, id: bookData.id)
+                        updateDownloadNumberOnServer(id: bookData.id)
                         if Globals.downloadBookArray.count > 0 {
                             Globals.downloadBookArray.remove(at: 0)
                         }
@@ -228,6 +230,7 @@ struct Globals {
                 autoSync()
         }
     }
+    
     ///Adding files automatically to Download Queue    
     static public func autoFillDownloadQueue(genre:String) {
         if isAutoFillSyncing {
@@ -374,6 +377,67 @@ struct Globals {
         }
         defaults.set(id, forKey: "\(genre)_autodownload_index_\(index_list_count)")
         defaults.set(index_list_count+1, forKey: "\(genre)_autodownload_index_count")
+    }
+    static func updateDownloadNumberOnServer(id:Int) {
+        print(token)
+        let updateUrl = Globals.adminUrl + "/api/books/update-download"
+        Alamofire.request(updateUrl, method: .post, parameters: ["id": id],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
+                switch response.result {
+                case .success(_):
+                    if let result = response.result.value {
+                        let json = JSON(result)
+                        if json["success"].boolValue {
+                            print(json["message"].stringValue)
+                        }
+                        else {
+                            print(json["message"].stringValue)
+                        }
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+        }
+    }
+    static func updateFavoriteNumberOnServer(id:Int) {
+        if id == 0 {
+            return
+        }
+        let loginUrl = Globals.adminUrl + "/api/books/update-favorite"
+        Alamofire.request(loginUrl, method: .post, parameters: ["id": id],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
+                switch response.result {
+                case .success(_):
+                    if let result = response.result.value {
+                        let json = JSON(result)
+                        if json["success"].boolValue {
+                            print(json["message"].stringValue)
+                        }
+                        else {
+                            print(json["message"].stringValue)
+                        }
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+        }
+    }
+    static func updateUserProStateOnServer(state:Bool) {
+        let loginUrl = Globals.adminUrl + "/api/update-pro-state"
+        Alamofire.request(loginUrl, method: .post, parameters: ["state": state],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
+                switch response.result {
+                case .success(_):
+                    if let result = response.result.value {
+                        let json = JSON(result)
+                        if json["success"].boolValue {
+                            print(json["message"].stringValue)
+                        }
+                        else {
+                            print(json["message"].stringValue)
+                        }
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+        }
     }
 }
 

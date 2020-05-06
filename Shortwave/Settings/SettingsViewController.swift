@@ -182,6 +182,7 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
             })
             else { return }
         Globals.isPro = SubscriptionProducts.store.isProductPurchased(SubscriptionProducts.subscriptionID)
+        Globals.updateUserProStateOnServer(state: Globals.isPro)
         if Globals.isPro {
             //TODO: Add here
             let alert = UIAlertController(title: "Subscription", message: "Subscribed Ansable Subscription Service successfully!", preferredStyle: .alert)
@@ -199,6 +200,7 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
             })
             else { return }
         Globals.isPro = SubscriptionProducts.store.isProductPurchased(SubscriptionProducts.subscriptionID)
+        Globals.updateUserProStateOnServer(state: Globals.isPro)
         if Globals.isPro {
             //TODO: add here
             let alert = UIAlertController(title: "Subscription", message: "Restored your purchase Successful!", preferredStyle: .alert)

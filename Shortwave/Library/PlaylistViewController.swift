@@ -354,10 +354,12 @@ extension PlaylistViewController {
             if book.fileItem != nil {
                 let favBook = Book(from: book.fileItem!, context: book.context!)
                 playlist?.addToBooks([favBook])
+                Globals.updateFavoriteNumberOnServer(id: book.fileItem!.bookId)
             }
             else {
                 playlist?.addToBooks([book])
             }
+            
         }
         favAction.backgroundColor = UIColor.purple
         return [deleteAction, favAction]

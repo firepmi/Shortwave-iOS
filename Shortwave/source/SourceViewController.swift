@@ -29,6 +29,7 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
                 Globals.products = products!
                 print("Products count: \(Globals.products.count)")
                 Globals.isPro = SubscriptionProducts.store.isProductPurchased(SubscriptionProducts.subscriptionID)
+                Globals.updateUserProStateOnServer(state: Globals.isPro)
                 print(SubscriptionProducts.subscriptionID, Globals.isPro)
             }
         })

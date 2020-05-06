@@ -25,9 +25,12 @@ class ImportManager {
         let filename = fileUrl.lastPathComponent
         
         print(filename)
+        let fileNameArr : [String] = filename.components(separatedBy: " ")
+        let bookId : String = fileNameArr[0]
+        
         let genre:String = filename.slice(from: "(", to: ")")!
         
-        let file = FileItem(originalUrl: fileUrl, processedUrl: nil, destinationFolder: destinationFolder, genre: genre)
+        let file = FileItem(originalUrl: fileUrl, processedUrl: nil, destinationFolder: destinationFolder, genre: genre, bookId: Int(bookId)!)
         self.files.append(file)
 
         NotificationCenter.default.post(name: .newFileUrl, object: self, userInfo: nil)

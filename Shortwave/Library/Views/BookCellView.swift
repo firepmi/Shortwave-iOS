@@ -176,6 +176,9 @@ class BookCellView: UITableViewCell {
     }
 
     @IBAction func checkBtnClicked(_ sender: Any) {
+        guard self.delegate == nil else {
+            return
+        }
         self.delegate.onCheckBtnClicked(cell: self)
     }
     @IBAction func artworkButtonTapped(_ sender: Any) {
