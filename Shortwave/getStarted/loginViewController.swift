@@ -101,16 +101,20 @@ class loginViewController: UIViewController, UITextFieldDelegate {
 
         loginButton.layer.masksToBounds = true
         loginButton.layer.cornerRadius = 10
+        
+        Globals.deviceID = UIDevice.current.identifierForVendor!.uuidString
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if let token = defaults.string(forKey: "token") {
-            if token != "" {
-                Globals.token = token
-                Globals.email = defaults.string(forKey: "email")!
-                self.performSegue(withIdentifier: "loginToMain", sender: nil)
-            }
-        }
+        self.performSegue(withIdentifier: "loginToMain", sender: nil)
+//        
+//        if let token = defaults.string(forKey: "token") {
+//            if token != "" {
+//                Globals.token = token
+//                Globals.email = defaults.string(forKey: "email")!
+//                self.performSegue(withIdentifier: "loginToMain", sender: nil)
+//            }
+//        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

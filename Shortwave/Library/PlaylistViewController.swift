@@ -15,7 +15,12 @@ class PlaylistViewController: BaseListViewController {
     var isShowingToolbar = true
     var checkList = [Bool]()
     override var items: [LibraryItem] {
-        return self.playlist.books?.array as? [LibraryItem] ?? []
+        var sortArray:[Book] = self.playlist.books!.array as! [Book]
+        sortArray = sortArray.sorted(by: { $0.bookId > $1.bookId })
+//        for a in sortArray {
+//            print(a.bookId)
+//        }
+        return sortArray//self.playlist.books?.array as? [LibraryItem] ?? []
     }
 
     override func viewDidLoad() {
@@ -354,12 +359,17 @@ extension PlaylistViewController {
             if book.fileItem != nil {
                 let favBook = Book(from: book.fileItem!, context: book.context!)
                 playlist?.addToBooks([favBook])
-                Globals.updateFavoriteNumberOnServer(id: book.fileItem!.bookId)
+                Globals.updateFavoriteNumberOnServer(id: book.bookId)
             }
             else {
                 playlist?.addToBooks([book])
+                Globals.updateFavoriteNumberOnServer(id: book.bookId)
             }
-            
+            DataManager.saveContext()
+
+            self.deleteRows(at: [indexPath])
+
+            NotificationCenter.default.post(name: .reloadData, object: nil)
         }
         favAction.backgroundColor = UIColor.purple
         return [deleteAction, favAction]

@@ -24,5 +24,5 @@ extension LibraryItem {
     @NSManaged public var percentCompleted: Double
     @NSManaged public var completedDate: Date?
     @NSManaged public var library: Library?
-
+    
 }

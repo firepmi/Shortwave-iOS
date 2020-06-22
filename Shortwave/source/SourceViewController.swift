@@ -10,10 +10,10 @@ import UIKit
 
 class SourceViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var titleArray = ["Calibre"]
-    var urlArray = [Globals.apiUrl]
-    var userArray = ["admin"]
-    var passwordArray = ["admin123"]
+    var titleArray = ["Radio Dramas", "Audio Books"]
+    var urlArray = [Globals.apiUrl,Globals.apiUrl]
+    var userArray = ["admin","admin"]
+    var passwordArray = ["admin123","admin123"]
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -158,11 +158,11 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
         cell.contentView.layer.shadowOpacity = 1
         cell.contentView.layer.shadowOffset = CGSize(width: -1, height: 1)
-        cell.contentView.layer.shadowRadius = 4.0
+        cell.contentView.layer.shadowRadius = 5.0
 
         let deleteButton = cell.viewWithTag(102) as? UIButton
         let deleteLabel = cell.viewWithTag(103)
-        if indexPath.row == 0 {
+        if indexPath.row <= 1 {
             deleteButton?.isHidden = true
             deleteLabel?.isHidden = true
         }

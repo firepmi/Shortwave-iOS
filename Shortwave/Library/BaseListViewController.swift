@@ -39,7 +39,8 @@ class BaseListViewController: UIViewController {
 
         self.tableView.register(UINib(nibName: "BookCellView", bundle: nil), forCellReuseIdentifier: "BookCellView")
         self.tableView.register(UINib(nibName: "AddCellView", bundle: nil), forCellReuseIdentifier: "AddCellView")
-
+        self.tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
+        
         self.tableView.reorder.delegate = self
         self.tableView.reorder.cellScale = 1.07
         self.tableView.reorder.shadowColor = UIColor.black

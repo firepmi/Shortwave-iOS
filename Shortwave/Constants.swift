@@ -45,8 +45,8 @@ enum Constants {
 struct Globals {
 //    public static let apiUrl = "http://ec2-52-15-147-184.us-east-2.compute.amazonaws.com";
     public static let apiUrl = "http://24.22.30.62:8083";
-//    public static let adminUrl = "http://24.22.30.62:5000";
-    public static let adminUrl = "http://192.168.1.238:5000";
+    public static let adminUrl = "http://24.22.30.62:5000";
+//    public static let adminUrl = "http://192.168.1.238:5000";
     public static var authKey = "YWRtaW46YWRtaW4xMjM="
     public static var serverUrl = ""
     public static var serverTitle = ""
@@ -55,6 +55,7 @@ struct Globals {
     public static var email = ""
     public static var userPassword = ""
     public static var token = ""
+    public static var deviceID = ""
     public static var isPro = false
     public static var products = [SKProduct]()
     public static var isNew = false
@@ -379,9 +380,10 @@ struct Globals {
         defaults.set(index_list_count+1, forKey: "\(genre)_autodownload_index_count")
     }
     static func updateDownloadNumberOnServer(id:Int) {
-        print(token)
         let updateUrl = Globals.adminUrl + "/api/books/update-download"
-        Alamofire.request(updateUrl, method: .post, parameters: ["id": id],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
+        print(updateUrl)
+        print(deviceID)
+        Alamofire.request(updateUrl, method: .post, parameters: ["id": id, "udid":deviceID],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
                 switch response.result {
                 case .success(_):
                     if let result = response.result.value {
@@ -403,7 +405,7 @@ struct Globals {
             return
         }
         let loginUrl = Globals.adminUrl + "/api/books/update-favorite"
-        Alamofire.request(loginUrl, method: .post, parameters: ["id": id],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
+        Alamofire.request(loginUrl, method: .post, parameters: ["id": id, "udid":deviceID],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
                 switch response.result {
                 case .success(_):
                     if let result = response.result.value {
@@ -421,8 +423,8 @@ struct Globals {
         }
     }
     static func updateUserProStateOnServer(state:Bool) {
-        let loginUrl = Globals.adminUrl + "/api/update-pro-state"
-        Alamofire.request(loginUrl, method: .post, parameters: ["state": state],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
+        let loginUrl = Globals.adminUrl + "/api/devices/update-pro-state"
+        Alamofire.request(loginUrl, method: .post, parameters: ["state": state, "udid":deviceID],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
                 switch response.result {
                 case .success(_):
                     if let result = response.result.value {

@@ -10,12 +10,18 @@
 		327C3B499174B7393DD3FECF /* Pods_Shortwave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5841DCB821CF1246128219FC /* Pods_Shortwave.framework */; };
 		5A356A9721F3EB6DB6368BD7 /* Pods_ShortwaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508CD9928B5D33566DB67357 /* Pods_ShortwaveUITests.framework */; };
 		5E4439F449A6DD21203FC11B /* Pods_ShortwaveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2135F2CD1154B5E55C44C30F /* Pods_ShortwaveTests.framework */; };
+		FC002889248AA9CE009332AB /* ItemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC002887248AA9CE009332AB /* ItemCollectionView.swift */; };
+		FC00288C248AB733009332AB /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC00288B248AB733009332AB /* CategoryTableViewCell.swift */; };
+		FC00288E248ABC87009332AB /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC00288D248ABC87009332AB /* CategoryTableViewCell.xib */; };
+		FC002890248AEE8A009332AB /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC00288F248AEE8A009332AB /* BookCollectionViewCell.xib */; };
+		FC002892248AEEF8009332AB /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC002891248AEEF8009332AB /* BookCollectionViewCell.swift */; };
 		FC005D1822F3165200AFA10C /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC005D1722F3165200AFA10C /* PrivacyViewController.swift */; };
 		FC005D1B22F3333600AFA10C /* btn_check_off.png in Resources */ = {isa = PBXBuildFile; fileRef = FC005D1922F3333400AFA10C /* btn_check_off.png */; };
 		FC005D1C22F3333600AFA10C /* btn_check_on.png in Resources */ = {isa = PBXBuildFile; fileRef = FC005D1A22F3333500AFA10C /* btn_check_on.png */; };
 		FC182B8E21C4068800306998 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC182B8D21C4068800306998 /* GoogleService-Info.plist */; };
 		FC52D7AD22467CCD00A954EB /* SortByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52D7AC22467CCD00A954EB /* SortByViewController.swift */; };
 		FC5E21252305C7C0002B16EB /* termsofservice.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FC5E21242305C7BF002B16EB /* termsofservice.pdf */; };
+		FC674D9224A04D270036495B /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC674D9124A04D260036495B /* PickerDialog.swift */; };
 		FC6BE5A723879C6A00486271 /* icon_check_on.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5A523879C6900486271 /* icon_check_on.png */; };
 		FC6BE5A823879C6A00486271 /* icon_check_off.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5A623879C6900486271 /* icon_check_off.png */; };
 		FC6BE5AC23882DB900486271 /* icon_deselect_all.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5A923882DB700486271 /* icon_deselect_all.png */; };
@@ -28,6 +34,14 @@
 		FC996E00237423FE0020EDF5 /* icon_close_white.png in Resources */ = {isa = PBXBuildFile; fileRef = FC996DFF237423FB0020EDF5 /* icon_close_white.png */; };
 		FC996E022374252E0020EDF5 /* CustomDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC996E012374252E0020EDF5 /* CustomDialogViewController.swift */; };
 		FC9E0CA624221E69005C9E8E /* icon_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9E0CA524221E69005C9E8E /* icon_delete.png */; };
+		FCAFE70C2482D2B400AD4B47 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FCAFE70B2482D2B300AD4B47 /* background.jpg */; };
+		FCAFE71324840F5700AD4B47 /* icon_server_item2.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAFE70D24840F5200AD4B47 /* icon_server_item2.png */; };
+		FCAFE71424840F5700AD4B47 /* icon_server_item6.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAFE70E24840F5400AD4B47 /* icon_server_item6.png */; };
+		FCAFE71524840F5700AD4B47 /* icon_server_item1.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAFE70F24840F5400AD4B47 /* icon_server_item1.png */; };
+		FCAFE71624840F5700AD4B47 /* icon_server_item3.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAFE71024840F5500AD4B47 /* icon_server_item3.png */; };
+		FCAFE71724840F5700AD4B47 /* icon_server_item4.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAFE71124840F5500AD4B47 /* icon_server_item4.png */; };
+		FCAFE71824840F5700AD4B47 /* icon_server_item5.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAFE71224840F5700AD4B47 /* icon_server_item5.png */; };
+		FCAFE71A24840FF300AD4B47 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAFE71924840FF300AD4B47 /* overlay.png */; };
 		FCBD10CD237DCB8E00A7196C /* icon_check.png in Resources */ = {isa = PBXBuildFile; fileRef = FCBD10CC237DCB8E00A7196C /* icon_check.png */; };
 		FCC408F32271114400725E98 /* ImageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC408F22271114400725E98 /* ImageViewManager.swift */; };
 		FCC5E20622DFA7D2009BD3DC /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5E20422DFA7D1009BD3DC /* IAPHelper.swift */; };
@@ -152,12 +166,18 @@
 		AA2DF94FB6AA4EE6E901AA18 /* Pods-ShortwaveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortwaveUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortwaveUITests/Pods-ShortwaveUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B91010C360E20D534E8A5E5D /* Pods-ShortwaveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortwaveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortwaveUITests/Pods-ShortwaveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EFA77FB35D22CB1CC95C318E /* Pods-ShortwaveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortwaveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortwaveTests/Pods-ShortwaveTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FC002887248AA9CE009332AB /* ItemCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionView.swift; sourceTree = "<group>"; };
+		FC00288B248AB733009332AB /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		FC00288D248ABC87009332AB /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		FC00288F248AEE8A009332AB /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		FC002891248AEEF8009332AB /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		FC005D1722F3165200AFA10C /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		FC005D1922F3333400AFA10C /* btn_check_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_check_off.png; sourceTree = "<group>"; };
 		FC005D1A22F3333500AFA10C /* btn_check_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_check_on.png; sourceTree = "<group>"; };
 		FC182B8D21C4068800306998 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC52D7AC22467CCD00A954EB /* SortByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByViewController.swift; sourceTree = "<group>"; };
 		FC5E21242305C7BF002B16EB /* termsofservice.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = termsofservice.pdf; sourceTree = "<group>"; };
+		FC674D9124A04D260036495B /* PickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDialog.swift; sourceTree = "<group>"; };
 		FC6BE5A523879C6900486271 /* icon_check_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check_on.png; sourceTree = "<group>"; };
 		FC6BE5A623879C6900486271 /* icon_check_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check_off.png; sourceTree = "<group>"; };
 		FC6BE5A923882DB700486271 /* icon_deselect_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_deselect_all.png; sourceTree = "<group>"; };
@@ -170,6 +190,14 @@
 		FC996DFF237423FB0020EDF5 /* icon_close_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_close_white.png; sourceTree = "<group>"; };
 		FC996E012374252E0020EDF5 /* CustomDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDialogViewController.swift; sourceTree = "<group>"; };
 		FC9E0CA524221E69005C9E8E /* icon_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_delete.png; sourceTree = "<group>"; };
+		FCAFE70B2482D2B300AD4B47 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		FCAFE70D24840F5200AD4B47 /* icon_server_item2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_server_item2.png; sourceTree = "<group>"; };
+		FCAFE70E24840F5400AD4B47 /* icon_server_item6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_server_item6.png; sourceTree = "<group>"; };
+		FCAFE70F24840F5400AD4B47 /* icon_server_item1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_server_item1.png; sourceTree = "<group>"; };
+		FCAFE71024840F5500AD4B47 /* icon_server_item3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_server_item3.png; sourceTree = "<group>"; };
+		FCAFE71124840F5500AD4B47 /* icon_server_item4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_server_item4.png; sourceTree = "<group>"; };
+		FCAFE71224840F5700AD4B47 /* icon_server_item5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_server_item5.png; sourceTree = "<group>"; };
+		FCAFE71924840FF300AD4B47 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		FCBD10CC237DCB8E00A7196C /* icon_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check.png; sourceTree = "<group>"; };
 		FCC408F22271114400725E98 /* ImageViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewManager.swift; sourceTree = "<group>"; };
 		FCC5E20422DFA7D1009BD3DC /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
@@ -314,12 +342,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FC002886248AA9BC009332AB /* ItemCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				FC002887248AA9CE009332AB /* ItemCollectionView.swift */,
+				FC002891248AEEF8009332AB /* BookCollectionViewCell.swift */,
+				FC00288F248AEE8A009332AB /* BookCollectionViewCell.xib */,
+			);
+			path = ItemCollectionView;
+			sourceTree = "<group>";
+		};
 		FC005D1422F305DB00AFA10C /* resource */ = {
 			isa = PBXGroup;
 			children = (
 				FC5E21242305C7BF002B16EB /* termsofservice.pdf */,
 			);
 			path = resource;
+			sourceTree = "<group>";
+		};
+		FC42654E248EB946009F8EDA /* CategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC00288B248AB733009332AB /* CategoryTableViewCell.swift */,
+				FC00288D248ABC87009332AB /* CategoryTableViewCell.xib */,
+			);
+			path = "\U0010CategoryTableViewCell";
 			sourceTree = "<group>";
 		};
 		FCC5E20322DFA741009BD3DC /* subscription */ = {
@@ -407,6 +454,14 @@
 		FCE6212321C3BD1C0043F27B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FCAFE70B2482D2B300AD4B47 /* background.jpg */,
+				FCAFE71924840FF300AD4B47 /* overlay.png */,
+				FCAFE70F24840F5400AD4B47 /* icon_server_item1.png */,
+				FCAFE70D24840F5200AD4B47 /* icon_server_item2.png */,
+				FCAFE71024840F5500AD4B47 /* icon_server_item3.png */,
+				FCAFE71124840F5500AD4B47 /* icon_server_item4.png */,
+				FCAFE71224840F5700AD4B47 /* icon_server_item5.png */,
+				FCAFE70E24840F5400AD4B47 /* icon_server_item6.png */,
 				FC9E0CA524221E69005C9E8E /* icon_delete.png */,
 				FC6BE5A923882DB700486271 /* icon_deselect_all.png */,
 				FC6BE5AA23882DB800486271 /* icon_download.png */,
@@ -497,11 +552,13 @@
 		FCE6215321C3C3600043F27B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FC42654E248EB946009F8EDA /* CategoryTableViewCell */,
+				FC002886248AA9BC009332AB /* ItemCollectionView */,
 				FCE6215821C3C3860043F27B /* AddButton.swift */,
-				FCE6215421C3C3850043F27B /* BookCellView.swift */,
-				FCE6215721C3C3850043F27B /* ItemProgress.swift */,
 				FCE6215521C3C3850043F27B /* AddCellView.xib */,
+				FCE6215421C3C3850043F27B /* BookCellView.swift */,
 				FCE6215621C3C3850043F27B /* BookCellView.xib */,
+				FCE6215721C3C3850043F27B /* ItemProgress.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -599,6 +656,7 @@
 			children = (
 				FCE621B721C3C5660043F27B /* rubberBandDistance.swift */,
 				FCE621B821C3C5660043F27B /* limitPanAngle.swift */,
+				FC674D9124A04D260036495B /* PickerDialog.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -740,6 +798,8 @@
 			files = (
 				FCE6213221C3BD3A0043F27B /* icon_folder_yellow.png in Resources */,
 				FCE620FB21C3AD690043F27B /* LaunchScreen.storyboard in Resources */,
+				FCAFE71A24840FF300AD4B47 /* overlay.png in Resources */,
+				FCAFE71624840F5700AD4B47 /* icon_server_item3.png in Resources */,
 				FCE621C121C3C5A10043F27B /* Credits.html in Resources */,
 				FCE6215B21C3C3860043F27B /* BookCellView.xib in Resources */,
 				FCE6215A21C3C3860043F27B /* AddCellView.xib in Resources */,
@@ -749,6 +809,7 @@
 				FCE6213021C3BD3A0043F27B /* bg_black.jpeg in Resources */,
 				FCE6213A21C3C0AE0043F27B /* Player.storyboard in Resources */,
 				FC6BE5AE23882DB900486271 /* icon_select_all.png in Resources */,
+				FCAFE71424840F5700AD4B47 /* icon_server_item6.png in Resources */,
 				FCE620F821C3AD690043F27B /* Assets.xcassets in Resources */,
 				FCE620F621C3AD550043F27B /* Main.storyboard in Resources */,
 				FC9E0CA624221E69005C9E8E /* icon_delete.png in Resources */,
@@ -756,16 +817,23 @@
 				FCE6212F21C3BD3A0043F27B /* icon_settings.png in Resources */,
 				FC182B8E21C4068800306998 /* GoogleService-Info.plist in Resources */,
 				FCE6212E21C3BD3A0043F27B /* icon_folder_green.png in Resources */,
+				FC002890248AEE8A009332AB /* BookCollectionViewCell.xib in Resources */,
 				FC6BE5AC23882DB900486271 /* icon_deselect_all.png in Resources */,
 				FC5E21252305C7C0002B16EB /* termsofservice.pdf in Resources */,
 				FCE6213121C3BD3A0043F27B /* icon_source_item.png in Resources */,
+				FCAFE70C2482D2B400AD4B47 /* background.jpg in Resources */,
 				FC6BE5A823879C6A00486271 /* icon_check_off.png in Resources */,
+				FCAFE71724840F5700AD4B47 /* icon_server_item4.png in Resources */,
+				FCAFE71324840F5700AD4B47 /* icon_server_item2.png in Resources */,
 				FC005D1B22F3333600AFA10C /* btn_check_off.png in Resources */,
 				FCE6217A21C3C4440043F27B /* ArtworkControl.xib in Resources */,
 				FCE6212C21C3BD3A0043F27B /* icon_sound_wave.png in Resources */,
+				FCAFE71524840F5700AD4B47 /* icon_server_item1.png in Resources */,
 				FCD77FD3227CFCFB00A70D48 /* icon_close.png in Resources */,
 				FCBD10CD237DCB8E00A7196C /* icon_check.png in Resources */,
+				FC00288E248ABC87009332AB /* CategoryTableViewCell.xib in Resources */,
 				FC6BE5A723879C6A00486271 /* icon_check_on.png in Resources */,
+				FCAFE71824840F5700AD4B47 /* icon_server_item5.png in Resources */,
 				FC005D1C22F3333600AFA10C /* btn_check_on.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,10 +951,12 @@
 				FCC5E20722DFA7D2009BD3DC /* SubscriptionProducts.swift in Sources */,
 				FCE621B921C3C5660043F27B /* rubberBandDistance.swift in Sources */,
 				FCE6219F21C3C5080043F27B /* Chapter+CoreDataProperties.swift in Sources */,
+				FC00288C248AB733009332AB /* CategoryTableViewCell.swift in Sources */,
 				FCE6217721C3C4440043F27B /* PlayerJumpIcon.swift in Sources */,
 				FC78FEE821F8E042009CFD30 /* AudioBookListViewController.swift in Sources */,
 				FCE6214821C3C2D10043F27B /* loginViewController.swift in Sources */,
 				FCE6215D21C3C3860043F27B /* AddButton.swift in Sources */,
+				FC674D9224A04D270036495B /* PickerDialog.swift in Sources */,
 				FCE621B221C3C5490043F27B /* IndexPath+BookPlayer.swift in Sources */,
 				FCE621BF21C3C5890043F27B /* BPMarqueeLabel.swift in Sources */,
 				FCE6217921C3C4440043F27B /* ArtworkControl.swift in Sources */,
@@ -925,6 +995,7 @@
 				FCE6218721C3C48C0043F27B /* SettingsViewController.swift in Sources */,
 				FCE621B321C3C5490043F27B /* UIColor+Sweetercolor.swift in Sources */,
 				FCE621BE21C3C5890043F27B /* BPArtworkView.swift in Sources */,
+				FC002892248AEEF8009332AB /* BookCollectionViewCell.swift in Sources */,
 				FCE621A421C3C5080043F27B /* LibraryItem+CoreDataClass.swift in Sources */,
 				FCE6215921C3C3860043F27B /* BookCellView.swift in Sources */,
 				FCE621AF21C3C5490043F27B /* Notification+BookPlayer.swift in Sources */,
@@ -935,6 +1006,7 @@
 				FCE621A321C3C5080043F27B /* Playlist+CoreDataClass.swift in Sources */,
 				FCE6214221C3C2560043F27B /* Common.swift in Sources */,
 				FCE6217F21C3C4630043F27B /* PlayerControlsViewController.swift in Sources */,
+				FC002889248AA9CE009332AB /* ItemCollectionView.swift in Sources */,
 				FCE6216F21C3C4260043F27B /* PlayerViewController.swift in Sources */,
 				FCE6216521C3C4050043F27B /* BaseListViewController.swift in Sources */,
 				FC005D1822F3165200AFA10C /* PrivacyViewController.swift in Sources */,

@@ -12,9 +12,8 @@ import SwiftReorder
 
 // swiftlint:disable file_length
 
-class LibraryViewController: BaseListViewController, UIGestureRecognizerDelegate {
-    var categoryItemList:[[LibraryItem]] = []
-    var collectionPositions:[CGFloat] = []
+class LibraryViewController: BaseListViewController, UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+    var selectedIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -466,72 +465,69 @@ class LibraryViewController: BaseListViewController, UIGestureRecognizerDelegate
 
 // MARK: - TableView Delegate
 extension LibraryViewController {
-//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        return nil
-//        guard indexPath.sectionValue == .library else {
-//            return nil
-//        }
-//
-//        let item = self.items[indexPath.row]
-//
-//        // "…" on a button indicates a follow up dialog instead of an immmediate action in macOS and iOS
-//        var title = "Delete…"
-//
-//        // Remove the dots if trying to delete an empty playlist
-//        if let playlist = item as? Playlist {
-//            title = playlist.hasBooks() ? title: "Delete"
-//        }
-//
-//        let deleteAction = UITableViewRowAction(style: .default, title: title) { (_, indexPath) in
-//            guard let book = self.items[indexPath.row] as? Book else {
-//                guard let playlist = self.items[indexPath.row] as? Playlist else {
-//                    return
-//                }
-//
-//                self.handleDelete(playlist: playlist, indexPath: indexPath)
-//
-//                return
-//            }
-//
-//            self.handleDelete(book: book, indexPath: indexPath)
-//        }
-//
-//        deleteAction.backgroundColor = .red
-//
-//        if item is Playlist {
-//            let renameAction = UITableViewRowAction(style: .normal, title: "Rename") { (_, indexPath) in
-//                guard let playlist = self.items[indexPath.row] as? Playlist else {
-//                    return
-//                }
-//
-//                let alert = UIAlertController(title: "Rename playlist", message: nil, preferredStyle: .alert)
-//
-//                alert.addTextField(configurationHandler: { (textfield) in
-//                    textfield.placeholder = playlist.title
-//                    textfield.text = playlist.title
-//                })
-//
-//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//                alert.addAction(UIAlertAction(title: "Rename", style: .default) { _ in
-//                    if let title = alert.textFields!.first!.text, title != playlist.title {
-//                        playlist.title = title
-//
-//                        DataManager.saveContext()
-//                        self.tableView.reloadRows(at: [indexPath], with: .none)
-//                    }
-//                })
-//
-//                self.present(alert, animated: true, completion: nil)
-//            }
-//
-//            return [deleteAction, renameAction]
-//        }
-//
-//        return [deleteAction]
-//    }
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        guard indexPath.sectionValue == .library else {
+            return nil
+        }
+
+        let item = self.items[indexPath.row]
+
+        // "…" on a button indicates a follow up dialog instead of an immmediate action in macOS and iOS
+        var title = "Delete…"
+
+        // Remove the dots if trying to delete an empty playlist
+        if let playlist = item as? Playlist {
+            title = playlist.hasBooks() ? title: "Delete"
+        }
+
+        let deleteAction = UITableViewRowAction(style: .default, title: title) { (_, indexPath) in
+            guard let book = self.items[indexPath.row] as? Book else {
+                guard let playlist = self.items[indexPath.row] as? Playlist else {
+                    return
+                }
+
+                self.handleDelete(playlist: playlist, indexPath: indexPath)
+
+                return
+            }
+
+            self.handleDelete(book: book, indexPath: indexPath)
+        }
+
+        deleteAction.backgroundColor = .red
+
+        if item is Playlist {
+            let renameAction = UITableViewRowAction(style: .normal, title: "Rename") { (_, indexPath) in
+                guard let playlist = self.items[indexPath.row] as? Playlist else {
+                    return
+                }
+
+                let alert = UIAlertController(title: "Rename playlist", message: nil, preferredStyle: .alert)
+
+                alert.addTextField(configurationHandler: { (textfield) in
+                    textfield.placeholder = playlist.title
+                    textfield.text = playlist.title
+                })
+
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Rename", style: .default) { _ in
+                    if let title = alert.textFields!.first!.text, title != playlist.title {
+                        playlist.title = title
+
+                        DataManager.saveContext()
+                        self.tableView.reloadRows(at: [indexPath], with: .none)
+                    }
+                })
+
+                self.present(alert, animated: true, completion: nil)
+            }
+
+            return [deleteAction, renameAction]
+        }
+
+        return [deleteAction]
     }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
@@ -560,80 +556,19 @@ extension LibraryViewController {
 // MARK: - TableView DataSource
 extension LibraryViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell
-        let item = self.items[indexPath.row]
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
 
-        cell!.artwork = item.artwork
-        cell!.title = item.title
-        cell!.playbackState = .stopped
-        cell!.type = item is Playlist ? .playlist : .book
-//        cell!.accessoryType = .none
-
-        cell!.onArtworkTap = { [weak self] in
-            guard let books = self?.queueBooksForPlayback(item) else {
-                return
-            }
-
-            self?.setupPlayer(books: books)
+        guard let bookCell = cell as? BookCellView,
+            let currentBook = PlayerManager.shared.currentBook,
+            let index = self.library.itemIndex(with: currentBook.fileURL),
+            index == indexPath.row else {
+                return cell
         }
 
-        if let book = item as? Book {
-            cell!.subtitle = book.author
-            cell!.progress = book.progress
-        } else if let playlist = item as? Playlist {
-            cell!.subtitle = playlist.info()
-            cell!.progress = playlist.downloadProgress()
-        }
+        bookCell.playbackState = .paused
 
-//        guard let bookCell = cell,
-//            let currentBook = PlayerManager.shared.currentBook,
-//            let index = self.library.itemIndex(with: currentBook.fileURL),
-//            index == indexPath.row else {
-////                return cell!
-//        }
-
-        cell!.playbackState = .paused
-        let collectionView = cell!.itemCollectionView
-        collectionView!.setDelegate(itemCollectionDelegate: self)
-        
-        let playlist = self.items[indexPath.row] as? Playlist
-        var sortArray:[Book] = playlist!.books!.array as! [Book]
-        sortArray = sortArray.sorted(by: { $0.bookId > $1.bookId })
-        
-        if collectionPositions.count <= indexPath.row {
-            collectionPositions.append(0)
-        }
-        collectionView!.reloadData(array: sortArray, scrollingPosition: 0, rowSection: indexPath.row)
-        
-        if indexPath.row < collectionPositions.count {
-            collectionView!.setContentOffset(offset: collectionPositions[indexPath.row])
-            if collectionPositions[indexPath.row] != 0 {
-                print("scroll offset: \(indexPath.row) - collectionPositions[indexPath.row]")
-            }
-        }
-        return cell!
+        return bookCell
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 240
-    }
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//            if scrollView == tableView {
-//                print("tableview scroll end")
-//            }
-//            else {
-//                print("collectionview scroll end")
-//                let position = scrollView.convert(scrollView.center, to: tableView)
-//                print("position: \(position)")
-//                let indexPath_t = tableView.indexPathForRow(at: CGPoint(x:50,y:position.y))
-//                let x = indexPath_t?.row
-//                while collectionPositions.count <= x! {
-//                    collectionPositions.append(0)
-//                }
-//                collectionPositions[x!] = scrollView.contentOffset.x
-//
-//            }
-//    //        print(scrollView.contentOffset);
-//        }
 }
 
 // MARK: - Reorder Delegate
@@ -713,36 +648,43 @@ extension LibraryViewController {
         }
     }
 }
-extension LibraryViewController: ItemCollectionViewDelegate {
 
-    
-    func itemCollectionView(_ itemCollectionView: ItemCollectionView, didSelectItemAt indexPath: IndexPath, section: Int) {
-        guard let books = self.itemCollectionView(queueBooksForPlayback: indexPath, section: section) as? [Book] else {
-            return
+extension LibraryViewController {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return folderList.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let reuseIdentifier = "folder_item"
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath)
+
+        let view = cell.viewWithTag(100)
+        view?.layer.cornerRadius = 5
+        view?.layer.borderWidth = 1
+        view?.layer.borderColor = UIColor(red: 96/255.0, green: 93/255.0, blue: 124/255.0, alpha: 1).cgColor
+
+        let titleLabel: UILabel = cell.viewWithTag(101) as! UILabel
+        titleLabel.text = folderList[indexPath.row]
+
+        let image = cell.viewWithTag(102) as! UIImageView
+        if selectedIndex == indexPath.row {
+            image.image = UIImage(named: "icon_folder_yellow.png")
+            titleLabel.textColor = UIColor(red: 243/255.0, green: 173/255.0, blue: 61/255.0, alpha: 1)
+        } else {
+            image.image = UIImage(named: "icon_folder_green.png")
+            titleLabel.textColor = UIColor(red: 109/255.0, green: 109/255.0, blue: 119/255.0, alpha: 1)
         }
 
-        self.setupPlayer(books: books)
+        cell.contentView.layer.shadowColor = UIColor.black.cgColor
+        cell.contentView.layer.shadowOpacity = 1
+        cell.contentView.layer.shadowOffset = CGSize(width: -1, height: 1)
+        cell.contentView.layer.shadowRadius = 4.0
+
+        return cell
     }
-    func itemCollectionView(queueBooksForPlayback indexPath: IndexPath, section: Int) -> [Book] {
-        let playlist = self.items[section] as? Playlist
-        var sortArray:[Book] = playlist!.books!.array as! [Book]
-        sortArray = sortArray.sorted(by: { $0.bookId > $1.bookId })
-        
-        if sortArray.count <= indexPath.row {
-            return []
-        }
-        return self.queueBooksForPlayback(sortArray[indexPath.row])
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        collectionView.reloadData()
     }
-    func itemCollectionView(setUpPlayer books: [Book]) {
-        self.setupPlayer(books: books)
-    }
-    func itemCollectionView(isScrollEnd offset: CGFloat, section: Int) {
-        let x = section
-        while collectionPositions.count <= x {
-            collectionPositions.append(0)
-        }
-        collectionPositions[x] = offset
-    }
-    
-    
 }

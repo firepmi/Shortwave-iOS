@@ -22,7 +22,7 @@ extension Book {
     @NSManaged public var chapters: NSOrderedSet?
     @NSManaged public var playlist: Playlist?
     @NSManaged public var artworkColors: ArtworkColors!
-
+    @NSManaged public var bookId: Int
 }
 
 // MARK: Generated accessors for chapters

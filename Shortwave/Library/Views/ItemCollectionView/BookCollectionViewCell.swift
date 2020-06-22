@@ -1,31 +1,19 @@
 //
-//  BookCellView.swift
-//  BookPlayer
+//  BookCollectionCellView.swift
+//  Shortwave
 //
-//  Created by Florian Pichler on 12.04.18.
-//  Copyright © 2018 Tortuga Power. All rights reserved.
+//  Created by mobileworld on 6/5/20.
+//  Copyright © 2020 Mobile World. All rights reserved.
 //
 
 import UIKit
 
-enum PlaybackState {
-    case playing
-    case paused
-    case stopped
+protocol BookCollectionCellViewDelegate {
+    func onCheckBtnClicked(cell:UICollectionViewCell)
 }
 
-enum BookCellType {
-    case book
-    case playlist
-    case file // in a playlist
-}
-
-protocol BookCellViewDelegate {
-    func onCheckBtnClicked(cell:UITableViewCell)
-}
-
-class BookCellView: UITableViewCell {
-    var delegate : BookCellViewDelegate!
+class BookCollectionViewCell: UICollectionViewCell {
+    var delegate : BookCollectionCellViewDelegate!
     @IBOutlet private weak var artworkView: BPArtworkView!
     @IBOutlet private weak var titleLabel: BPMarqueeLabel!
     @IBOutlet private weak var subtitleLabel: BPMarqueeLabel!
@@ -46,10 +34,10 @@ class BookCellView: UITableViewCell {
         set {
             self.artworkView.image = newValue
 
-            let ratio = self.artworkView.imageRatio
-
-            self.artworkHeight.constant = ratio > 1 ? 50.0 / ratio : 50.0
-            self.artworkWidth.constant = ratio < 1 ? 50.0 * ratio : 50.0
+//            let ratio = self.artworkView.imageRatio
+//
+//            self.artworkHeight.constant = ratio > 1 ? 50.0 / ratio : 50.0
+//            self.artworkWidth.constant = ratio < 1 ? 50.0 * ratio : 50.0
         }
     }
 
@@ -79,7 +67,7 @@ class BookCellView: UITableViewCell {
             self.progressView.value = newValue.isNaN
                 ? 0.0
                 : newValue
-            setAccessibilityLabels()
+//            setAccessibilityLabels()
         }
     }
 
@@ -87,15 +75,15 @@ class BookCellView: UITableViewCell {
         didSet {
 //            switch self.type {
 //                case .file:
-//                    self.accessoryType = .none
+////                    self.accessoryType = .none
 //
 //                    self.progressTrailing.constant = 11.0
 //                case .playlist:
-//                    self.accessoryType = .disclosureIndicator
+////                    self.accessoryType = .disclosureIndicator
 //
 //                    self.progressTrailing.constant = -5.0
 //                default:
-//                    self.accessoryType = .none
+////                    self.accessoryType = .none
 //
 //                    self.progressTrailing.constant = 29.0 // Disclosure indicator offset
 //            }
@@ -147,26 +135,26 @@ class BookCellView: UITableViewCell {
         }
     }
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        self.isChecked = false
-        self.isCheckMode = false
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        self.setup()
-    }
+//    override init(style: UICollectionViewCell.CellStyle, reuseIdentifier: String?) {
+//        self.isChecked = false
+//        self.isCheckMode = false
+//        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//
+//        self.setup()
+//    }
 
     required init?(coder aDecoder: NSCoder) {
         self.isChecked = false
         self.isCheckMode = false
         super.init(coder: aDecoder)
 
-        self.setup()
+//        self.setup()
     }
 
-    private func setup() {
-        self.accessoryType = .none
-        self.selectionStyle = .none
-    }
+//    private func setup() {
+//        self.accessoryType = .none
+//        self.selectionStyle = .none
+//    }
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -182,12 +170,13 @@ class BookCellView: UITableViewCell {
         self.delegate.onCheckBtnClicked(cell: self)
     }
     @IBAction func artworkButtonTapped(_ sender: Any) {
+        print("artwork button tapped")
         self.onArtworkTap?()
     }
 }
 
 // MARK: - Voiceover
-extension BookCellView {
+extension BookCollectionViewCell {
     private func setAccessibilityLabels() {
         let voiceOverService = VoiceOverService()
         isAccessibilityElement = true
@@ -197,4 +186,5 @@ extension BookCellView {
                                                            progress: progress)
     }
 }
+
 

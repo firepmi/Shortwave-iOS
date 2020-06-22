@@ -1,42 +1,32 @@
 //
-//  BookCellView.swift
-//  BookPlayer
+//  CategoryTableViewCell.swift
+//  Shortwave
 //
-//  Created by Florian Pichler on 12.04.18.
-//  Copyright © 2018 Tortuga Power. All rights reserved.
+//  Created by mobileworld on 6/5/20.
+//  Copyright © 2020 Mobile World. All rights reserved.
 //
 
 import UIKit
 
-enum PlaybackState {
-    case playing
-    case paused
-    case stopped
-}
 
-enum BookCellType {
-    case book
-    case playlist
-    case file // in a playlist
-}
-
-protocol BookCellViewDelegate {
+protocol CategoryTableViewCellDelegate {
     func onCheckBtnClicked(cell:UITableViewCell)
 }
 
-class BookCellView: UITableViewCell {
-    var delegate : BookCellViewDelegate!
+class CategoryTableViewCell: UITableViewCell {
+    var delegate : CategoryTableViewCellDelegate!
     @IBOutlet private weak var artworkView: BPArtworkView!
-    @IBOutlet private weak var titleLabel: BPMarqueeLabel!
-    @IBOutlet private weak var subtitleLabel: BPMarqueeLabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var progressTrailing: NSLayoutConstraint!
     @IBOutlet private weak var progressView: ItemProgress!
     @IBOutlet private weak var artworkButton: UIButton!
     @IBOutlet weak var artworkWidth: NSLayoutConstraint!
     @IBOutlet weak var artworkHeight: NSLayoutConstraint!
-    @IBOutlet weak var checkboxImage: UIImageView!
-    @IBOutlet weak var checkButton: UIButton!
-        
+    @IBOutlet weak var itemCollectionView: ItemCollectionView!
+    @IBOutlet weak var sortButton: UIButton!
+    
+    var sortBy: String?
     var onArtworkTap: (() -> Void)?
 
     var artwork: UIImage? {
@@ -85,6 +75,7 @@ class BookCellView: UITableViewCell {
 
     var type: BookCellType = .book {
         didSet {
+            self.accessoryType = .none
 //            switch self.type {
 //                case .file:
 //                    self.accessoryType = .none
@@ -102,29 +93,7 @@ class BookCellView: UITableViewCell {
         }
     }
     
-    var isChecked: Bool {
-        didSet {
-            if self.isChecked {
-                self.checkboxImage.image = UIImage(named: "icon_check_on.png")
-            }
-            else {
-                self.checkboxImage.image = UIImage(named: "icon_check_off.png")
-            }
-        }
-    }
     
-    var isCheckMode : Bool {
-        didSet {
-            if isCheckMode {
-                self.checkboxImage.isHidden = false
-//                self.progressView.isHidden = true
-            }
-            else {
-                self.checkboxImage.isHidden = true
-//                self.progressView.isHidden = false
-            }
-        }
-    }
 
     var playbackState: PlaybackState = PlaybackState.stopped {
         didSet {
@@ -148,16 +117,12 @@ class BookCellView: UITableViewCell {
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        self.isChecked = false
-        self.isCheckMode = false
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         self.setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
-        self.isChecked = false
-        self.isCheckMode = false
         super.init(coder: aDecoder)
 
         self.setup()
@@ -181,13 +146,25 @@ class BookCellView: UITableViewCell {
         }
         self.delegate.onCheckBtnClicked(cell: self)
     }
+    
+    @IBAction func onSortButtonClicked(_ sender: Any) {
+        let pickerData = [
+                ["value": "Title", "display": "Title"],
+                ["value": "Author", "display": "Author"]
+            ]
+        PickerDialog().show(title: "Sort By", options: pickerData, selected: "Title") {
+            (value) -> Void in
+            self.sortBy = value
+            self.sortButton.setTitle("Sort by: \(self.sortBy!)", for: .normal)
+        }
+    }
     @IBAction func artworkButtonTapped(_ sender: Any) {
         self.onArtworkTap?()
     }
 }
 
 // MARK: - Voiceover
-extension BookCellView {
+extension CategoryTableViewCell {
     private func setAccessibilityLabels() {
         let voiceOverService = VoiceOverService()
         isAccessibilityElement = true

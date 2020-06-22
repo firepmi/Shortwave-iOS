@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BookCollectionViewCell" reuseIdentifier="BookCollectionViewCell" id="mrL-qi-cOr" customClass="BookCollectionViewCell" customModule="Shortwave" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DLT-8Z-qyo">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="JNv-jO-9Lz" customClass="BPArtworkView" customModule="Shortwave" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="130" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="JNv-jO-9Lz" secondAttribute="height" multiplier="1:1" id="c12-hH-TD6"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2j-eV-Ot6" customClass="ItemProgress" customModule="Shortwave" customModuleProvider="target">
+                        <rect key="frame" x="121" y="150" width="19" height="19"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="gaZ-kb-tKG"/>
+                            <constraint firstAttribute="width" constant="19" id="ggK-DD-mZm"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZ8-r7-5Ek" customClass="BPMarqueeLabel" customModule="Shortwave" customModuleProvider="target">
+                        <rect key="frame" x="10" y="150" width="95" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dh9-Sc-fDb" customClass="BPMarqueeLabel" customModule="Shortwave" customModuleProvider="target">
+                        <rect key="frame" x="10" y="171" width="95" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.56078431370000004" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oI-c2-mmF">
+                        <rect key="frame" x="50" y="0.0" width="100" height="100"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <action selector="checkBtnClicked:" destination="mrL-qi-cOr" eventType="touchUpInside" id="zIi-DI-3hd"/>
+                        </connections>
+                    </button>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check_off.png" translatesAutoresizingMaskIntoConstraints="NO" id="x5v-yY-5BL">
+                        <rect key="frame" x="80" y="30" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="5FB-a1-S79"/>
+                            <constraint firstAttribute="width" secondItem="x5v-yY-5BL" secondAttribute="height" multiplier="1:1" id="zTW-sT-DT5"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJD-2u-9dt">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <action selector="artworkButtonTapped:" destination="mrL-qi-cOr" eventType="touchUpInside" id="tLD-Kd-I3R"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" red="0.1529411765" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4oI-c2-mmF" secondAttribute="trailing" id="39c-lv-I1J"/>
+                    <constraint firstItem="bJD-2u-9dt" firstAttribute="leading" secondItem="DLT-8Z-qyo" secondAttribute="leading" id="4nA-yd-3mp"/>
+                    <constraint firstItem="4oI-c2-mmF" firstAttribute="top" secondItem="DLT-8Z-qyo" secondAttribute="top" id="6BB-N4-a99"/>
+                    <constraint firstItem="s2j-eV-Ot6" firstAttribute="leading" secondItem="VZ8-r7-5Ek" secondAttribute="trailing" constant="16" id="99W-UL-Qxs"/>
+                    <constraint firstItem="x5v-yY-5BL" firstAttribute="top" secondItem="DLT-8Z-qyo" secondAttribute="top" constant="30" id="Dh1-xP-vrb"/>
+                    <constraint firstAttribute="trailing" secondItem="x5v-yY-5BL" secondAttribute="trailing" constant="30" id="DyK-su-k42"/>
+                    <constraint firstItem="s2j-eV-Ot6" firstAttribute="top" secondItem="JNv-jO-9Lz" secondAttribute="bottom" constant="10" id="Fi5-nq-9mA"/>
+                    <constraint firstItem="VZ8-r7-5Ek" firstAttribute="top" secondItem="JNv-jO-9Lz" secondAttribute="bottom" constant="10" id="ID5-Db-qvr"/>
+                    <constraint firstItem="JNv-jO-9Lz" firstAttribute="top" secondItem="DLT-8Z-qyo" secondAttribute="top" constant="10" id="KxK-L4-Q56"/>
+                    <constraint firstItem="x5v-yY-5BL" firstAttribute="width" secondItem="x5v-yY-5BL" secondAttribute="height" multiplier="1:1" id="Mbl-Af-kbS"/>
+                    <constraint firstAttribute="trailing" secondItem="s2j-eV-Ot6" secondAttribute="trailing" constant="10" id="OFJ-is-HFX"/>
+                    <constraint firstItem="4oI-c2-mmF" firstAttribute="bottom" secondItem="x5v-yY-5BL" secondAttribute="bottom" constant="30" id="PVe-w7-vOJ"/>
+                    <constraint firstItem="4oI-c2-mmF" firstAttribute="leading" secondItem="x5v-yY-5BL" secondAttribute="leading" constant="-30" id="PvK-wA-s2v"/>
+                    <constraint firstItem="VZ8-r7-5Ek" firstAttribute="leading" secondItem="DLT-8Z-qyo" secondAttribute="leading" constant="10" id="Stu-a6-YuL"/>
+                    <constraint firstAttribute="trailing" secondItem="bJD-2u-9dt" secondAttribute="trailing" id="aIf-D0-hab"/>
+                    <constraint firstItem="bJD-2u-9dt" firstAttribute="top" secondItem="DLT-8Z-qyo" secondAttribute="top" id="ajz-ts-ELV"/>
+                    <constraint firstItem="Dh9-Sc-fDb" firstAttribute="top" secondItem="VZ8-r7-5Ek" secondAttribute="bottom" constant="3" id="avy-Wf-Pgk"/>
+                    <constraint firstItem="JNv-jO-9Lz" firstAttribute="centerX" secondItem="DLT-8Z-qyo" secondAttribute="centerX" id="fav-pj-gSU"/>
+                    <constraint firstItem="Dh9-Sc-fDb" firstAttribute="width" secondItem="VZ8-r7-5Ek" secondAttribute="width" id="srE-pE-gSw"/>
+                    <constraint firstItem="Dh9-Sc-fDb" firstAttribute="trailing" secondItem="VZ8-r7-5Ek" secondAttribute="trailing" id="vhQ-ST-0GC"/>
+                    <constraint firstAttribute="bottom" secondItem="bJD-2u-9dt" secondAttribute="bottom" id="x9F-MO-5lZ"/>
+                    <constraint firstItem="JNv-jO-9Lz" firstAttribute="leading" secondItem="DLT-8Z-qyo" secondAttribute="leading" constant="10" id="ycr-Bw-nf6"/>
+                    <constraint firstItem="Dh9-Sc-fDb" firstAttribute="leading" secondItem="VZ8-r7-5Ek" secondAttribute="leading" id="zXw-i4-Dcz"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="217" height="508"/>
+            <connections>
+                <outlet property="artworkButton" destination="bJD-2u-9dt" id="BGv-co-MAL"/>
+                <outlet property="artworkView" destination="JNv-jO-9Lz" id="bdp-Cg-UzK"/>
+                <outlet property="checkButton" destination="4oI-c2-mmF" id="iNr-uI-6DJ"/>
+                <outlet property="checkboxImage" destination="x5v-yY-5BL" id="obQ-1Z-Dcq"/>
+                <outlet property="progressTrailing" destination="OFJ-is-HFX" id="0QU-Qr-MNw"/>
+                <outlet property="progressView" destination="s2j-eV-Ot6" id="cdw-lN-gIA"/>
+                <outlet property="subtitleLabel" destination="Dh9-Sc-fDb" id="oHR-Qq-Ap9"/>
+                <outlet property="titleLabel" destination="VZ8-r7-5Ek" id="qwM-kq-tOf"/>
+            </connections>
+            <point key="canvasLocation" x="-92.753623188405811" y="295.3125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="defaultArtwork" width="325" height="325"/>
+        <image name="icon_check_off.png" width="495" height="485"/>
+    </resources>
+</document>

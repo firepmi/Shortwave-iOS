@@ -17,7 +17,7 @@ public class Book: LibraryItem {
     var fileURL: URL {
         return DataManager.getProcessedFolderURL().appendingPathComponent(self.identifier)
     }
-
+    
     var currentChapter: Chapter? {
         guard let chapters = self.chapters?.array as? [Chapter], !chapters.isEmpty else {
             return nil
@@ -112,5 +112,6 @@ public class Book: LibraryItem {
         
         self.fileItem = bookUrl
         self.context = context
+        self.bookId = bookUrl.bookId
     }
 }

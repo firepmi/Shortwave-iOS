@@ -20,5 +20,6 @@ extension IndexPath {
 enum Section: Int {
     case library,
     add,
-    total
+    total,
+    category
 }
