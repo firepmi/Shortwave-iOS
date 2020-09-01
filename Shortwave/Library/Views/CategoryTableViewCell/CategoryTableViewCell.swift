@@ -26,7 +26,7 @@ class CategoryTableViewCell: UITableViewCell {
     @IBOutlet weak var itemCollectionView: ItemCollectionView!
     @IBOutlet weak var sortButton: UIButton!
     
-    var sortBy: String?
+    var sortBy: String = "Title"
     var onArtworkTap: (() -> Void)?
 
     var artwork: UIImage? {
@@ -155,7 +155,8 @@ class CategoryTableViewCell: UITableViewCell {
         PickerDialog().show(title: "Sort By", options: pickerData, selected: "Title") {
             (value) -> Void in
             self.sortBy = value
-            self.sortButton.setTitle("Sort by: \(self.sortBy!)", for: .normal)
+            self.sortButton.setTitle("Sort by: \(self.sortBy)", for: .normal)
+            self.itemCollectionView.sort(by: value)
         }
     }
     @IBAction func artworkButtonTapped(_ sender: Any) {

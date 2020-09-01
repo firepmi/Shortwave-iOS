@@ -66,6 +66,8 @@ struct Globals {
     public static var isSyncing = false
     public static var isAutoFillSyncing = false
     public static var genreArray = [JSON]()
+    public static var virtualLibraries = [JSON]()
+    public static var virtualLibrary = JSON()
     public static var queueProgress:CGFloat = 0
     public static var genreEndIndex = [String:Bool]()
     public static var genreCountMap = [String:Int]()
@@ -329,6 +331,42 @@ struct Globals {
                 case .failure(let error):
                     print(error.localizedDescription)
                     
+                }
+        }
+                
+        Alamofire.request(rootUrl)
+        .authenticate(user: Globals.username, password: Globals.password)
+        .validate(contentType: ["application/json"])
+            .response { response in
+                Globals.cookies = HTTPCookieStorage.shared.cookies!
+                print(Globals.cookies)
+                Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: response.request?.url, mainDocumentURL: nil)
+        }
+    }
+    static func getVirtualLibraries(completion:(()->Void)?) {
+        var rootUrl = serverUrl
+        if rootUrl == "" {
+            rootUrl = apiUrl + "/"
+        }
+        let link = rootUrl + "virtual-libraries"
+        print(link)
+        
+        let loginString = String(format: "%@:%@", Globals.username, Globals.password)
+        let loginData = loginString.data(using: String.Encoding.utf8)!
+        let base64LoginString = loginData.base64EncodedString()
+        Globals.authKey = base64LoginString
+        autoGenreListRequest = Alamofire.SessionManager.default.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
+        "Authorization":"Basic \(base64LoginString)"])
+            .responseJSON { response in
+                switch response.result {
+                case .success(_):
+                    if let result = response.result.value {
+                        let json = JSON(result)
+                        virtualLibraries = json.arrayValue
+                        completion!()
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
         }
                 

@@ -21,7 +21,7 @@ class ItemCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
     
     var itemDelegate: ItemCollectionViewDelegate!
     var identifier = "BookCollectionViewCell"
-    var categoryItemList:[LibraryItem] = []
+    var categoryItemList:[Book] = []
     var collectionPosition = CGFloat(0)
     var section = 0
     var waiting = false
@@ -61,7 +61,13 @@ class ItemCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         flowLayout.scrollDirection = direction
     }
     public func sort(by:String){
-        
+        if by == "Title" {
+            categoryItemList = categoryItemList.sorted(by: { $0.bookId > $1.bookId })
+        }
+        else {
+            categoryItemList = categoryItemList.sorted(by: { $0.author > $1.author })
+        }
+        collectionView.reloadData()
     }
     public func setContentOffset(offset:CGFloat){
         collectionPosition = offset
@@ -69,14 +75,14 @@ class ItemCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         itemDelegate.itemCollectionView(isScrollEnd: offset, section: section)
     }
     
-    public func reloadData(array:[LibraryItem], scrollingPosition:CGFloat, rowSection: Int){
+    public func reloadData(array:[Book], scrollingPosition:CGFloat, rowSection: Int){
         categoryItemList = array
         section = rowSection
         collectionPosition = scrollingPosition
         waiting = false
         collectionView.reloadData()
     }
-    public func reloadData(array:[LibraryItem]){
+    public func reloadData(array:[Book]){
         categoryItemList = array
         waiting = false
         collectionView.reloadData()
@@ -133,7 +139,7 @@ class ItemCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         let indexPath1 = IndexPath(row: y, section: 0)
         collectionView.reloadItems(at: [indexPath1])
     }
-        
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        collectionView.reloadData()
         itemDelegate.itemCollectionView(self, didSelectItemAt: indexPath, section: section)
