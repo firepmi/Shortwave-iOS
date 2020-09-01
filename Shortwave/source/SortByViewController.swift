@@ -49,14 +49,17 @@ class SortByViewController: UIViewController {
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
         Globals.authKey = base64LoginString
-        request = Alamofire.SessionManager.default.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
+        var param = [String:String]()
+        if Globals.virtualLibrary["value"].string != nil {
+            param["virtual_library"] = Globals.virtualLibrary["value"].stringValue
+        }
+        request = Alamofire.SessionManager.default.request(link, method: .get, parameters: param,encoding: JSONEncoding.default, headers: [
         "Authorization":"Basic \(base64LoginString)"])
             .responseJSON { response in
                 switch response.result {
                 case .success(_):
                     self.loading = false
                     self.alertIndicator.dismiss(animated: false) {
-                        
                         if let result = response.result.value {
                             let json = JSON(result)
                             let jsonArray = json.arrayValue
@@ -83,13 +86,6 @@ class SortByViewController: UIViewController {
                             }
                             self.loaded = true
                             self.tableView.reloadData()
-                            
-                            if Globals.isNew {
-                                Globals.isNew = false
-                                let vc:SourceViewController = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! SourceViewController
-                                vc.addNewServer(url: Globals.serverUrl, title: Globals.serverTitle, user: Globals.username, password: Globals.password)
-                            }
-                            
                         }
                         else {
                             let alert = UIAlertController(title: "Loading Data", message: "Loading Data failure!", preferredStyle: UIAlertController.Style.alert)
@@ -119,7 +115,7 @@ class SortByViewController: UIViewController {
                     
                 }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
             print("stop request", self.loading)
             if self.loading {
                 self.loading = false
