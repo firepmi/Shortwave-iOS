@@ -171,7 +171,7 @@
                         <viewLayoutGuide key="safeArea" id="fgl-Ld-eYH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Download from" id="6j3-XI-BrG">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="G2Z-nl-q5b">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" systemItem="add" id="G2Z-nl-q5b">
                             <color key="tintColor" red="0.94117647059999998" green="0.69411764710000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onAddNewServer:" destination="Pzb-Rz-IuD" id="NsL-4A-5d5"/>

@@ -42,18 +42,17 @@ class SortByViewController: UIViewController {
     }
     func onLoadData(){
         self.loading = true
-        let link = Globals.serverUrl + "genre_title_list"
-        print(link)
-        
+        var link = Globals.serverUrl + "genre_title_list"
         let loginString = String(format: "%@:%@", Globals.username, Globals.password)
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
         Globals.authKey = base64LoginString
-        var param = [String:String]()
-        if Globals.virtualLibrary["value"].string != nil {
-            param["virtual_library"] = Globals.virtualLibrary["value"].stringValue
+        
+        if Globals.virtualLibraryIndex != -1 {
+            link = "\(link)/\(Globals.virtualLibraryIndex)"
         }
-        request = Alamofire.SessionManager.default.request(link, method: .get, parameters: param,encoding: JSONEncoding.default, headers: [
+        print(link)
+        request = Alamofire.SessionManager.default.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
         "Authorization":"Basic \(base64LoginString)"])
             .responseJSON { response in
                 switch response.result {

@@ -67,7 +67,7 @@ struct Globals {
     public static var isAutoFillSyncing = false
     public static var genreArray = [JSON]()
     public static var virtualLibraries = [JSON]()
-    public static var virtualLibrary = JSON()
+    public static var virtualLibraryIndex = -1
     public static var queueProgress:CGFloat = 0
     public static var genreEndIndex = [String:Bool]()
     public static var genreCountMap = [String:Int]()

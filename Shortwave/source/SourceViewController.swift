@@ -42,13 +42,14 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
             Globals.getAutoGenreList()
         }
         Globals.getVirtualLibraries {
+            self.serverArray = [JSON()]
             self.serverArray.append(contentsOf: Globals.virtualLibraries)
             self.collectionView.reloadData()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Globals.virtualLibraries.count
+        return serverArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -79,7 +80,7 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Globals.virtualLibrary = serverArray[indexPath.row]
+        Globals.virtualLibraryIndex = indexPath.row-1
         gotoMain()
     }
     @IBAction func onAddNewServer(_ sender: Any) {
