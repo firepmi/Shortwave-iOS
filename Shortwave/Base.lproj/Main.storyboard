@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QAd-vo-Vh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QAd-vo-Vh1">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -60,6 +61,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gny-cx-Bg7"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -71,7 +73,6 @@
                             <constraint firstItem="Gny-cx-Bg7" firstAttribute="bottom" secondItem="b0f-6G-C7c" secondAttribute="bottom" id="Wjk-N5-XV4"/>
                             <constraint firstItem="b0f-6G-C7c" firstAttribute="trailing" secondItem="Gny-cx-Bg7" secondAttribute="trailing" id="kpn-MA-Up0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Gny-cx-Bg7"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Files" image="icon_files.png" id="9Pe-Tl-JVU"/>
                     <connections>
@@ -121,7 +122,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button hidden="YES" opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6P-Zr-sjG">
+                                                        <button hidden="YES" opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6P-Zr-sjG">
                                                             <rect key="frame" x="60" y="0.0" width="60" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <state key="normal">
@@ -161,6 +162,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="fgl-Ld-eYH"/>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.14509803921568626" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hfO-LD-2pd" firstAttribute="bottom" secondItem="fgl-Ld-eYH" secondAttribute="bottom" constant="-10" id="4LC-qZ-Cmi"/>
@@ -168,7 +170,6 @@
                             <constraint firstItem="hfO-LD-2pd" firstAttribute="trailing" secondItem="fgl-Ld-eYH" secondAttribute="trailing" constant="-10" id="Feo-Dg-8cv"/>
                             <constraint firstItem="hfO-LD-2pd" firstAttribute="leading" secondItem="fgl-Ld-eYH" secondAttribute="leading" constant="10" id="Nze-hT-Koe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fgl-Ld-eYH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Download from" id="6j3-XI-BrG">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" systemItem="add" id="G2Z-nl-q5b">
@@ -367,7 +368,7 @@ Use with caution and care for your hearing.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscription - Premium Version" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48A-lg-4eY">
-                                                    <rect key="frame" x="16" y="12" width="242" height="20.5"/>
+                                                    <rect key="frame" x="16" y="12" width="241" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -392,7 +393,7 @@ Use with caution and care for your hearing.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restore Purchase" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSG-lz-p3X">
-                                                    <rect key="frame" x="16" y="12" width="135" height="20.5"/>
+                                                    <rect key="frame" x="16" y="12" width="134" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -418,7 +419,7 @@ Use with caution and care for your hearing.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms in Use and Privacy Policy of Ansable" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0p-kH-cFd">
-                                                    <rect key="frame" x="16" y="12" width="328" height="20.5"/>
+                                                    <rect key="frame" x="16" y="12" width="326.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -530,7 +531,7 @@ Use with caution and care for your hearing.</string>
                                                                 <constraint firstAttribute="height" constant="22" id="MSj-pC-2mB"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ez5-m2-tkp">
+                                                        <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ez5-m2-tkp">
                                                             <rect key="frame" x="81" y="0.0" width="39" height="40"/>
                                                         </button>
                                                     </subviews>
@@ -607,7 +608,7 @@ Use with caution and care for your hearing.</string>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygr-km-2hB">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygr-km-2hB">
                                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="60"/>
                                                                 <connections>
                                                                     <action selector="onSelectAll:" destination="eTr-hb-OZz" eventType="touchUpInside" id="eA0-by-4Ol"/>
@@ -656,7 +657,7 @@ Use with caution and care for your hearing.</string>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67d-sI-ZSd">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67d-sI-ZSd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="60"/>
                                                                 <connections>
                                                                     <action selector="onDeselectAll:" destination="eTr-hb-OZz" eventType="touchUpInside" id="MV6-6a-zVh"/>
@@ -705,7 +706,7 @@ Use with caution and care for your hearing.</string>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9E-I4-hrQ">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9E-I4-hrQ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="115" height="60"/>
                                                                 <connections>
                                                                     <action selector="onDownloadAll:" destination="eTr-hb-OZz" eventType="touchUpInside" id="QZM-JX-3Uj"/>
@@ -749,6 +750,7 @@ Use with caution and care for your hearing.</string>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="j8E-vu-R7w"/>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.14509803921568626" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="j8E-vu-R7w" firstAttribute="trailing" secondItem="gjK-OF-duh" secondAttribute="trailing" constant="10" id="1zp-P6-vZl"/>
@@ -762,7 +764,6 @@ Use with caution and care for your hearing.</string>
                             <constraint firstItem="lkH-5H-iVg" firstAttribute="bottom" secondItem="j8E-vu-R7w" secondAttribute="bottom" id="oXP-vx-b7y"/>
                             <constraint firstItem="gjK-OF-duh" firstAttribute="top" secondItem="j8E-vu-R7w" secondAttribute="top" constant="10" id="zud-Gy-ww1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="j8E-vu-R7w"/>
                     </view>
                     <navigationItem key="navigationItem" id="fd5-Af-rDb"/>
                     <connections>
@@ -812,19 +813,19 @@ Use with caution and care for your hearing.</string>
                                                     <color key="backgroundColor" red="0.2196078431372549" green="0.77647058823529413" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" verticalHuggingPriority="251" text="Aladin - blablabla sto do tudo data da tod dot toda dota das;lododlf d fiek dlslks wwlwl didlds slslsd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adR-9Y-f1x">
-                                                    <rect key="frame" x="10" y="7" width="291" height="46"/>
+                                                    <rect key="frame" x="10" y="7" width="290" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="153MB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzD-BR-Lc2">
-                                                    <rect key="frame" x="311" y="22.5" width="39" height="15"/>
+                                                    <rect key="frame" x="310" y="22.5" width="39" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqB-Er-jkt">
-                                                    <rect key="frame" x="360" y="22.5" width="31" height="15"/>
+                                                    <rect key="frame" x="359" y="22.5" width="32" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -874,6 +875,7 @@ Use with caution and care for your hearing.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="hnH-5k-WUC"/>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.14509803921568626" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="70V-hg-Us6" firstAttribute="centerX" secondItem="hnH-5k-WUC" secondAttribute="centerX" id="0nE-AF-6m3"/>
@@ -887,7 +889,6 @@ Use with caution and care for your hearing.</string>
                             <constraint firstItem="70V-hg-Us6" firstAttribute="leading" secondItem="hnH-5k-WUC" secondAttribute="leading" constant="25" id="Yse-oB-GkZ"/>
                             <constraint firstItem="UUJ-on-kjq" firstAttribute="leading" secondItem="hnH-5k-WUC" secondAttribute="leading" constant="25" id="ejO-09-Tym"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="hnH-5k-WUC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Download Books" id="HTD-hI-eHP"/>
                     <connections>
@@ -1070,6 +1071,7 @@ Use with caution and care for your hearing.</string>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <viewLayoutGuide key="safeArea" id="RJy-OQ-yOf"/>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.14509803921568626" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="pBP-Gg-zR3" firstAttribute="leading" secondItem="S0r-5S-fT7" secondAttribute="leading" constant="16" id="6a0-yk-KjP"/>
@@ -1095,7 +1097,6 @@ Use with caution and care for your hearing.</string>
                                     <constraint firstAttribute="trailing" secondItem="Yog-QU-sD5" secondAttribute="trailing" constant="16" id="oNE-FR-Md5"/>
                                     <constraint firstAttribute="trailing" secondItem="l2v-hx-85C" secondAttribute="trailing" constant="16" id="thC-sB-Dyw"/>
                                 </constraints>
-                                <viewLayoutGuide key="safeArea" id="RJy-OQ-yOf"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeG-Sn-DHx">
                                 <rect key="frame" x="0.0" y="60" width="375" height="65"/>
@@ -1172,7 +1173,7 @@ Use with caution and care for your hearing.</string>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cA-fJ-Acp">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cA-fJ-Acp">
                                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="60"/>
                                                                 <connections>
                                                                     <action selector="onSelectAll:" destination="eTr-hb-OZz" eventType="touchUpInside" id="1fJ-bv-cbw"/>
@@ -1222,7 +1223,7 @@ Use with caution and care for your hearing.</string>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yd9-jt-5ld">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yd9-jt-5ld">
                                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="60"/>
                                                                 <connections>
                                                                     <action selector="onDeselectAll:" destination="eTr-hb-OZz" eventType="touchUpInside" id="opf-iO-HdW"/>
@@ -1272,7 +1273,7 @@ Use with caution and care for your hearing.</string>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQu-Dx-UQc">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQu-Dx-UQc">
                                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="60"/>
                                                                 <connections>
                                                                     <action selector="onDelete:" destination="XZ8-Ha-OZN" eventType="touchUpInside" id="INv-dn-C1I"/>
@@ -1317,6 +1318,7 @@ Use with caution and care for your hearing.</string>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="CKb-uE-Rzm"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="S0r-5S-fT7" firstAttribute="leading" secondItem="CKb-uE-Rzm" secondAttribute="leading" id="7ah-za-Bjy"/>
@@ -1334,7 +1336,6 @@ Use with caution and care for your hearing.</string>
                             <constraint firstItem="vLB-vm-W2L" firstAttribute="leading" secondItem="CKb-uE-Rzm" secondAttribute="leading" id="Ywa-nX-tq3"/>
                             <constraint firstItem="vLB-vm-W2L" firstAttribute="top" secondItem="UeG-Sn-DHx" secondAttribute="bottom" id="pPU-D7-8xZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CKb-uE-Rzm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Playlist" largeTitleDisplayMode="never" id="izI-Pl-Rnt"/>
                     <connections>
@@ -1413,7 +1414,7 @@ Use with caution and care for your hearing.</string>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="fPh-z9-Tc5" secondAttribute="trailing" constant="5" id="3s9-EO-WVk"/>
                                                 <constraint firstAttribute="height" constant="72" id="FwT-fW-vJb"/>
@@ -1441,13 +1442,13 @@ Use with caution and care for your hearing.</string>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="OKP-8n-EqR"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="j2w-eF-Qmt" firstAttribute="leading" secondItem="r9F-fq-dDO" secondAttribute="leading" constant="8" id="1Jc-rN-V88"/>
                             <constraint firstItem="j2w-eF-Qmt" firstAttribute="bottom" secondItem="r9F-fq-dDO" secondAttribute="bottom" constant="-8" id="CSD-o5-WDf"/>
                             <constraint firstAttribute="trailing" secondItem="j2w-eF-Qmt" secondAttribute="trailing" constant="8" id="uhb-cs-X3m"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="OKP-8n-EqR"/>
                     </view>
                     <connections>
                         <outlet property="artwork" destination="VVl-ON-iS7" id="dxh-IM-pw8"/>
@@ -1514,6 +1515,7 @@ Use with caution and care for your hearing.</string>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <viewLayoutGuide key="safeArea" id="MMR-Fb-X28"/>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.14509803921568626" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="8XP-ZG-OgN" secondAttribute="trailing" constant="16" id="0fe-7S-4cM"/>
@@ -1530,7 +1532,6 @@ Use with caution and care for your hearing.</string>
                                     <constraint firstAttribute="bottom" secondItem="oRg-bS-GGy" secondAttribute="bottom" id="t98-Wf-WNq"/>
                                     <constraint firstAttribute="trailing" secondItem="oRg-bS-GGy" secondAttribute="trailing" constant="16" id="z7q-ef-9QZ"/>
                                 </constraints>
-                                <viewLayoutGuide key="safeArea" id="MMR-Fb-X28"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5M-DI-F77">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -1584,6 +1585,7 @@ Use with caution and care for your hearing.</string>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2vd-Qr-Zz5"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="392-ii-NXF" secondAttribute="bottom" id="0zf-Aj-DJA"/>
@@ -1598,7 +1600,6 @@ Use with caution and care for your hearing.</string>
                             <constraint firstItem="2vd-Qr-Zz5" firstAttribute="trailing" secondItem="y5M-DI-F77" secondAttribute="trailing" id="mL3-Ml-Qzo"/>
                             <constraint firstItem="y5M-DI-F77" firstAttribute="top" secondItem="2vd-Qr-Zz5" secondAttribute="top" id="wVV-d8-LQ4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2vd-Qr-Zz5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Your library" id="Y8z-FW-XvT"/>
                     <connections>
@@ -1653,7 +1654,7 @@ Use with caution and care for your hearing.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4b-z8-VkW">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4b-z8-VkW">
                                 <rect key="frame" x="114" y="523" width="147" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.25490196078431371" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1664,7 +1665,7 @@ Use with caution and care for your hearing.</string>
                                     <action selector="onLogin:" destination="QAd-vo-Vh1" eventType="touchUpInside" id="tc0-Rq-ZkZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jW-oT-ox0">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jW-oT-ox0">
                                 <rect key="frame" x="73" y="620" width="229" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1686,7 +1687,7 @@ Use with caution and care for your hearing.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49S-xK-DDb">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49S-xK-DDb">
                                 <rect key="frame" x="82" y="464" width="210" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1698,8 +1699,8 @@ Use with caution and care for your hearing.</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="DcO-D6-4jJ"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="TeX-mA-KkG" id="bsO-u9-rcb"/>
@@ -1725,7 +1726,7 @@ Use with caution and care for your hearing.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnH-qb-3py">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnH-qb-3py">
                                 <rect key="frame" x="114" y="583" width="147" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.25490196078431371" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1736,7 +1737,7 @@ Use with caution and care for your hearing.</string>
                                     <action selector="onBackToLogin:" destination="dLv-sa-vsN" eventType="touchUpInside" id="yDb-AD-4b0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxB-IU-Oo1">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxB-IU-Oo1">
                                 <rect key="frame" x="114" y="537" width="147" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.25490196078431371" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1846,7 +1847,7 @@ Use with caution and care for your hearing.</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8u-EP-xe9">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8u-EP-xe9">
                                 <rect key="frame" x="95" y="450" width="219" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -1854,8 +1855,8 @@ Use with caution and care for your hearing.</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sDA-Cd-YhQ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="checkButton" destination="0MT-qL-She" id="PzC-T4-nPI"/>
@@ -2107,7 +2108,7 @@ Use with caution and care for your hearing.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="View project on GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CBs-85-x3u">
-                                                    <rect key="frame" x="16" y="9" width="177" height="20.5"/>
+                                                    <rect key="frame" x="16" y="9" width="176" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2136,7 +2137,7 @@ Use with caution and care for your hearing.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Send us an email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i7j-wF-v14">
-                                                    <rect key="frame" x="16" y="9" width="130" height="20.5"/>
+                                                    <rect key="frame" x="16" y="9" width="129" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" red="0.1529411765" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2259,8 +2260,8 @@ Use with caution and care for your hearing.</string>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1529411765" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Axu-Cv-Hp4"/>
+                        <color key="backgroundColor" red="0.1529411765" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="oSN-04-ZpJ">
                         <barButtonItem key="rightBarButtonItem" title="Next &gt;" id="28I-cK-Xrk">
@@ -2292,7 +2293,7 @@ Use with caution and care for your hearing.</string>
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUY-bM-uDM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUY-bM-uDM">
                                 <rect key="frame" x="20" y="20" width="61" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="&lt; Back">
@@ -2303,6 +2304,7 @@ Use with caution and care for your hearing.</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="lgE-7y-m4P"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lgE-7y-m4P" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jUY-bM-uDM" secondAttribute="trailing" symbolic="YES" id="2mn-e7-6Qc"/>
@@ -2313,7 +2315,6 @@ Use with caution and care for your hearing.</string>
                             <constraint firstItem="lgE-7y-m4P" firstAttribute="bottom" secondItem="gIk-ay-kFC" secondAttribute="bottom" id="seg-Xk-Pk0"/>
                             <constraint firstItem="jUY-bM-uDM" firstAttribute="top" secondItem="lgE-7y-m4P" secondAttribute="top" constant="20" id="uku-oA-qvc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="lgE-7y-m4P"/>
                     </view>
                     <connections>
                         <outlet property="pdfView" destination="gIk-ay-kFC" id="aWe-sR-Mpr"/>
@@ -2328,7 +2329,7 @@ Use with caution and care for your hearing.</string>
             <objects>
                 <viewController title="Subscription Detail" id="Q5H-Ah-haW" customClass="SubscriptionViewController" customModule="Shortwave" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qs3-Dw-Ilz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3C-T4-gpf">
@@ -2350,14 +2351,14 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                 <color key="textColor" red="0.1529411765" green="0.68235294120000001" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgJ-RL-Vpi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgJ-RL-Vpi">
                                 <rect key="frame" x="65.5" y="534" width="244" height="30"/>
                                 <state key="normal" title="Terms of Service and Privacy Policy"/>
                                 <connections>
                                     <action selector="onTermsandPrivacyPolicy:" destination="Q5H-Ah-haW" eventType="touchUpInside" id="w1J-M2-5BK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9J-b0-8sR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9J-b0-8sR">
                                 <rect key="frame" x="60" y="490" width="255" height="34"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -2369,6 +2370,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nZQ-En-1CN"/>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.14509803921568626" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vgJ-RL-Vpi" firstAttribute="bottom" secondItem="nZQ-En-1CN" secondAttribute="bottom" constant="-10" id="Bls-wb-WBd"/>
@@ -2381,7 +2383,6 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                             <constraint firstItem="H9J-b0-8sR" firstAttribute="centerX" secondItem="nZQ-En-1CN" secondAttribute="centerX" id="qO9-P7-DD6"/>
                             <constraint firstItem="q3C-T4-gpf" firstAttribute="leading" secondItem="nZQ-En-1CN" secondAttribute="leading" constant="30" id="uii-kB-O3f"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nZQ-En-1CN"/>
                     </view>
                     <navigationItem key="navigationItem" id="FdW-p0-cUT"/>
                 </viewController>
@@ -2427,7 +2428,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUl-OL-fVQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUl-OL-fVQ">
                                         <rect key="frame" x="112.5" y="267.5" width="90" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2444,28 +2445,28 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bl4-EH-6y2" customClass="SearchTextField" customModule="SearchTextField">
                                         <rect key="frame" x="30" y="82.5" width="255" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="QEJ-of-gpo"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csR-76-YBb" customClass="SearchTextField" customModule="SearchTextField">
                                         <rect key="frame" x="30" y="127.5" width="255" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="eWf-YN-g4f"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXl-v7-Yf3" customClass="SearchTextField" customModule="SearchTextField">
                                         <rect key="frame" x="30" y="172.5" width="255" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="YiA-Th-cP7"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjf-WT-SUk" customClass="SearchTextField" customModule="SearchTextField">
                                         <rect key="frame" x="30" y="217.5" width="255" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ZDL-h3-9kD"/>
                                         </constraints>
@@ -2502,7 +2503,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                     <constraint firstItem="iUl-OL-fVQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qRg-ML-qsX" secondAttribute="leading" constant="20" symbolic="YES" id="wp2-xZ-iy5"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQM-fg-tkQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQM-fg-tkQ">
                                 <rect key="frame" x="295" y="97.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="dDE-5l-DoS"/>
@@ -2513,6 +2514,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="A7H-Dm-M6j"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MEk-nY-cjm" firstAttribute="top" secondItem="sp3-WU-iYm" secondAttribute="top" id="020-0I-uGK"/>
@@ -2525,7 +2527,6 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                             <constraint firstItem="qRg-ML-qsX" firstAttribute="leading" secondItem="A7H-Dm-M6j" secondAttribute="leading" constant="30" id="cVX-jE-HTc"/>
                             <constraint firstItem="MEk-nY-cjm" firstAttribute="leading" secondItem="sp3-WU-iYm" secondAttribute="leading" id="eV4-rx-Rm7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="A7H-Dm-M6j"/>
                     </view>
                     <connections>
                         <outlet property="confirmButton" destination="iUl-OL-fVQ" id="2Y9-bx-bFh"/>
@@ -2580,7 +2581,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkO-7N-sXH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkO-7N-sXH">
                                         <rect key="frame" x="67.5" y="202.5" width="180" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2595,7 +2596,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                             <action selector="onSkip:" destination="iBT-e0-wEA" eventType="touchUpInside" id="Kk5-Qe-kvM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elh-Rt-RZu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elh-Rt-RZu">
                                         <rect key="frame" x="67.5" y="252.5" width="180" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2617,12 +2618,12 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply for all" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SI-2p-F4R">
-                                        <rect key="frame" x="64" y="155" width="91" height="21"/>
+                                        <rect key="frame" x="64" y="155" width="90" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qha-dJ-sLu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qha-dJ-sLu">
                                         <rect key="frame" x="30" y="148.5" width="255" height="34"/>
                                         <connections>
                                             <action selector="onApplyAll:" destination="iBT-e0-wEA" eventType="touchUpInside" id="jTc-aa-1UA"/>
@@ -2657,7 +2658,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                     <constraint firstItem="qha-dJ-sLu" firstAttribute="bottom" secondItem="RF9-SP-qYQ" secondAttribute="bottom" constant="5" id="zEc-Hc-C9P"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tai-nR-84Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tai-nR-84Q">
                                 <rect key="frame" x="295" y="157.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="DKu-D2-5af"/>
@@ -2668,6 +2669,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Icc-fU-hFx"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8rN-BQ-w8f" firstAttribute="leading" secondItem="rLp-nh-r9G" secondAttribute="leading" id="5Fn-et-s4e"/>
@@ -2680,7 +2682,6 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                             <constraint firstItem="tai-nR-84Q" firstAttribute="trailing" secondItem="oJ6-rK-0dT" secondAttribute="trailing" id="qQh-gL-2Lv"/>
                             <constraint firstItem="oJ6-rK-0dT" firstAttribute="centerY" secondItem="rLp-nh-r9G" secondAttribute="centerY" constant="-20" id="xIW-h4-42I"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Icc-fU-hFx"/>
                     </view>
                     <connections>
                         <outlet property="checkboxImageView" destination="RF9-SP-qYQ" id="iQT-Ej-7du"/>
@@ -2720,7 +2721,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnV-4a-rpa">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnV-4a-rpa">
                                 <rect key="frame" x="114" y="523" width="147" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.25490196079999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2731,7 +2732,7 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                     <action selector="onResetPassword:" destination="8N7-bx-mNg" eventType="touchUpInside" id="wrO-42-XiV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGR-xn-Utv">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGR-xn-Utv">
                                 <rect key="frame" x="73" y="620" width="229" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -2754,8 +2755,8 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="5Ah-aw-l5d"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Ktq-Nl-2Rp" id="J9e-ND-mdg"/>
@@ -2793,5 +2794,11 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
         <image name="icon_source.png" width="28" height="30"/>
         <image name="icon_source_item.png" width="122" height="121"/>
         <image name="nowPlayingPlay" width="62" height="62"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

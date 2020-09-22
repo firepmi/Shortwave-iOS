@@ -128,7 +128,7 @@ class registerViewController: UIViewController, UITextFieldDelegate {
         present(alertIndicator, animated: true, completion: nil)
         
         let registerUrl = Globals.adminUrl + "/api/register"
-        Alamofire.request(registerUrl, method: .post, parameters: [
+        AF.request(registerUrl, method: .post, parameters: [
             "email": emailTextField.text!,
             "password":passwordTextField.text!,
             "password2":confirmTextField.text!,
@@ -139,19 +139,15 @@ class registerViewController: UIViewController, UITextFieldDelegate {
                 })
                                         
                 switch response.result {
-                case .success(_):
-                    if let result = response.result.value {
-                        let json = JSON(result)
-                        if json["success"].boolValue {
-                            self.alertSucess()
-                        }
-                        else {
-                            self.alert(message: json["message"].stringValue)
-                        }
+                case .success(let value):
+                    let json = JSON(value)
+                    if json["success"].boolValue {
+                        self.alertSucess()
                     }
                     else {
-                        self.alert(message: "Loading Data failure!")
+                        self.alert(message: json["message"].stringValue)
                     }
+                
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.alert(message: "Loading Data failure!")

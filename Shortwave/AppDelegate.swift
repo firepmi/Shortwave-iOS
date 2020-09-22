@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 import DirectoryWatcher
-import Firebase
+//import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
 //        Database.database().isPersistenceEnabled = true
         
         // Override point for customization after application launch.
@@ -135,6 +135,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if options.contains(.shouldResume) {
                 PlayerManager.shared.play()
             }
+        @unknown default:
+            break
         }
     }
     
@@ -237,7 +239,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        self.watcher.onDeletedFiles = { newFiles in
 //            DataManager.notifyPendingFiles()
 //        }
-        self.watcher = DirectoryWatcher.watch(documentsUrl) {
+        
+        self.watcher = DirectoryWatcher.watch(documentsUrl)
+        self.watcher?.onNewFiles = { newFiles in
+            DataManager.notifyPendingFiles()
+        }
+        self.watcher?.onDeletedFiles = { files in
             DataManager.notifyPendingFiles()
         }
     }

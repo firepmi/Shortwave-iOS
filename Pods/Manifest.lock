@@ -1,124 +1,19 @@
 PODS:
-  - Alamofire (4.8.0)
-  - AlamofireImage (3.5.0):
-    - Alamofire (~> 4.8)
+  - Alamofire (5.2.2)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
   - AMProgressBar (0.1.0)
-  - DeviceKit (1.11.0)
-  - DirectoryWatcher (1.1.0)
-  - Firebase (6.12.0):
-    - Firebase/Core (= 6.12.0)
-  - Firebase/Auth (6.12.0):
-    - Firebase/CoreOnly
-    - FirebaseAuth (~> 6.3.1)
-  - Firebase/Core (6.12.0):
-    - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.1.5)
-  - Firebase/CoreOnly (6.12.0):
-    - FirebaseCore (= 6.3.3)
-  - Firebase/Database (6.12.0):
-    - Firebase/CoreOnly
-    - FirebaseDatabase (~> 6.1.2)
-  - Firebase/RemoteConfig (6.12.0):
-    - Firebase/CoreOnly
-    - FirebaseRemoteConfig (~> 4.4.4)
-  - Firebase/Storage (6.12.0):
-    - Firebase/CoreOnly
-    - FirebaseStorage (~> 3.4.1)
-  - FirebaseABTesting (3.1.2):
-    - FirebaseAnalyticsInterop (~> 1.3)
-    - FirebaseCore (~> 6.1)
-    - Protobuf (>= 3.9.2, ~> 3.9)
-  - FirebaseAnalytics (6.1.5):
-    - FirebaseCore (~> 6.3)
-    - FirebaseInstanceID (~> 4.2)
-    - GoogleAppMeasurement (= 6.1.5)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
-    - GoogleUtilities/MethodSwizzler (~> 6.0)
-    - GoogleUtilities/Network (~> 6.0)
-    - "GoogleUtilities/NSData+zlib (~> 6.0)"
-    - nanopb (= 0.3.9011)
-  - FirebaseAnalyticsInterop (1.4.0)
-  - FirebaseAuth (6.3.1):
-    - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 6.2)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.2)
-    - GoogleUtilities/Environment (~> 6.2)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseAuthInterop (1.0.0)
-  - FirebaseCore (6.3.3):
-    - FirebaseCoreDiagnostics (~> 1.0)
-    - FirebaseCoreDiagnosticsInterop (~> 1.0)
-    - GoogleUtilities/Environment (~> 6.2)
-    - GoogleUtilities/Logger (~> 6.2)
-  - FirebaseCoreDiagnostics (1.1.2):
-    - FirebaseCoreDiagnosticsInterop (~> 1.0)
-    - GoogleDataTransportCCTSupport (~> 1.0)
-    - GoogleUtilities/Environment (~> 6.2)
-    - GoogleUtilities/Logger (~> 6.2)
-    - nanopb (~> 0.3.901)
-  - FirebaseCoreDiagnosticsInterop (1.1.0)
-  - FirebaseDatabase (6.1.2):
-    - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 6.0)
-    - leveldb-library (~> 1.22)
-  - FirebaseInstanceID (4.2.7):
-    - FirebaseCore (~> 6.0)
-    - GoogleUtilities/Environment (~> 6.0)
-    - GoogleUtilities/UserDefaults (~> 6.0)
-  - FirebaseRemoteConfig (4.4.4):
-    - FirebaseABTesting (~> 3.1)
-    - FirebaseAnalyticsInterop (~> 1.4)
-    - FirebaseCore (~> 6.2)
-    - FirebaseInstanceID (~> 4.2)
-    - GoogleUtilities/Environment (~> 6.2)
-    - "GoogleUtilities/NSData+zlib (~> 6.2)"
-    - Protobuf (>= 3.9.2, ~> 3.9)
-  - FirebaseStorage (3.4.1):
-    - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 6.0)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleAppMeasurement (6.1.5):
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
-    - GoogleUtilities/MethodSwizzler (~> 6.0)
-    - GoogleUtilities/Network (~> 6.0)
-    - "GoogleUtilities/NSData+zlib (~> 6.0)"
-    - nanopb (= 0.3.9011)
-  - GoogleDataTransport (3.2.0)
-  - GoogleDataTransportCCTSupport (1.2.2):
-    - GoogleDataTransport (~> 3.2)
-    - nanopb (~> 0.3.901)
-  - GoogleUtilities/AppDelegateSwizzler (6.3.1):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.3.1)
-  - GoogleUtilities/Logger (6.3.1):
-    - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.3.1):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.3.1):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.3.1)"
-  - GoogleUtilities/Reachability (6.3.1):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.3.1):
-    - GoogleUtilities/Logger
-  - GTMSessionFetcher/Core (1.3.0)
+  - DeviceKit (3.2.0)
+  - DirectoryWatcher (2.6.0)
   - IDZSwiftCommonCrypto (0.13.0)
-  - JGProgressHUD (2.0.3)
-  - leveldb-library (1.22)
-  - MarqueeLabel/Swift (3.2.0)
-  - nanopb (0.3.9011):
-    - nanopb/decode (= 0.3.9011)
-    - nanopb/encode (= 0.3.9011)
-  - nanopb/decode (0.3.9011)
-  - nanopb/encode (0.3.9011)
-  - Protobuf (3.10.0)
+  - JGProgressHUD (2.1)
+  - MarqueeLabel/Swift (3.2.1)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
   - SearchTextField (1.2.4)
-  - SwiftReorder (6.0.1)
-  - SwiftyJSON (4.2.0)
+  - SwiftReorder (7.2.0)
+  - SwiftyJSON (5.0.0)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
@@ -127,15 +22,10 @@ DEPENDENCIES:
   - AMProgressBar
   - DeviceKit
   - DirectoryWatcher
-  - Firebase
-  - Firebase/Auth
-  - Firebase/Core
-  - Firebase/Database
-  - Firebase/RemoteConfig
-  - Firebase/Storage
   - IDZSwiftCommonCrypto
   - JGProgressHUD
   - MarqueeLabel/Swift
+  - SDWebImage
   - SearchTextField
   - SwiftReorder
   - SwiftyJSON
@@ -148,70 +38,30 @@ SPEC REPOS:
     - AMProgressBar
     - DeviceKit
     - DirectoryWatcher
-    - Firebase
-    - FirebaseABTesting
-    - FirebaseAnalytics
-    - FirebaseAnalyticsInterop
-    - FirebaseAuth
-    - FirebaseAuthInterop
-    - FirebaseCore
-    - FirebaseCoreDiagnostics
-    - FirebaseCoreDiagnosticsInterop
-    - FirebaseDatabase
-    - FirebaseInstanceID
-    - FirebaseRemoteConfig
-    - FirebaseStorage
-    - GoogleAppMeasurement
-    - GoogleDataTransport
-    - GoogleDataTransportCCTSupport
-    - GoogleUtilities
-    - GTMSessionFetcher
     - IDZSwiftCommonCrypto
     - JGProgressHUD
-    - leveldb-library
     - MarqueeLabel
-    - nanopb
-    - Protobuf
+    - SDWebImage
     - SearchTextField
     - SwiftReorder
     - SwiftyJSON
     - Toast-Swift
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   AMProgressBar: 3f4671c4af4cb4fc9864ddc0a688450c8c7d1561
-  DeviceKit: a3a86f8dddbe1317a9a243cdf9646858bf135dce
-  DirectoryWatcher: bfc4904d3953e8f49bf440d1c22cd0556b05c10d
-  Firebase: da031bc7012374e3bed17a6731b89327b29863b9
-  FirebaseABTesting: 0d10f3cdc3fa00f3f175b5b56c1003c8e888299f
-  FirebaseAnalytics: 4e53a7eb7b76bc703c4d9239bc964545e9b23361
-  FirebaseAnalyticsInterop: d48b6ab67bcf016a05e55b71fc39c61c0cb6b7f3
-  FirebaseAuth: b401a012cc33b04df3b52bb308b04e8766f2693e
-  FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
-  FirebaseCore: bcd6c112429249d7921e907d661e8955a3549e26
-  FirebaseCoreDiagnostics: 511f4f3ed7d440bb69127e8b97c2bc8befae639e
-  FirebaseCoreDiagnosticsInterop: e9b1b023157e3a2fc6418b5cb601e79b9af7b3a0
-  FirebaseDatabase: 963515d232ded06f36f6ce830507c94551866170
-  FirebaseInstanceID: ebd2ea79ee38db0cb5f5167b17a0d387e1cc7b6e
-  FirebaseRemoteConfig: 8bb483b372bf859635c719d01911d5f7bf6df4b4
-  FirebaseStorage: b7c6d00997bc21d4465453bdcc5cc65513110fed
-  GoogleAppMeasurement: 037f46d1d8ae8b312720f1042585ab961a1289e3
-  GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
-  GoogleDataTransportCCTSupport: ef79a4728b864946a8aafdbab770d5294faf3b5f
-  GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
-  GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
+  DeviceKit: d081659419cce07c0b5239dbc9fb39ed7413c7fe
+  DirectoryWatcher: 094d59b8082c89be95a98754755b014f1470fbe8
   IDZSwiftCommonCrypto: 00dd37cdfbd149312a7e5a582cf9909f8b129f44
-  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
-  leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
-  MarqueeLabel: 440a502b91a9179bd98f9fff00ba1150650a1c0e
-  nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
-  Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
+  MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
-  SwiftReorder: b59368b978c9826116147672ff1f59a2d4dd9110
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  SwiftReorder: d687883abf5f2327268e006b038025a6fc515e34
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: ae98e42f12c2089294c55291f969ecb4195577d2
+PODFILE CHECKSUM: 6b6b49313a3b1b06a5672dd44686780473b95ea1
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

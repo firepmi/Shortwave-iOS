@@ -30,15 +30,15 @@ class loginViewController: UIViewController, UITextFieldDelegate {
         present(alertIndicator, animated: true, completion: nil)
         defaults.set(emailTextField.text, forKey: "email")
         let loginUrl = Globals.adminUrl + "/api/login"
-        Alamofire.request(loginUrl, method: .post, parameters: ["email": emailTextField.text!, "password":passwordTextField.text!],encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        AF.request(loginUrl, method: .post, parameters: ["email": emailTextField.text!, "password":passwordTextField.text!],encoding: JSONEncoding.default, headers: nil).responseJSON { response in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     alertIndicator.dismiss(animated: false, completion: nil)
                 })
                                         
                 switch response.result {
-                case .success(_):
-                    if let result = response.result.value {
-                        let json = JSON(result)
+                case .success(let value):
+//                    if let result = value {
+                        let json = JSON(value)
                         if json["success"].boolValue {
                             Globals.token = json["token"].stringValue
                             self.defaults.set(self.emailTextField.text, forKey: "email")
@@ -51,10 +51,10 @@ class loginViewController: UIViewController, UITextFieldDelegate {
                         else {
                             self.alert(message: json["message"].stringValue)
                         }
-                    }
-                    else {
-                        self.alert(message: "Loading Data failure!")
-                    }
+//                    }
+//                    else {
+//                        self.alert(message: "Loading Data failure!")
+//                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.alert(message: "Loading Data failure!")

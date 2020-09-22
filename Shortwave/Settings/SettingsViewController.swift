@@ -229,32 +229,32 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
         controller.dismiss(animated: true)
     }
 
-    func sendSupportEmmail() {
-        let device = Device()
-
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-
-            mail.mailComposeDelegate = self
-            mail.setToRecipients([self.supportEmail])
-            mail.setSubject("I need help with SimpleWave \(self.version)-\(self.build)")
-            mail.setMessageBody("<p>Hello SimpleWave Crew,<br>I have an issue concerning SimpleWave \(self.appVersion) on my \(device) running \(self.systemVersion)</p><p>When I try to…</p>", isHTML: true)
-
-            self.present(mail, animated: true)
-        } else {
-            let debugInfo = "BookPlayer \(self.appVersion)\n\(device) with \(self.systemVersion)"
-
-            let alert = UIAlertController(title: "Unable to compose email", message: "You need to set up an email account in your device settings to use this. \n\nPlease mail us at \(self.supportEmail)\n\n\(debugInfo)", preferredStyle: .alert)
-
-            alert.addAction(UIAlertAction(title: "Copy information to clipboard", style: .default, handler: { _ in
-                UIPasteboard.general.string = "\(self.supportEmail)\n\(debugInfo)"
-            }))
-
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
+//    func sendSupportEmmail() {
+//        let device = Device()
+//
+//        if MFMailComposeViewController.canSendMail() {
+//            let mail = MFMailComposeViewController()
+//
+//            mail.mailComposeDelegate = self
+//            mail.setToRecipients([self.supportEmail])
+//            mail.setSubject("I need help with SimpleWave \(self.version)-\(self.build)")
+//            mail.setMessageBody("<p>Hello SimpleWave Crew,<br>I have an issue concerning SimpleWave \(self.appVersion) on my \(device) running \(self.systemVersion)</p><p>When I try to…</p>", isHTML: true)
+//
+//            self.present(mail, animated: true)
+//        } else {
+//            let debugInfo = "BookPlayer \(self.appVersion)\n\(device) with \(self.systemVersion)"
+//
+//            let alert = UIAlertController(title: "Unable to compose email", message: "You need to set up an email account in your device settings to use this. \n\nPlease mail us at \(self.supportEmail)\n\n\(debugInfo)", preferredStyle: .alert)
+//
+//            alert.addAction(UIAlertAction(title: "Copy information to clipboard", style: .default, handler: { _ in
+//                UIPasteboard.general.string = "\(self.supportEmail)\n\(debugInfo)"
+//            }))
+//
+//            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//    }
     func onLogOut() {
         Globals.token = ""
         let defaults: UserDefaults = UserDefaults.standard

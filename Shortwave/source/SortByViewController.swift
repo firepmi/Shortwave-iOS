@@ -52,15 +52,15 @@ class SortByViewController: UIViewController {
             link = "\(link)/\(Globals.virtualLibraryIndex)"
         }
         print(link)
-        request = Alamofire.SessionManager.default.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
+        request = AF.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
         "Authorization":"Basic \(base64LoginString)"])
             .responseJSON { response in
                 switch response.result {
-                case .success(_):
+                case .success(let value):
                     self.loading = false
                     self.alertIndicator.dismiss(animated: false) {
-                        if let result = response.result.value {
-                            let json = JSON(result)
+//                        if let result = value {
+                            let json = JSON(value)
                             let jsonArray = json.arrayValue
                             self.listArray = [[],[],[]]
                             for item in jsonArray {
@@ -85,14 +85,14 @@ class SortByViewController: UIViewController {
                             }
                             self.loaded = true
                             self.tableView.reloadData()
-                        }
-                        else {
-                            let alert = UIAlertController(title: "Loading Data", message: "Loading Data failure!", preferredStyle: UIAlertController.Style.alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-                                
-                            }))
-                            self.present(alert, animated: true);
-                        }
+//                        }
+//                        else {
+//                            let alert = UIAlertController(title: "Loading Data", message: "Loading Data failure!", preferredStyle: UIAlertController.Style.alert)
+//                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+//                                
+//                            }))
+//                            self.present(alert, animated: true);
+//                        }
                     }
 
                 case .failure(let error):
@@ -129,13 +129,13 @@ class SortByViewController: UIViewController {
             }
         })
         
-        Alamofire.request(Globals.serverUrl)
-        .authenticate(user: Globals.username, password: Globals.password)
+        AF.request(Globals.serverUrl)
+            .authenticate(username: Globals.username, password: Globals.password)
         .validate(contentType: ["application/json"])
             .response { response in
                 Globals.cookies = HTTPCookieStorage.shared.cookies!
                 print(Globals.cookies)
-                Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: response.request?.url, mainDocumentURL: nil)
+                AF.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: response.request?.url, mainDocumentURL: nil)
         }
     }
     override func viewDidAppear(_ animated: Bool) {

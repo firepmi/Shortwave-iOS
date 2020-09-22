@@ -8,8 +8,8 @@
 
 
 import UIKit
-import Firebase
-import FirebaseAuth
+//import Firebase
+//import FirebaseAuth
 
 class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
@@ -32,25 +32,25 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         alertIndicator.view.addSubview(activityView)
         present(alertIndicator, animated: true, completion: nil)
         
-        Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { error in
-            alertIndicator.dismiss(animated: true) {
-                if error != nil {
-                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription,
-                                                  preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
-                else {
-                    let alert = UIAlertController(title: "Reset Password", message: "A password reset link was sent. Click the link in the email to create a new password.",
-                                                  preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-                        self.dismiss(animated: true, completion: nil)
-                    }))
-                    self.present(alert, animated: true, completion: nil)
-                    
-                }
-            }
-        }
+//        Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { error in
+//            alertIndicator.dismiss(animated: true) {
+//                if error != nil {
+//                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription,
+//                                                  preferredStyle: UIAlertController.Style.alert)
+//                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+//                    self.present(alert, animated: true, completion: nil)
+//                }
+//                else {
+//                    let alert = UIAlertController(title: "Reset Password", message: "A password reset link was sent. Click the link in the email to create a new password.",
+//                                                  preferredStyle: UIAlertController.Style.alert)
+//                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+//                        self.dismiss(animated: true, completion: nil)
+//                    }))
+//                    self.present(alert, animated: true, completion: nil)
+//
+//                }
+//            }
+//        }
         
     }
     func alert(message: String) {

@@ -200,11 +200,11 @@ struct Globals {
         downloadingGenre = bookData.genre
         print(fileUrl!.path)
         
-        Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: URL(string: bookData.downloadUrl), mainDocumentURL: nil)
+        AF.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: URL(string: bookData.downloadUrl), mainDocumentURL: nil)
         
-        Alamofire.SessionManager.default.request(bookData.downloadUrl, headers: [
+        AF.request(bookData.downloadUrl, headers: [
             "Authorization":"Basic \(Globals.authKey)"])
-            .authenticate(user: Globals.username, password: Globals.password)
+            .authenticate(username: Globals.username, password: Globals.password)
             .downloadProgress { progress in
                 Globals.queueProgress =  CGFloat(progress.fractionCompleted)
                 print(Globals.queueProgress)
@@ -261,12 +261,12 @@ struct Globals {
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
          
-        Alamofire.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
+        AF.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
             "Authorization":"Basic \(base64LoginString)"]).responseJSON { response in
                 switch response.result {
-                case .success(_):
-                    if let result = response.result.value {
-                        let json = JSON(result)
+                case .success(let value):
+//                    if let result = response.result.value {
+                        let json = JSON(value)
                         if json.arrayValue.count == 0 {
                             print(genre + " is end")
                             genreEndIndex[genre] = true
@@ -290,12 +290,12 @@ struct Globals {
                             isAutoFillSyncing = false
                             autoFillDownloadQueue(genre: genre)
                         }
-                    }
-                    else {
-                        print("auto loading data failure")
-                        isAutoFillSyncing = false
-                        autoFillDownloadQueue(genre: genre)
-                    }
+//                    }
+//                    else {
+//                        print("auto loading data failure")
+//                        isAutoFillSyncing = false
+//                        autoFillDownloadQueue(genre: genre)
+//                    }
 
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -316,31 +316,31 @@ struct Globals {
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
         Globals.authKey = base64LoginString
-        autoGenreListRequest = Alamofire.SessionManager.default.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
+        autoGenreListRequest = AF.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
         "Authorization":"Basic \(base64LoginString)"])
             .responseJSON { response in
                 switch response.result {
-                case .success(_):
-                    if let result = response.result.value {
-                        let json = JSON(result)
+                case .success(let value):
+//                    if let result = response.result.value {
+                        let json = JSON(value)
                         let jsonArray = json.arrayValue
                         for item in jsonArray {
                             Globals.genreCountMap[item["title"].stringValue] = item["count"].intValue
                         }
-                    }
+//                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                     
                 }
         }
                 
-        Alamofire.request(rootUrl)
-        .authenticate(user: Globals.username, password: Globals.password)
+        AF.request(rootUrl)
+        .authenticate(username: Globals.username, password: Globals.password)
         .validate(contentType: ["application/json"])
             .response { response in
                 Globals.cookies = HTTPCookieStorage.shared.cookies!
                 print(Globals.cookies)
-                Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: response.request?.url, mainDocumentURL: nil)
+                AF.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: response.request?.url, mainDocumentURL: nil)
         }
     }
     static func getVirtualLibraries(completion:(()->Void)?) {
@@ -355,28 +355,28 @@ struct Globals {
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
         Globals.authKey = base64LoginString
-        autoGenreListRequest = Alamofire.SessionManager.default.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
+        autoGenreListRequest = AF.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
         "Authorization":"Basic \(base64LoginString)"])
             .responseJSON { response in
                 switch response.result {
-                case .success(_):
-                    if let result = response.result.value {
-                        let json = JSON(result)
+                case .success(let value):
+//                    if let result = response.result.value {
+                        let json = JSON(value)
                         virtualLibraries = json.arrayValue
                         completion!()
-                    }
+//                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
         }
                 
-        Alamofire.request(rootUrl)
-        .authenticate(user: Globals.username, password: Globals.password)
+        AF.request(rootUrl)
+        .authenticate(username: Globals.username, password: Globals.password)
         .validate(contentType: ["application/json"])
             .response { response in
                 Globals.cookies = HTTPCookieStorage.shared.cookies!
                 print(Globals.cookies)
-                Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: response.request?.url, mainDocumentURL: nil)
+                AF.session.configuration.httpCookieStorage?.setCookies(Globals.cookies, for: response.request?.url, mainDocumentURL: nil)
         }
     }
     static func cancelAutoGetGenreList(){
@@ -421,18 +421,18 @@ struct Globals {
         let updateUrl = Globals.adminUrl + "/api/books/update-download"
         print(updateUrl)
         print(deviceID)
-        Alamofire.request(updateUrl, method: .post, parameters: ["id": id, "udid":deviceID],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
+        AF.request(updateUrl, method: .post, parameters: ["id": id, "udid":deviceID],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
                 switch response.result {
-                case .success(_):
-                    if let result = response.result.value {
-                        let json = JSON(result)
+                case .success(let value):
+//                    if let result = response.result.value {
+                        let json = JSON(value)
                         if json["success"].boolValue {
                             print(json["message"].stringValue)
                         }
                         else {
                             print(json["message"].stringValue)
                         }
-                    }
+//                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -443,17 +443,15 @@ struct Globals {
             return
         }
         let loginUrl = Globals.adminUrl + "/api/books/update-favorite"
-        Alamofire.request(loginUrl, method: .post, parameters: ["id": id, "udid":deviceID],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
+        AF.request(loginUrl, method: .post, parameters: ["id": id, "udid":deviceID],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
                 switch response.result {
-                case .success(_):
-                    if let result = response.result.value {
-                        let json = JSON(result)
-                        if json["success"].boolValue {
-                            print(json["message"].stringValue)
-                        }
-                        else {
-                            print(json["message"].stringValue)
-                        }
+                case .success(let value):
+                    let json = JSON(value)
+                    if json["success"].boolValue {
+                        print(json["message"].stringValue)
+                    }
+                    else {
+                        print(json["message"].stringValue)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -462,18 +460,18 @@ struct Globals {
     }
     static func updateUserProStateOnServer(state:Bool) {
         let loginUrl = Globals.adminUrl + "/api/devices/update-pro-state"
-        Alamofire.request(loginUrl, method: .post, parameters: ["state": state, "udid":deviceID],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
+        AF.request(loginUrl, method: .post, parameters: ["state": state, "udid":deviceID],encoding: JSONEncoding.default, headers: ["Authorization":token]).responseJSON { response in
                 switch response.result {
-                case .success(_):
-                    if let result = response.result.value {
-                        let json = JSON(result)
+                case .success(let value):
+//                    if let result = value {
+                        let json = JSON(value)
                         if json["success"].boolValue {
                             print(json["message"].stringValue)
                         }
                         else {
                             print(json["message"].stringValue)
                         }
-                    }
+//                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

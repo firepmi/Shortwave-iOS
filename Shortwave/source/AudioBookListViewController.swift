@@ -11,10 +11,11 @@ import Alamofire
 import SwiftyJSON
 import JGProgressHUD
 import StoreKit
-import Firebase
-import FirebaseAuth
-import FirebaseDatabase
+//import Firebase
+//import FirebaseAuth
+//import FirebaseDatabase
 import Toast_Swift
+import SDWebImage
 
 class AudioBookListViewController: UIViewController {
     var bookArray:[JSON] = []
@@ -28,7 +29,7 @@ class AudioBookListViewController: UIViewController {
     var type = 0
     var downloadRequest:Request!
     let hud = JGProgressHUD(style: .extraLight)
-    var ref: DatabaseReference!
+//    var ref: DatabaseReference!
     var isGenre = false
     var isLast = false
     
@@ -158,7 +159,7 @@ class AudioBookListViewController: UIViewController {
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
          
-        Alamofire.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
+        AF.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
             "Authorization":"Basic \(base64LoginString)"]).responseJSON { response in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     alertIndicator.dismiss(animated: false, completion: nil)
@@ -170,9 +171,9 @@ class AudioBookListViewController: UIViewController {
                 }
                 self.waiting = false
                 switch response.result {
-                case .success(_):
-                    if let result = response.result.value {
-                        let json = JSON(result)
+                case .success(let value):
+//                    if let result = response.result {
+                        let json = JSON(value)
                         if json.arrayValue.count == 0 {
                             self.isLast = true
                         }
@@ -186,14 +187,14 @@ class AudioBookListViewController: UIViewController {
                             print(self.bookArray.count)
                             self.collectionView.reloadData()
                         }
-                    }
-                    else {
-                        let alert = UIAlertController(title: "Loading Data", message: "Loading Data failure!", preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-
-                        }))
-                        self.present(alert, animated: true);
-                    }                   
+//                    }
+//                    else {
+//                        let alert = UIAlertController(title: "Loading Data", message: "Loading Data failure!", preferredStyle: UIAlertController.Style.alert)
+//                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+//
+//                        }))
+//                        self.present(alert, animated: true);
+//                    }
 
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -229,116 +230,116 @@ class AudioBookListViewController: UIViewController {
     var updatedAudioID = 0
     var updatedDate = ""
     var updatedSize = 0
-    func onUpdateInfo(){
-        if updatedWeek == 0 {
-            return
-        }
-        let user = Auth.auth().currentUser
-        self.ref.child("products").child((user?.uid)!).child("weekly")
-            .child("week\(updatedWeek)").child("product")
-            .child("audio\(updatedAudioID)").setValue(updatedId)
-        self.ref.child("products").child((user?.uid)!).child("weekly")
-            .child("week\(updatedWeek)").child("start_date")
-            .setValue(updatedDate)
-        self.ref.child("products").child((user?.uid)!).child("weekly")
-            .child("week\(updatedWeek)").child("total_value")
-            .setValue(updatedSize)
-    }
-    func onCheckAvailableCount(id:Int, index:Int) {
-        let user = Auth.auth().currentUser
-        ref.child("products").child((user?.uid)!).child("weekly")
-            .observeSingleEvent(of: .value) { (snapshot) in
-                let date = Date()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                
-                if snapshot.childrenCount == 0 {
-                    //Create Initial Week
-                    self.updatedWeek = 1
-                    self.updatedId = id
-                    self.updatedDate = dateFormatter.string(from: date)
-                    self.updatedAudioID = 1
-                    self.updatedSize = self.bookArray[index]["filesize"].intValue
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                        self.alertDownloadDialog(index: index)
-                    }
-                }
-                else {
-                    var lastChild:DataSnapshot!
-                    let week:UInt = snapshot.childrenCount
-                    for child in snapshot.children {
-                        lastChild = child as? DataSnapshot
-                    }
-                    var startDate = Date()
-                    var lastValue:UInt = 0
-                    var totalValue = 0
-                    for case let snap as DataSnapshot in lastChild.children {
-                        if snap.key == "start_date" {
-                            startDate = dateFormatter.date(from: snap.value as! String)!
-                        }
-                        else if snap.key == "product" {
-                            lastValue = snap.childrenCount
-                        }
-                        else if snap.key == "total_value" {
-                            totalValue = snap.value as! Int
-                        }
-                    }
-                    
-                    if startDate < date && date < (startDate.addingTimeInterval(3600*24*7)) {
-                        var limit = 5000
-                        if Globals.isPro {
-                            limit = 30000
-                        }
-                        else if totalValue >= limit {
-                            let alert = UIAlertController(title: "Download", message: "You can not download more than \(limit)MB size of books per week, Would you purchase subscription to be allowed 25GB continuous memory?", preferredStyle: UIAlertController.Style.alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-                                self.onPurchaseSubscription()
-                            }))
-                            alert.addAction(UIAlertAction(title: "No, Thanks", style: .cancel, handler: { (UIAlertAction) in
-                            }))
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                                self.present(alert, animated: true);
-                            }
-                            return
-                        }
-                        if totalValue >= limit {
-                            print("You can not download more than \(limit)MB size of  books per week, Please try again next week")
-                            let alert = UIAlertController(title: "Download", message: "You can not download more than \(limit)MB size of books per week, Please try again next week", preferredStyle: UIAlertController.Style.alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (UIAlertAction) in
-                            }))
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                                self.present(alert, animated: true);
-                            }
-                            
-                        }
-                        else {
-                            //Add new audio
-                            self.updatedWeek = Int(week)
-                            self.updatedId = id
-                            self.updatedDate = dateFormatter.string(from: date)
-                            self.updatedAudioID = Int(lastValue+1)
-                            self.updatedSize = totalValue + self.bookArray[index]["filesize"].intValue
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                                self.alertDownloadDialog(index: index)
-                            }
-                        }
-                        return
-                    }
-                    //Create new week
-                    self.updatedWeek = Int(week+1)
-                    self.updatedId = id
-                    self.updatedDate = dateFormatter.string(from: date)
-                    self.updatedAudioID = 1
-                    self.updatedSize = self.bookArray[index]["filesize"].intValue
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                        self.alertDownloadDialog(index: index)
-                    }
-                }
-        }
-    }
+//    func onUpdateInfo(){
+//        if updatedWeek == 0 {
+//            return
+//        }
+//        let user = Auth.auth().currentUser
+//        self.ref.child("products").child((user?.uid)!).child("weekly")
+//            .child("week\(updatedWeek)").child("product")
+//            .child("audio\(updatedAudioID)").setValue(updatedId)
+//        self.ref.child("products").child((user?.uid)!).child("weekly")
+//            .child("week\(updatedWeek)").child("start_date")
+//            .setValue(updatedDate)
+//        self.ref.child("products").child((user?.uid)!).child("weekly")
+//            .child("week\(updatedWeek)").child("total_value")
+//            .setValue(updatedSize)
+//    }
+//    func onCheckAvailableCount(id:Int, index:Int) {
+//        let user = Auth.auth().currentUser
+//        ref.child("products").child((user?.uid)!).child("weekly")
+//            .observeSingleEvent(of: .value) { (snapshot) in
+//                let date = Date()
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd"
+//
+//                if snapshot.childrenCount == 0 {
+//                    //Create Initial Week
+//                    self.updatedWeek = 1
+//                    self.updatedId = id
+//                    self.updatedDate = dateFormatter.string(from: date)
+//                    self.updatedAudioID = 1
+//                    self.updatedSize = self.bookArray[index]["filesize"].intValue
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+//                        self.alertDownloadDialog(index: index)
+//                    }
+//                }
+//                else {
+//                    var lastChild:DataSnapshot!
+//                    let week:UInt = snapshot.childrenCount
+//                    for child in snapshot.children {
+//                        lastChild = child as? DataSnapshot
+//                    }
+//                    var startDate = Date()
+//                    var lastValue:UInt = 0
+//                    var totalValue = 0
+//                    for case let snap as DataSnapshot in lastChild.children {
+//                        if snap.key == "start_date" {
+//                            startDate = dateFormatter.date(from: snap.value as! String)!
+//                        }
+//                        else if snap.key == "product" {
+//                            lastValue = snap.childrenCount
+//                        }
+//                        else if snap.key == "total_value" {
+//                            totalValue = snap.value as! Int
+//                        }
+//                    }
+//
+//                    if startDate < date && date < (startDate.addingTimeInterval(3600*24*7)) {
+//                        var limit = 5000
+//                        if Globals.isPro {
+//                            limit = 30000
+//                        }
+//                        else if totalValue >= limit {
+//                            let alert = UIAlertController(title: "Download", message: "You can not download more than \(limit)MB size of books per week, Would you purchase subscription to be allowed 25GB continuous memory?", preferredStyle: UIAlertController.Style.alert)
+//                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+//                                self.onPurchaseSubscription()
+//                            }))
+//                            alert.addAction(UIAlertAction(title: "No, Thanks", style: .cancel, handler: { (UIAlertAction) in
+//                            }))
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+//                                self.present(alert, animated: true);
+//                            }
+//                            return
+//                        }
+//                        if totalValue >= limit {
+//                            print("You can not download more than \(limit)MB size of  books per week, Please try again next week")
+//                            let alert = UIAlertController(title: "Download", message: "You can not download more than \(limit)MB size of books per week, Please try again next week", preferredStyle: UIAlertController.Style.alert)
+//                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (UIAlertAction) in
+//                            }))
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+//                                self.present(alert, animated: true);
+//                            }
+//
+//                        }
+//                        else {
+//                            //Add new audio
+//                            self.updatedWeek = Int(week)
+//                            self.updatedId = id
+//                            self.updatedDate = dateFormatter.string(from: date)
+//                            self.updatedAudioID = Int(lastValue+1)
+//                            self.updatedSize = totalValue + self.bookArray[index]["filesize"].intValue
+//
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+//                                self.alertDownloadDialog(index: index)
+//                            }
+//                        }
+//                        return
+//                    }
+//                    //Create new week
+//                    self.updatedWeek = Int(week+1)
+//                    self.updatedId = id
+//                    self.updatedDate = dateFormatter.string(from: date)
+//                    self.updatedAudioID = 1
+//                    self.updatedSize = self.bookArray[index]["filesize"].intValue
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+//                        self.alertDownloadDialog(index: index)
+//                    }
+//                }
+//        }
+//    }
     
     @objc func onCheckItem(_ sender:UIButton){
         let position = sender.convert(CGPoint.zero, to: collectionView)
@@ -437,7 +438,7 @@ extension AudioBookListViewController: UICollectionViewDelegate, UICollectionVie
             coverString = coverString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
             let imageUrl = Globals.serverUrl + "cover/" + coverString
             if bookArray[indexPath.row]["has_cover"].intValue > 0 {
-                ImageViewManager.getImageFromUrl(url: imageUrl, imageView: image, placeholder: UIImage(named: "icon_source_item.png")!)
+                image.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "test_pattern.png"))
             }
             
             cell.contentView.layer.shadowColor = UIColor.black.cgColor
