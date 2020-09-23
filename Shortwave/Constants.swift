@@ -477,6 +477,30 @@ struct Globals {
                 }
         }
     }
+    static public func getBookInfo(bookId:String, completion: ((JSON)->Void)? ) {
+        var rootUrl = serverUrl
+        if rootUrl == "" {
+            rootUrl = apiUrl + "/"
+        }
+        let link = rootUrl + "bookinfo/\(bookId)"
+        print(link)
+        
+        let loginString = String(format: "%@:%@", Globals.username, Globals.password)
+        let loginData = loginString.data(using: String.Encoding.utf8)!
+        let base64LoginString = loginData.base64EncodedString()
+         
+        AF.request(link, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
+            "Authorization":"Basic \(base64LoginString)"]).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+//                    if let result = response.result.value {
+                        let json = JSON(value)
+                    completion?(json)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+        }
+    }
 }
 
 class BookData {
@@ -534,6 +558,17 @@ extension String {
                 substring(with: substringFrom..<substringTo)
             }
         }
+    }
+    subscript(_ range: CountableRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+        let end = index(start, offsetBy: min(self.count - range.lowerBound,
+                                             range.upperBound - range.lowerBound))
+        return String(self[start..<end])
+    }
+
+    subscript(_ range: CountablePartialRangeFrom<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+         return String(self[start...])
     }
 }
 

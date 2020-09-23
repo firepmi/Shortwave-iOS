@@ -717,10 +717,13 @@ extension LibraryViewController: ItemCollectionViewDelegate {
 
     
     func itemCollectionView(_ itemCollectionView: ItemCollectionView, didSelectItemAt indexPath: IndexPath, section: Int) {
-        guard let books = self.itemCollectionView(queueBooksForPlayback: indexPath, section: section) as? [Book] else {
+        let books = self.itemCollectionView(queueBooksForPlayback: indexPath, section: section)
+
+        if let playlist = self.items[section] as? Playlist {
+            self.presentBookDetails(playlist, books: books)
+
             return
         }
-
         self.setupPlayer(books: books)
     }
     func itemCollectionView(queueBooksForPlayback indexPath: IndexPath, section: Int) -> [Book] {
@@ -733,7 +736,11 @@ extension LibraryViewController: ItemCollectionViewDelegate {
         }
         return self.queueBooksForPlayback(sortArray[indexPath.row])
     }
-    func itemCollectionView(setUpPlayer books: [Book]) {
+    func itemCollectionView(setUpPlayer books: [Book], section: Int) {
+        if let playlist = self.items[section] as? Playlist {
+            self.presentBookDetails(playlist, books: books)
+            return
+        }
         self.setupPlayer(books: books)
     }
     func itemCollectionView(isScrollEnd offset: CGFloat, section: Int) {

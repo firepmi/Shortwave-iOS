@@ -438,7 +438,7 @@ extension AudioBookListViewController: UICollectionViewDelegate, UICollectionVie
             coverString = coverString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
             let imageUrl = Globals.serverUrl + "cover/" + coverString
             if bookArray[indexPath.row]["has_cover"].intValue > 0 {
-                image.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "test_pattern.png"))
+                image.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "icon_source_item.png"))
             }
             
             cell.contentView.layer.shadowColor = UIColor.black.cgColor

@@ -14,7 +14,7 @@ import AlamofireImage
 protocol ItemCollectionViewDelegate {
     func itemCollectionView(_ itemCollectionView: ItemCollectionView, didSelectItemAt indexPath: IndexPath, section:Int)
     func itemCollectionView(queueBooksForPlayback indexPath: IndexPath, section:Int) -> [Book]
-    func itemCollectionView(setUpPlayer books:[Book])
+    func itemCollectionView(setUpPlayer books:[Book], section:Int)
     func itemCollectionView(isScrollEnd offset:CGFloat, section: Int)
 }
 class ItemCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
@@ -112,7 +112,7 @@ class ItemCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
                 return
             }
 
-            self?.itemDelegate.itemCollectionView(setUpPlayer: books)
+            self?.itemDelegate.itemCollectionView(setUpPlayer: books, section: self!.section)
         }
 
         if let book = item as? Book {

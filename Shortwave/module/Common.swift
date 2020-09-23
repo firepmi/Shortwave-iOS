@@ -60,7 +60,7 @@ enum GradientOrientation {
     }
 }
 
-extension UIButton {
+extension UIView {
     func applyGradient(withColours colours: [UIColor], locations: [NSNumber]? = nil) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
@@ -78,6 +78,7 @@ extension UIButton {
         self.layer.insertSublayer(gradient, at: 0)
     }
 }
+
 extension UITextField {
     func setLeftPaddingPoints(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))

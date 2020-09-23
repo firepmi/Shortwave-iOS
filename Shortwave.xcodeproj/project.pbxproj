@@ -19,6 +19,10 @@
 		FC005D1B22F3333600AFA10C /* btn_check_off.png in Resources */ = {isa = PBXBuildFile; fileRef = FC005D1922F3333400AFA10C /* btn_check_off.png */; };
 		FC005D1C22F3333600AFA10C /* btn_check_on.png in Resources */ = {isa = PBXBuildFile; fileRef = FC005D1A22F3333500AFA10C /* btn_check_on.png */; };
 		FC182B8E21C4068800306998 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC182B8D21C4068800306998 /* GoogleService-Info.plist */; };
+		FC496F282519F9F400093E5B /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = FC496F252519F9F400093E5B /* icon_play.png */; };
+		FC496F5B251A463400093E5B /* icon_settings_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC496F59251A462E00093E5B /* icon_settings_circle.png */; };
+		FC496F5C251A463400093E5B /* icon_download_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC496F5A251A463400093E5B /* icon_download_circle.png */; };
+		FC496F60251AB57000093E5B /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC496F5F251AB57000093E5B /* default.jpg */; };
 		FC52D7AD22467CCD00A954EB /* SortByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52D7AC22467CCD00A954EB /* SortByViewController.swift */; };
 		FC5E21252305C7C0002B16EB /* termsofservice.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FC5E21242305C7BF002B16EB /* termsofservice.pdf */; };
 		FC674D9224A04D270036495B /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC674D9124A04D260036495B /* PickerDialog.swift */; };
@@ -30,6 +34,7 @@
 		FC6BE5B023884BA300486271 /* DownloadBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6BE5AF23884BA300486271 /* DownloadBooksViewController.swift */; };
 		FC771F8523D176F10097CA9F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC771F8423D176F10097CA9F /* ForgotPasswordViewController.swift */; };
 		FC78FEE821F8E042009CFD30 /* AudioBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78FEE721F8E042009CFD30 /* AudioBookListViewController.swift */; };
+		FC7AECD1251999310043A81C /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AECD0251999300043A81C /* BookDetailViewController.swift */; };
 		FC8EC97E2329DDD100B8D8F5 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8EC97D2329DDD100B8D8F5 /* SubscriptionViewController.swift */; };
 		FC996E00237423FE0020EDF5 /* icon_close_white.png in Resources */ = {isa = PBXBuildFile; fileRef = FC996DFF237423FB0020EDF5 /* icon_close_white.png */; };
 		FC996E022374252E0020EDF5 /* CustomDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC996E012374252E0020EDF5 /* CustomDialogViewController.swift */; };
@@ -175,6 +180,10 @@
 		FC005D1922F3333400AFA10C /* btn_check_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_check_off.png; sourceTree = "<group>"; };
 		FC005D1A22F3333500AFA10C /* btn_check_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_check_on.png; sourceTree = "<group>"; };
 		FC182B8D21C4068800306998 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC496F252519F9F400093E5B /* icon_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_play.png; sourceTree = "<group>"; };
+		FC496F59251A462E00093E5B /* icon_settings_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings_circle.png; sourceTree = "<group>"; };
+		FC496F5A251A463400093E5B /* icon_download_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_download_circle.png; sourceTree = "<group>"; };
+		FC496F5F251AB57000093E5B /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		FC52D7AC22467CCD00A954EB /* SortByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByViewController.swift; sourceTree = "<group>"; };
 		FC5E21242305C7BF002B16EB /* termsofservice.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = termsofservice.pdf; sourceTree = "<group>"; };
 		FC674D9124A04D260036495B /* PickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDialog.swift; sourceTree = "<group>"; };
@@ -186,6 +195,7 @@
 		FC6BE5AF23884BA300486271 /* DownloadBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadBooksViewController.swift; sourceTree = "<group>"; };
 		FC771F8423D176F10097CA9F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		FC78FEE721F8E042009CFD30 /* AudioBookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookListViewController.swift; sourceTree = "<group>"; };
+		FC7AECD0251999300043A81C /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		FC8EC97D2329DDD100B8D8F5 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		FC996DFF237423FB0020EDF5 /* icon_close_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_close_white.png; sourceTree = "<group>"; };
 		FC996E012374252E0020EDF5 /* CustomDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDialogViewController.swift; sourceTree = "<group>"; };
@@ -454,6 +464,10 @@
 		FCE6212321C3BD1C0043F27B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FC496F5F251AB57000093E5B /* default.jpg */,
+				FC496F5A251A463400093E5B /* icon_download_circle.png */,
+				FC496F59251A462E00093E5B /* icon_settings_circle.png */,
+				FC496F252519F9F400093E5B /* icon_play.png */,
 				FCAFE70B2482D2B300AD4B47 /* background.jpg */,
 				FCAFE71924840FF300AD4B47 /* overlay.png */,
 				FCAFE70F24840F5400AD4B47 /* icon_server_item1.png */,
@@ -532,6 +546,7 @@
 				FCE6216121C3C4040043F27B /* BaseListViewController.swift */,
 				FCE6216221C3C4040043F27B /* LibraryViewController.swift */,
 				FCE6216421C3C4040043F27B /* PlaylistViewController.swift */,
+				FC7AECD0251999300043A81C /* BookDetailViewController.swift */,
 				FCE6216321C3C4040043F27B /* RootViewController.swift */,
 				FCE6215321C3C3600043F27B /* Views */,
 				FCE6215E21C3C3A00043F27B /* Containers */,
@@ -801,6 +816,7 @@
 				FCAFE71A24840FF300AD4B47 /* overlay.png in Resources */,
 				FCAFE71624840F5700AD4B47 /* icon_server_item3.png in Resources */,
 				FCE621C121C3C5A10043F27B /* Credits.html in Resources */,
+				FC496F60251AB57000093E5B /* default.jpg in Resources */,
 				FCE6215B21C3C3860043F27B /* BookCellView.xib in Resources */,
 				FCE6215A21C3C3860043F27B /* AddCellView.xib in Resources */,
 				FC996E00237423FE0020EDF5 /* icon_close_white.png in Resources */,
@@ -810,12 +826,15 @@
 				FCE6213A21C3C0AE0043F27B /* Player.storyboard in Resources */,
 				FC6BE5AE23882DB900486271 /* icon_select_all.png in Resources */,
 				FCAFE71424840F5700AD4B47 /* icon_server_item6.png in Resources */,
+				FC496F5C251A463400093E5B /* icon_download_circle.png in Resources */,
 				FCE620F821C3AD690043F27B /* Assets.xcassets in Resources */,
 				FCE620F621C3AD550043F27B /* Main.storyboard in Resources */,
 				FC9E0CA624221E69005C9E8E /* icon_delete.png in Resources */,
 				FCE6213321C3BD3A0043F27B /* icon_source.png in Resources */,
+				FC496F282519F9F400093E5B /* icon_play.png in Resources */,
 				FCE6212F21C3BD3A0043F27B /* icon_settings.png in Resources */,
 				FC182B8E21C4068800306998 /* GoogleService-Info.plist in Resources */,
+				FC496F5B251A463400093E5B /* icon_settings_circle.png in Resources */,
 				FCE6212E21C3BD3A0043F27B /* icon_folder_green.png in Resources */,
 				FC002890248AEE8A009332AB /* BookCollectionViewCell.xib in Resources */,
 				FC6BE5AC23882DB900486271 /* icon_deselect_all.png in Resources */,
@@ -975,6 +994,7 @@
 				FCE6217021C3C4260043F27B /* PlayerManager.swift in Sources */,
 				FCE6216621C3C4050043F27B /* LibraryViewController.swift in Sources */,
 				FCE6215021C3C34C0043F27B /* ImportManager.swift in Sources */,
+				FC7AECD1251999310043A81C /* BookDetailViewController.swift in Sources */,
 				FC771F8523D176F10097CA9F /* ForgotPasswordViewController.swift in Sources */,
 				FCE6219A21C3C5080043F27B /* Library+CoreDataClass.swift in Sources */,
 				FCE621B021C3C5490043F27B /* UIColor+BookPlayer.swift in Sources */,
