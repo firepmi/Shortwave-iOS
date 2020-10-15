@@ -62,6 +62,7 @@ enum GradientOrientation {
 
 extension UIView {
     func applyGradient(withColours colours: [UIColor], locations: [NSNumber]? = nil) {
+        layer.sublayers?.forEach( {$0.removeFromSuperlayer()})
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = colours.map { $0.cgColor }
@@ -70,6 +71,7 @@ extension UIView {
     }
 
     func applyGradient(withColours colours: [UIColor], gradientOrientation orientation: GradientOrientation) {
+        layer.sublayers?.forEach( {$0.removeFromSuperlayer()})
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = colours.map { $0.cgColor }

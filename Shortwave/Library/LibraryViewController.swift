@@ -99,7 +99,7 @@ class LibraryViewController: BaseListViewController, UIGestureRecognizerDelegate
         }
         for item in items {
             if let p = item as? Playlist {
-                Globals.autoFillDownloadQueue(genre: p.title)                
+                Globals.autoFillDownloadQueue(genre: p.title)
             }
         }
     }

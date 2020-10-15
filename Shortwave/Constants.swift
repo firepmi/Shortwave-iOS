@@ -241,7 +241,9 @@ struct Globals {
         }
         let count = getBookCount(genre: genre)
         let totalCount = genreCountMap[genre] ?? 0
-        if count > 10 || (totalCount != 0 && count >= totalCount) || genre == "Favorite" {
+        print(genre)
+        print(genreEndIndex[genre] ?? false)
+        if count > 10 || (totalCount != 0 && count >= totalCount) || genre == "Favorite" || (genreEndIndex[genre] != nil && genreEndIndex[genre]! && count < 11 ) {
             isAutoFillSyncing = false
             return
         }
