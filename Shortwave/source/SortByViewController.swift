@@ -444,7 +444,12 @@ extension SortByViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cover = cell.viewWithTag(102)!
 //        cover.applyGradient(withColours: [colors[indexPath.row % colors.count], UIColor.black, colors[indexPath.row % colors.count]])
         let gcolors = [colors[indexPath.row % colors.count], UIColor.black, colors[indexPath.row % colors.count]]
-        let yourWidth = collectionView.bounds.width/3.0-10
+        print(collectionView.bounds.width)
+        var columnCount:CGFloat = 2
+        if collectionView.bounds.width > 374 {
+            columnCount = 3
+        }
+        let yourWidth = collectionView.bounds.width/columnCount - 10
         let yourHeight = yourWidth * 2 / 3
         
         let gradient: CAGradientLayer = CAGradientLayer()
@@ -476,7 +481,11 @@ extension SortByViewController: UICollectionViewDelegate, UICollectionViewDataSo
         collectionView.reloadItems(at: [indexPath])
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let yourWidth = collectionView.bounds.width/3.0-10
+        var columnCount:CGFloat = 2
+        if collectionView.bounds.width > 374 {
+            columnCount = 3
+        }
+        let yourWidth = collectionView.bounds.width/columnCount - 10
         let yourHeight = yourWidth * 2 / 3
 
         return CGSize(width: yourWidth, height: yourHeight)

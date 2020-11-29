@@ -614,6 +614,11 @@ extension LibraryViewController {
         return cell!
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let playlist = self.items[indexPath.row] as? Playlist
+        let sortArray:[Book] = playlist!.books!.array as! [Book]
+        if sortArray.count == 0 {
+            return 40
+        }
         return 240
     }
 //    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

@@ -70,8 +70,10 @@ extension UIView {
         self.layer.insertSublayer(gradient, at: 0)
     }
 
-    func applyGradient(withColours colours: [UIColor], gradientOrientation orientation: GradientOrientation) {
-        layer.sublayers?.forEach( {$0.removeFromSuperlayer()})
+    func applyGradient(withColours colours: [UIColor], gradientOrientation orientation: GradientOrientation, isShouldClearedChild:Bool = true) {
+        if isShouldClearedChild {
+            layer.sublayers?.forEach( {$0.removeFromSuperlayer()})
+        }
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = colours.map { $0.cgColor }

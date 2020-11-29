@@ -479,7 +479,7 @@ struct Globals {
                 }
         }
     }
-    static public func getBookInfo(bookId:String, completion: ((JSON)->Void)? ) {
+    static public func getBookInfo(bookId:String, completion: ((JSON)->Void)?, error: ((Error)->Void)? ) {
         var rootUrl = serverUrl
         if rootUrl == "" {
             rootUrl = apiUrl + "/"
@@ -496,7 +496,7 @@ struct Globals {
                 switch response.result {
                 case .success(let value):
 //                    if let result = response.result.value {
-                        let json = JSON(value)
+                    let json = JSON(value)
                     completion?(json)
                 case .failure(let error):
                     print(error.localizedDescription)

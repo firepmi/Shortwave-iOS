@@ -38,7 +38,6 @@ class BookDetailViewController: BaseListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         collectionView.register(UINib(nibName: "BookCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifier)
         collectionView.dataSource = self
@@ -48,8 +47,7 @@ class BookDetailViewController: BaseListViewController {
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         collectionView.invalidateIntrinsicContentSize()
-        
-        
+                
         self.toggleEmptyStateView()
 
         self.navigationItem.title = playlist.title
@@ -59,22 +57,27 @@ class BookDetailViewController: BaseListViewController {
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Please wait..."
         hud.show(in: self.view)
-        Globals.getBookInfo(bookId: "\(currentBook.bookId)") { json in
+        Globals.getBookInfo(bookId: "\(currentBook.bookId)", completion: { json in
             print(json)
             hud.dismiss()
             self.reloadDetailView(json: json)
-            self.collectionView.reloadData()
-        }
+//            self.collectionView.reloadData()
+        }, error: { error in
+            hud.dismiss()
+            print(error)
+        })
     }
     func reloadDetailView(json:JSON){
         self.navigationItem.title = json["title"].stringValue
         titleLabel.text = json["title"].stringValue
         pubDateLabel.text = json["authors",0].string
         seriesLabel.text = json["series"].stringValue
+        //tags to string
         var zenres = ""
         for zenre in json["tags"].arrayValue {
             zenres = "\(zenres),\(zenre.stringValue)"
         }
+        //remove prefix comma,
         if zenres != "" {
             zenres = zenres[1..<zenres.count]
         }
@@ -92,18 +95,19 @@ class BookDetailViewController: BaseListViewController {
         let fixedWidth = descriptionTextView.frame.size.width
         let newSize = descriptionTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         descriptionHeightConstraint.constant = newSize.height
-        
+//
         tableView.layoutIfNeeded()
         tableViewHeightConstraint.constant = tableView.contentSize.height
         tableView.alwaysBounceVertical = false
         tableView.isScrollEnabled = false
-        
+
         detailView.applyGradient(
             withColours:
             [
                 UIColor(red: 181/255.0, green: 123/255.0, blue: 220/255.0, alpha: 0.5),
                 UIColor(red: 201/255.0, green: 81/255.0, blue: 194/255.0, alpha: 0)
-            ], gradientOrientation: .vertical)
+            ], gradientOrientation: .vertical, isShouldClearedChild: false)
+
     }
     override func viewDidAppear(_ animated: Bool) {
         getData()
