@@ -44,6 +44,12 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
         Globals.getVirtualLibraries {
             self.serverArray = [JSON()]
             self.serverArray.append(contentsOf: Globals.virtualLibraries)
+            var calibre = JSON()
+            calibre["name"] = "Calibre"
+            self.serverArray.append(calibre)
+            var plex = JSON()
+            plex["name"] = "Plex"
+            self.serverArray.append(plex)
             self.collectionView.reloadData()
         }
     }
@@ -70,6 +76,14 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
         else {
             titleLabel.text = serverArray[indexPath.row]["name"].stringValue//titleArray[indexPath.row]
         }
+
+        let icon = view?.viewWithTag(104) as! UIImageView
+        if indexPath.row == Globals.virtualLibraries.count + 1 {
+            icon.image = UIImage(named: "icon_calibre.png")
+        }
+        else if indexPath.row == Globals.virtualLibraries.count + 2 {
+            icon.image = UIImage(named: "icon_plex.png")
+        }
         
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
         cell.contentView.layer.shadowOpacity = 1
@@ -80,8 +94,18 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Globals.virtualLibraryIndex = indexPath.row-1
-        gotoMain()
+        if Globals.virtualLibraries.count + 1 == indexPath.row {
+            onPersonalServer()
+        }
+        else if Globals.virtualLibraries.count + 2 == indexPath.row {
+            print("Plex server")
+            onPlexServer()
+        }
+        else {
+            Globals.virtualLibraryIndex = indexPath.row-1
+            gotoMain()
+        }
+        
     }
     @IBAction func onAddNewServer(_ sender: Any) {
         onPersonalServer()
@@ -97,6 +121,24 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
         vc.modalTransitionStyle = .crossDissolve
         vc.completion = { 
             self.performSegue(withIdentifier: "mainToSort", sender: nil) //toBookList
+        }
+        
+        present(vc, animated: true, completion:nil)
+        
+    }
+    @objc func onPlexServer(){
+        let vc = storyboard!.instantiateViewController(withIdentifier: "PlexLogin") as! PlexLoginViewController
+        
+        vc.modalPresentationStyle = .overFullScreen
+        let popover = vc.popoverPresentationController
+        popover?.sourceView = self.view
+        popover?.sourceRect = self.view.bounds
+        popover?.delegate = self as? UIPopoverPresentationControllerDelegate
+        vc.modalTransitionStyle = .crossDissolve
+        vc.completion = {
+            let pvc = self.storyboard!.instantiateViewController(withIdentifier: "plex_library")
+            self.navigationController?.pushViewController(pvc, animated: true)
+//            self.performSegue(withIdentifier: "plex_library", sender: nil) //toBookList
         }
         
         present(vc, animated: true, completion:nil)

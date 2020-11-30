@@ -14,6 +14,7 @@ PODS:
   - SearchTextField (1.2.4)
   - SwiftReorder (7.2.0)
   - SwiftyJSON (5.0.0)
+  - SwiftyXMLParser (5.1.0)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - SearchTextField
   - SwiftReorder
   - SwiftyJSON
+  - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
   - Toast-Swift
 
 SPEC REPOS:
@@ -47,6 +49,15 @@ SPEC REPOS:
     - SwiftyJSON
     - Toast-Swift
 
+EXTERNAL SOURCES:
+  SwiftyXMLParser:
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
+CHECKOUT OPTIONS:
+  SwiftyXMLParser:
+    :commit: ec7f183642adf429babd867d1a38c5c6912408ba
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
@@ -60,8 +71,9 @@ SPEC CHECKSUMS:
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
   SwiftReorder: d687883abf5f2327268e006b038025a6fc515e34
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  SwiftyXMLParser: 23b5a9321a8adf72aae29046ea58c3d097b4ac17
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 6b6b49313a3b1b06a5672dd44686780473b95ea1
+PODFILE CHECKSUM: 452d911a30606e17d85da9a65e00a19cdd94c195
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

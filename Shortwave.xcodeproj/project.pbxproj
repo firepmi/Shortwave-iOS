@@ -73,6 +73,8 @@
 		FC6BE5AD23882DB900486271 /* icon_download.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5AA23882DB800486271 /* icon_download.png */; };
 		FC6BE5AE23882DB900486271 /* icon_select_all.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BE5AB23882DB900486271 /* icon_select_all.png */; };
 		FC6BE5B023884BA300486271 /* DownloadBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6BE5AF23884BA300486271 /* DownloadBooksViewController.swift */; };
+		FC73E5F425743DA800EFC398 /* PlexLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73E5F325743DA800EFC398 /* PlexLoginViewController.swift */; };
+		FC73E5F82574408D00EFC398 /* icon_plex.png in Resources */ = {isa = PBXBuildFile; fileRef = FC73E5F72574408D00EFC398 /* icon_plex.png */; };
 		FC771F8523D176F10097CA9F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC771F8423D176F10097CA9F /* ForgotPasswordViewController.swift */; };
 		FC78FEE821F8E042009CFD30 /* AudioBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78FEE721F8E042009CFD30 /* AudioBookListViewController.swift */; };
 		FC7AECD1251999310043A81C /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AECD0251999300043A81C /* BookDetailViewController.swift */; };
@@ -119,6 +121,8 @@
 		FCC5E20722DFA7D2009BD3DC /* SubscriptionProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5E20522DFA7D1009BD3DC /* SubscriptionProducts.swift */; };
 		FCCA1D2822C5A04C00B24CE4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCA1D2722C5A04B00B24CE4 /* StoreKit.framework */; };
 		FCD77FD3227CFCFB00A70D48 /* icon_close.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD77FD2227CFCFB00A70D48 /* icon_close.png */; };
+		FCDF109B25746FF000A636C8 /* PlexLibrarySectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF109A25746FF000A636C8 /* PlexLibrarySectionsViewController.swift */; };
+		FCDF109F25749CE800A636C8 /* icon_calibre.png in Resources */ = {isa = PBXBuildFile; fileRef = FCDF109E25749CE800A636C8 /* icon_calibre.png */; };
 		FCE0FD1821C435F0003DA154 /* ColorCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0FD1721C435F0003DA154 /* ColorCube.swift */; };
 		FCE620F121C3AD550043F27B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE620F021C3AD550043F27B /* AppDelegate.swift */; };
 		FCE620F321C3AD550043F27B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE620F221C3AD550043F27B /* ViewController.swift */; };
@@ -300,6 +304,8 @@
 		FC6BE5AA23882DB800486271 /* icon_download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_download.png; sourceTree = "<group>"; };
 		FC6BE5AB23882DB900486271 /* icon_select_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_select_all.png; sourceTree = "<group>"; };
 		FC6BE5AF23884BA300486271 /* DownloadBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadBooksViewController.swift; sourceTree = "<group>"; };
+		FC73E5F325743DA800EFC398 /* PlexLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlexLoginViewController.swift; sourceTree = "<group>"; };
+		FC73E5F72574408D00EFC398 /* icon_plex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_plex.png; sourceTree = "<group>"; };
 		FC771F8423D176F10097CA9F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		FC78FEE721F8E042009CFD30 /* AudioBookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookListViewController.swift; sourceTree = "<group>"; };
 		FC7AECD0251999300043A81C /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +352,8 @@
 		FCC5E20522DFA7D1009BD3DC /* SubscriptionProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionProducts.swift; sourceTree = "<group>"; };
 		FCCA1D2722C5A04B00B24CE4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FCD77FD2227CFCFB00A70D48 /* icon_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_close.png; sourceTree = "<group>"; };
+		FCDF109A25746FF000A636C8 /* PlexLibrarySectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlexLibrarySectionsViewController.swift; sourceTree = "<group>"; };
+		FCDF109E25749CE800A636C8 /* icon_calibre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_calibre.png; sourceTree = "<group>"; };
 		FCE0FD1721C435F0003DA154 /* ColorCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCube.swift; sourceTree = "<group>"; };
 		FCE620ED21C3AD540043F27B /* Shortwave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shortwave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE620F021C3AD550043F27B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -671,8 +679,10 @@
 			children = (
 				FC0F44C62537A20C0054605F /* categories */,
 				FC496F5F251AB57000093E5B /* default.jpg */,
+				FCDF109E25749CE800A636C8 /* icon_calibre.png */,
 				FC496F5A251A463400093E5B /* icon_download_circle.png */,
 				FC496F59251A462E00093E5B /* icon_settings_circle.png */,
+				FC73E5F72574408D00EFC398 /* icon_plex.png */,
 				FC496F252519F9F400093E5B /* icon_play.png */,
 				FCAFE70B2482D2B300AD4B47 /* background.jpg */,
 				FCAFE71924840FF300AD4B47 /* overlay.png */,
@@ -709,6 +719,8 @@
 			isa = PBXGroup;
 			children = (
 				FC996E012374252E0020EDF5 /* CustomDialogViewController.swift */,
+				FC73E5F325743DA800EFC398 /* PlexLoginViewController.swift */,
+				FCDF109A25746FF000A636C8 /* PlexLibrarySectionsViewController.swift */,
 				FCFEC4F723A54EB300C8E067 /* SkipDownloadDialogViewController.swift */,
 				FCE6213E21C3C23B0043F27B /* SourceViewController.swift */,
 				FC52D7AC22467CCD00A954EB /* SortByViewController.swift */,
@@ -1022,6 +1034,7 @@
 				FC0F44F62537A2320054605F /* radio.jpg in Resources */,
 				FC0F44F92537A2320054605F /* christmas.jpg in Resources */,
 				FCE620FB21C3AD690043F27B /* LaunchScreen.storyboard in Resources */,
+				FC73E5F82574408D00EFC398 /* icon_plex.png in Resources */,
 				FC0F44F12537A2320054605F /* expedition.jpg in Resources */,
 				FCAFE71A24840FF300AD4B47 /* overlay.png in Resources */,
 				FC0F45032537A2320054605F /* anthology.jpg in Resources */,
@@ -1088,6 +1101,7 @@
 				FCAFE70C2482D2B400AD4B47 /* background.jpg in Resources */,
 				FC6BE5A823879C6A00486271 /* icon_check_off.png in Resources */,
 				FC0F44FA2537A2320054605F /* aviation.jpg in Resources */,
+				FCDF109F25749CE800A636C8 /* icon_calibre.png in Resources */,
 				FCAFE71724840F5700AD4B47 /* icon_server_item4.png in Resources */,
 				FC0F451F2537BFBD0054605F /* crime.jpg in Resources */,
 				FC0F451E2537BFBD0054605F /* superhero.jpg in Resources */,
@@ -1251,6 +1265,7 @@
 				FCE621B221C3C5490043F27B /* IndexPath+BookPlayer.swift in Sources */,
 				FCE621BF21C3C5890043F27B /* BPMarqueeLabel.swift in Sources */,
 				FCE6217921C3C4440043F27B /* ArtworkControl.swift in Sources */,
+				FC73E5F425743DA800EFC398 /* PlexLoginViewController.swift in Sources */,
 				FCE6219E21C3C5080043F27B /* BookPlayer.xcdatamodeld in Sources */,
 				FCFEC4F823A54EB300C8E067 /* SkipDownloadDialogViewController.swift in Sources */,
 				FCE6219B21C3C5080043F27B /* Library+CoreDataProperties.swift in Sources */,
@@ -1307,6 +1322,7 @@
 				FCE6219921C3C5080043F27B /* Playlist+CoreDataProperties.swift in Sources */,
 				FCE621B421C3C5490043F27B /* UIViewController+BookPlayer.swift in Sources */,
 				FCE6213C21C3C2190043F27B /* Constants.swift in Sources */,
+				FCDF109B25746FF000A636C8 /* PlexLibrarySectionsViewController.swift in Sources */,
 				FCE621A021C3C5080043F27B /* Book+CoreDataProperties.swift in Sources */,
 				FCE6215C21C3C3860043F27B /* ItemProgress.swift in Sources */,
 			);
