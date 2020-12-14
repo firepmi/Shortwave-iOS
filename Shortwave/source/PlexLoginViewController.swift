@@ -101,7 +101,8 @@ class PlexLoginViewController: UIViewController {
     }
     @IBAction func onConfirm(_ sender: Any) {
         onLogin()
-                    let defaults: UserDefaults = UserDefaults.standard
+                    
+        let defaults: UserDefaults = UserDefaults.standard
         defaults.set(usernameTextField.text!, forKey: "plex_username")
         defaults.set(urlTextField.text!, forKey: "plex_url")
         defaults.set(passwordTextField.text!, forKey: "plex_password")

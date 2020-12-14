@@ -1,8 +1,8 @@
 //
-//  PlexLibrarySectionsViewController.swift
+//  PlexItemsViewController.swift
 //  Shortwave
 //
-//  Created by mobileworld on 30.11.20.
+//  Created by Mobile World on 12/14/20.
 //  Copyright © 2020 Mobile World. All rights reserved.
 //
 
@@ -11,9 +11,10 @@ import Alamofire
 import SwiftyJSON
 import SDWebImage
 
-class PlexLibrarySectionsViewController: UIViewController {
+class PlexItemsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var plexUrl = ""
+    var itemUrl = ""
     var libraries:[JSON] = []
     var completion = {}
     override func viewDidLoad() {
@@ -28,13 +29,13 @@ class PlexLibrarySectionsViewController: UIViewController {
             view.makeToast("url is invalid")
             navigationController?.popViewController(animated: true)
         }
-        if plexUrl.last != "/" {
-            plexUrl += "/"
+        if plexUrl.last == "/" {
+            plexUrl = String(plexUrl.dropLast())
         }
         getData()
     }
     func getData(){
-        let libraryUrl = "\(plexUrl)library/sections"
+        let libraryUrl = "\(plexUrl)\(itemUrl)"
         print(libraryUrl)
         AF.request(libraryUrl, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
             "Accept":"application/json",
@@ -42,8 +43,14 @@ class PlexLibrarySectionsViewController: UIViewController {
         ]).responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    let json = JSON(value)                    
-                    self.libraries = json["MediaContainer","Directory"].arrayValue
+                    let json = JSON(value)
+                    print(json)
+                    self.libraries = json["MediaContainer","Metadata"].arrayValue
+                    self.title = json["MediaContainer","title1"].stringValue
+                    if self.title == "" {
+                        self.title = "Plex Library"
+                    }
+                    
                     self.collectionView.reloadData()
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -52,7 +59,7 @@ class PlexLibrarySectionsViewController: UIViewController {
         }
     }
 }
-extension PlexLibrarySectionsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension PlexItemsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return libraries.count
     }
@@ -66,7 +73,7 @@ extension PlexLibrarySectionsViewController: UICollectionViewDelegate, UICollect
         titleLabel.text = lib["title"].stringValue
 
         let bgImage = cell.viewWithTag(102) as! UIImageView
-        let imgeUrl = "\(String(plexUrl.dropLast()))\(lib["composite"].stringValue)?X-Plex-Token=\(Globals.plex_token)"
+        let imgeUrl = "\(plexUrl)\(lib["thumb"].stringValue)?X-Plex-Token=\(Globals.plex_token)"
         print(imgeUrl)
         bgImage.sd_setImage(with: URL(string: imgeUrl), placeholderImage: UIImage(named: "default.jpg"))
         
@@ -82,12 +89,24 @@ extension PlexLibrarySectionsViewController: UICollectionViewDelegate, UICollect
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
         let lib = libraries[indexPath.row]
-        let pvc = self.storyboard!.instantiateViewController(withIdentifier: "plex_item") as! PlexItemsViewController
-        pvc.itemUrl = "/library/sections/\(lib["key"].stringValue)/all"
-        self.navigationController?.pushViewController(pvc, animated: true)
-        
+        if lib["type"].stringValue == "track" {
+            
+        }
+        else {
+            let pvc = self.storyboard!.instantiateViewController(withIdentifier: "plex_item") as! PlexItemsViewController
+            pvc.itemUrl = lib["key"].stringValue
+            self.navigationController?.pushViewController(pvc, animated: true)
+        }
+//        for i in 0 ..< selectedArray.count {
+//            if selectedArray[i] == indexPath {
+//                selectedArray.remove(at: i)
+//                collectionView.reloadItems(at: [indexPath])
+//                return
+//            }
+//        }
+//        selectedArray.append(indexPath)
+//        collectionView.reloadItems(at: [indexPath])
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var columnCount:CGFloat = 2
@@ -100,3 +119,4 @@ extension PlexLibrarySectionsViewController: UICollectionViewDelegate, UICollect
         return CGSize(width: yourWidth, height: yourHeight)
     }
 }
+

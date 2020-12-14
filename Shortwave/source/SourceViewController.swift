@@ -84,6 +84,9 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
         else if indexPath.row == Globals.virtualLibraries.count + 2 {
             icon.image = UIImage(named: "icon_plex.png")
         }
+        else {
+            icon.image = UIImage(named: "default.jpg")
+        }
         
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
         cell.contentView.layer.shadowOpacity = 1

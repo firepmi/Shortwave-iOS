@@ -60,6 +60,7 @@
 		FC0F451F2537BFBD0054605F /* crime.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC0F451B2537BFB90054605F /* crime.jpg */; };
 		FC0F45202537BFBD0054605F /* worldwar2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC0F451C2537BFBC0054605F /* worldwar2.jpg */; };
 		FC182B8E21C4068800306998 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC182B8D21C4068800306998 /* GoogleService-Info.plist */; };
+		FC3B88562587F8210047E386 /* PlexItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B88552587F8210047E386 /* PlexItemsViewController.swift */; };
 		FC496F282519F9F400093E5B /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = FC496F252519F9F400093E5B /* icon_play.png */; };
 		FC496F5B251A463400093E5B /* icon_settings_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC496F59251A462E00093E5B /* icon_settings_circle.png */; };
 		FC496F5C251A463400093E5B /* icon_download_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC496F5A251A463400093E5B /* icon_download_circle.png */; };
@@ -291,6 +292,7 @@
 		FC0F451B2537BFB90054605F /* crime.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crime.jpg; sourceTree = "<group>"; };
 		FC0F451C2537BFBC0054605F /* worldwar2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = worldwar2.jpg; sourceTree = "<group>"; };
 		FC182B8D21C4068800306998 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC3B88552587F8210047E386 /* PlexItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlexItemsViewController.swift; sourceTree = "<group>"; };
 		FC496F252519F9F400093E5B /* icon_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_play.png; sourceTree = "<group>"; };
 		FC496F59251A462E00093E5B /* icon_settings_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings_circle.png; sourceTree = "<group>"; };
 		FC496F5A251A463400093E5B /* icon_download_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_download_circle.png; sourceTree = "<group>"; };
@@ -721,6 +723,7 @@
 				FC996E012374252E0020EDF5 /* CustomDialogViewController.swift */,
 				FC73E5F325743DA800EFC398 /* PlexLoginViewController.swift */,
 				FCDF109A25746FF000A636C8 /* PlexLibrarySectionsViewController.swift */,
+				FC3B88552587F8210047E386 /* PlexItemsViewController.swift */,
 				FCFEC4F723A54EB300C8E067 /* SkipDownloadDialogViewController.swift */,
 				FCE6213E21C3C23B0043F27B /* SourceViewController.swift */,
 				FC52D7AC22467CCD00A954EB /* SortByViewController.swift */,
@@ -1300,6 +1303,7 @@
 				FC996E022374252E0020EDF5 /* CustomDialogViewController.swift in Sources */,
 				FCE6216021C3C3CB0043F27B /* MiniPlayerViewController.swift in Sources */,
 				FCE6218721C3C48C0043F27B /* SettingsViewController.swift in Sources */,
+				FC3B88562587F8210047E386 /* PlexItemsViewController.swift in Sources */,
 				FCE621B321C3C5490043F27B /* UIColor+Sweetercolor.swift in Sources */,
 				FCE621BE21C3C5890043F27B /* BPArtworkView.swift in Sources */,
 				FC002892248AEEF8009332AB /* BookCollectionViewCell.swift in Sources */,
