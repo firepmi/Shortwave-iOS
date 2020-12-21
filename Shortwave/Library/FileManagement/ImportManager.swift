@@ -30,7 +30,7 @@ class ImportManager {
         
         let genre:String = filename.slice(from: "(", to: ")")!
         
-        let file = FileItem(originalUrl: fileUrl, processedUrl: nil, destinationFolder: destinationFolder, genre: genre, bookId: Int(bookId)!)
+        let file = FileItem(originalUrl: fileUrl, processedUrl: nil, destinationFolder: destinationFolder, genre: genre, bookId: Int(bookId) ?? 0)
         self.files.append(file)
 
         NotificationCenter.default.post(name: .newFileUrl, object: self, userInfo: nil)

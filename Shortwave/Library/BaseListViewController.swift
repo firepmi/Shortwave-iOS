@@ -117,28 +117,31 @@ class BaseListViewController: UIViewController {
         if books.isEmpty {
             return
         }
-
         // Make sure player is for a different book
-//        guard
-//            let firstBook = books.first,
-//            let currentBook = PlayerManager.shared.currentBook,
-//            currentBook == firstBook
-//        else {
-//            // Handle loading new player
-//            self.loadPlayer(books: books)
-//
-//            return
-//        }
+        if playlist.title! == "Plex" {
+            guard
+                let firstBook = books.first,
+                let currentBook = PlayerManager.shared.currentBook,
+                currentBook == firstBook
+            else {
+                // Handle loading new player
+                self.loadPlayer(books: books)
 
-        guard let bookDetailVC = storyboard!.instantiateViewController(withIdentifier: "book_detail") as? BookDetailViewController else {
-            return
+                return
+            }
         }
+        else {
 
-        bookDetailVC.library = self.library
-        bookDetailVC.playlist = playlist
-        bookDetailVC.currentBook = books.first
+            guard let bookDetailVC = storyboard!.instantiateViewController(withIdentifier: "book_detail") as? BookDetailViewController else {
+                return
+            }
 
-        self.navigationController?.pushViewController(bookDetailVC, animated: true)
+            bookDetailVC.library = self.library
+            bookDetailVC.playlist = playlist
+            bookDetailVC.currentBook = books.first
+
+            self.navigationController?.pushViewController(bookDetailVC, animated: true)
+        }
     }
     func showPlayerView(book: Book) {
         let storyboard = UIStoryboard(name: "Player", bundle: nil)

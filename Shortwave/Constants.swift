@@ -168,12 +168,15 @@ struct Globals {
     
     static func onAddBookToQueue(book:JSON) -> Int { //0 - success, 1 - already downloaded, 2 - on queue, 3 - overflow than limit
         let bookDate = BookData.init(id: book["id"].intValue,
-            name: "\(book["id"].stringValue) (\(book["tags"].stringValue)) \(book["title"].stringValue).\(book["format"].stringValue.lowercased())",
+                                     name: book["tags"].stringValue == "Plex" ? book["name"].stringValue :
+                "\(book["id"].stringValue) (\(book["tags"].stringValue)) \(book["title"].stringValue).\(book["format"].stringValue.lowercased())",
             format: book["format"].stringValue.lowercased(),
             size: (book["filesize"].stringValue as NSString).floatValue,
             title: book["title"].stringValue,
             author: book["author"].stringValue,
-            genre: book["tags"].stringValue
+            genre: book["tags"].stringValue,
+            downloadUrl: book["download"].string,
+            fileName: book["file_name"].string
         )
         if isExist(fileUrl: bookDate.fileUrl!.path, title: bookDate.title, author: bookDate.author) {
             return 1
@@ -517,7 +520,7 @@ class BookData {
     var genre = ""
     var downloadUrl = ""
     var fileUrl:URL?
-    init(id:Int, name:String, format: String, size:Float, title:String, author:String, genre:String){
+    init(id:Int, name:String, format: String, size:Float, title:String, author:String, genre:String, downloadUrl:String? = nil, fileName:String? = nil){
         self.name = name
         self.size = size
         self.id = id
@@ -530,8 +533,18 @@ class BookData {
         if rootUrl == "" {
             rootUrl = Globals.apiUrl + "/"
         }
-        downloadUrl = rootUrl+"download/\(id)/\(format)/\(id).\(format)"
-        fileUrl = Globals.getSaveFileUrl(fileName: name)
+        if downloadUrl == nil {
+            self.downloadUrl = rootUrl+"download/\(id)/\(format)/\(id).\(format)"
+        }
+        else {
+            self.downloadUrl = downloadUrl!
+        }
+        if fileName == nil {
+            fileUrl = Globals.getSaveFileUrl(fileName: name)
+        }
+        else {
+            fileUrl = Globals.getSaveFileUrl(fileName: fileName!)
+        }
     }
 }
 class DownloadIndexData {

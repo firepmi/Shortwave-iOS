@@ -58,6 +58,41 @@ class PlexItemsViewController: UIViewController {
                 }
         }
     }
+    func getFileName(_ url:String) -> String {
+        let arr = url.components(separatedBy: "\\")
+        if arr.count == 0 { return "" }
+        return arr[arr.count-1]
+    }
+    func getFileExtension(_ fileName:String) -> String {
+        let arr = fileName.components(separatedBy: ".")
+        if arr.count == 0 { return ""}
+        return arr[arr.count-1]
+    }
+    func createPlexFolder(){
+        let library = DataManager.getLibrary()
+        let key = "Plex"
+        var playlist:Playlist?
+        var items: [LibraryItem] {
+            guard library != nil else {
+                return []
+            }
+
+            return library.items?.array as? [LibraryItem] ?? []
+        }
+        
+        for item in items {
+            if let p = item as? Playlist {
+                if p.title == key {
+                    playlist = p
+                    break
+                }
+            }
+        }
+        if playlist == nil {
+            playlist = DataManager.createPlaylist(title: key, books: [])
+            library.addToItems(playlist!)
+        }
+    }
 }
 extension PlexItemsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,7 +105,13 @@ extension PlexItemsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         let lib = libraries[indexPath.row]
         let titleLabel = cell.viewWithTag(101) as! UILabel
-        titleLabel.text = lib["title"].stringValue
+        if lib["title"].stringValue == "" {
+            titleLabel.text = lib["titleSort"].stringValue
+        }
+        else {
+            titleLabel.text = lib["title"].stringValue
+        }
+        
 
         let bgImage = cell.viewWithTag(102) as! UIImageView
         let imgeUrl = "\(plexUrl)\(lib["thumb"].stringValue)?X-Plex-Token=\(Globals.plex_token)"
@@ -91,7 +132,25 @@ extension PlexItemsViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let lib = libraries[indexPath.row]
         if lib["type"].stringValue == "track" {
+            var json = JSON()
+            json["name"].string = "\(getFileName(lib["Media",0,"Part",0,"file"].stringValue))"
+            json["file_name"].string = "\(lib["Media",0,"Part",0,"id"].intValue) (Plex) \(getFileName(lib["Media",0,"Part",0,"file"].stringValue))"
+            json["size"].float = lib["Media",0,"Part",0,"size"].floatValue / 1024 / 1024
+            json["title"].string = lib["title"].stringValue == "" ? lib["titleSort"].stringValue : lib["title"].stringValue
+            json["author"].string = lib["parentTitle"].stringValue
+            json["genre"].string = "Plex"
+            json["tags"].string = "Plex"
+            json["format"].string = getFileExtension(json["name"].stringValue)
+            json["download"].string = "\(plexUrl)\(lib["Media",0,"Part",0,"key"].stringValue)?X-Plex-Token=\(Globals.plex_token)"
             
+            createPlexFolder()
+            switch Globals.onAddBookToQueue(book: json) {
+            case 0:
+                view.makeToast("Added on Download queue.")
+                break
+            default:
+                break
+            }
         }
         else {
             let pvc = self.storyboard!.instantiateViewController(withIdentifier: "plex_item") as! PlexItemsViewController

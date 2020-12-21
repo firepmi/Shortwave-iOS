@@ -597,7 +597,7 @@ extension LibraryViewController {
         collectionView!.setDelegate(itemCollectionDelegate: self)
         
         let playlist = self.items[indexPath.row] as? Playlist
-        var sortArray:[Book] = playlist!.books!.array as! [Book]
+        var sortArray:[Book] = (playlist?.books!.array ?? []) as! [Book]
         sortArray = sortArray.sorted(by: { $0.bookId > $1.bookId })
         
         if collectionPositions.count <= indexPath.row {
@@ -615,9 +615,12 @@ extension LibraryViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let playlist = self.items[indexPath.row] as? Playlist
+        if playlist == nil {
+            return 0
+        }
         let sortArray:[Book] = playlist!.books!.array as! [Book]
         if sortArray.count == 0 {
-            return 40
+            return 0 //40
         }
         return 240
     }

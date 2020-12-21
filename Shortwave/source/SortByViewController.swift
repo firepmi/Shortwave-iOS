@@ -71,36 +71,10 @@ class SortByViewController: UIViewController {
                             self.listArray = [[]]//[[],[],[]]
                             for item in jsonArray {
                                 self.listArray[0].append(item)
-//                                var added = false
-//                                Globals.genreCountMap[item["title"].stringValue] = item["count"].intValue
-//                                for i in 0 ..< self.genreArray.count {
-//                                    if item["genre"].stringValue == self.genreArray[i] {
-//                                        self.listArray[0].append(item)
-//                                        added = true
-//                                    }
-//                                }
-//                                if !added {
-//                                    self.genreArray.append(item["genre"].stringValue)
-//                                    self.listArray.append([item])
-//                                }
                             }
-//
-//                            for i in 0 ..< self.genreArray.count {
-//                                if self.genreArray[i] == "Other" {
-//                                    self.genreArray[i] = "Misc"
-//                                }
-//                            }
-                            self.loaded = true
+
+                        self.loaded = true
                         self.collectionView.reloadData()
-//                            self.tableView.reloadData()
-//                        }
-//                        else {
-//                            let alert = UIAlertController(title: "Loading Data", message: "Loading Data failure!", preferredStyle: UIAlertController.Style.alert)
-//                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-//                                
-//                            }))
-//                            self.present(alert, animated: true);
-//                        }
                     }
 
                 case .failure(let error):
@@ -172,7 +146,7 @@ class SortByViewController: UIViewController {
         Globals.genreKey = ""
 //        Globals.downloadedGenre = listArray[selectedArray[0].section][selectedArray[0].row]["title"].stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        var library = DataManager.getLibrary()
+        let library = DataManager.getLibrary()
         
         for index in selectedArray {
             let key = listArray[index.section][index.row]["title"].stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -491,43 +465,3 @@ extension SortByViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return CGSize(width: yourWidth, height: yourHeight)
     }
 }
-
-//extension SortByViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return listArray[section].count
-//    }
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return genreArray.count
-//    }
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return genreArray[section]
-//    }
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cellID:NSString = "sortCell";
-//        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellID as String)!
-//        cell.selectionStyle = .none
-//
-//        let titleLabel = cell.viewWithTag(100) as! UILabel
-//        titleLabel.text = listArray[indexPath.section][indexPath.row]["title"].stringValue + " -- (" + listArray[indexPath.section][indexPath.row]["count"].stringValue + ")"
-//
-//        let checkImage = cell.viewWithTag(101)
-//        checkImage?.isHidden = true
-//        for index in selectedArray {
-//            if index == indexPath {
-//                checkImage?.isHidden = false
-//            }
-//        }
-//        return cell
-//    }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        for i in 0 ..< selectedArray.count {
-//            if selectedArray[i] == indexPath {
-//                selectedArray.remove(at: i)
-//                tableView.reloadRows(at: [indexPath], with: .none)
-//                return
-//            }
-//        }
-//        selectedArray.append(indexPath)
-//        tableView.reloadRows(at: [indexPath], with: .none)
-//    }
-//}
