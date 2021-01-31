@@ -10,16 +10,21 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import JGProgressHUD
 
 class PlexLibrarySectionsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var emptyView: UIView!
     var plexUrl = ""
     var libraries:[JSON] = []
     var completion = {}
+    var hud = JGProgressHUD(style: .extraLight)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Plex Library"
+        emptyView.isHidden = true
     }
     override func viewDidAppear(_ animated: Bool) {
         let defaults: UserDefaults = UserDefaults.standard
@@ -34,17 +39,27 @@ class PlexLibrarySectionsViewController: UIViewController {
         getData()
     }
     func getData(){
+        hud = JGProgressHUD(style: .extraLight)
+        hud.textLabel.text = "Loading..."
+        hud.show(in: self.view)
         let libraryUrl = "\(plexUrl)library/sections"
         print(libraryUrl)
         AF.request(libraryUrl, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
             "Accept":"application/json",
             "X-Plex-Token": Globals.plex_token,
         ]).responseJSON { response in
+            self.hud.dismiss()
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)                    
                     self.libraries = json["MediaContainer","Directory"].arrayValue
                     self.collectionView.reloadData()
+                    if self.libraries.count == 0 {
+                        self.emptyView.isHidden = false
+                    }
+                    else {
+                        self.emptyView.isHidden = true
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.view.makeToast(error.localizedDescription)

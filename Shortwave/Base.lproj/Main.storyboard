@@ -3501,10 +3501,31 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                     <outlet property="delegate" destination="xr7-Sf-Pd6" id="t1m-hK-izA"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uU0-KJ-1dZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This library is currently empty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxX-Gm-FLY">
+                                        <rect key="frame" x="80" y="309.5" width="215" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="SxX-Gm-FLY" firstAttribute="centerX" secondItem="uU0-KJ-1dZ" secondAttribute="centerX" id="Agr-Th-fw0"/>
+                                    <constraint firstAttribute="trailing" secondItem="SxX-Gm-FLY" secondAttribute="trailing" constant="80" id="I3I-AK-XXV"/>
+                                    <constraint firstItem="SxX-Gm-FLY" firstAttribute="centerY" secondItem="uU0-KJ-1dZ" secondAttribute="centerY" id="tLn-MY-5tU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uU0-KJ-1dZ" firstAttribute="top" secondItem="kll-FI-bI4" secondAttribute="bottom" id="1el-xS-NZJ"/>
                             <constraint firstItem="HrN-bp-2nP" firstAttribute="top" secondItem="kll-FI-bI4" secondAttribute="bottom" constant="10" id="3In-Jy-RqL"/>
+                            <constraint firstItem="vhf-Gq-5KA" firstAttribute="top" secondItem="uU0-KJ-1dZ" secondAttribute="bottom" id="3eH-nF-F0I"/>
+                            <constraint firstAttribute="trailing" secondItem="uU0-KJ-1dZ" secondAttribute="trailing" id="TmR-cv-56S"/>
+                            <constraint firstItem="uU0-KJ-1dZ" firstAttribute="leading" secondItem="mWd-Lr-StT" secondAttribute="leading" id="TpC-bO-yQy"/>
                             <constraint firstItem="HrN-bp-2nP" firstAttribute="trailing" secondItem="mWd-Lr-StT" secondAttribute="trailing" constant="-10" id="qdN-sq-q6q"/>
                             <constraint firstItem="HrN-bp-2nP" firstAttribute="leading" secondItem="mWd-Lr-StT" secondAttribute="leading" constant="10" id="urz-yg-Cc9"/>
                             <constraint firstItem="HrN-bp-2nP" firstAttribute="bottom" secondItem="vhf-Gq-5KA" secondAttribute="top" constant="-10" id="yS9-wc-gab"/>
@@ -3513,11 +3534,12 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                     <navigationItem key="navigationItem" title="Download from" id="qqa-85-2fN"/>
                     <connections>
                         <outlet property="collectionView" destination="HrN-bp-2nP" id="CF7-1x-0UL"/>
+                        <outlet property="emptyView" destination="uU0-KJ-1dZ" id="MlL-gx-BU7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4B-qX-Bir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="1622"/>
+            <point key="canvasLocation" x="1949.5999999999999" y="1621.4392803598203"/>
         </scene>
         <!--Plex Item-->
         <scene sceneID="rrW-cv-ISf">
@@ -3591,18 +3613,40 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
                                     <outlet property="delegate" destination="F80-PB-slj" id="3eE-gN-Ysb"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpV-nf-saF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This library is currently empty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS3-Jm-OpE">
+                                        <rect key="frame" x="80" y="309.5" width="215" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DS3-Jm-OpE" secondAttribute="trailing" constant="80" id="FB2-u3-T7K"/>
+                                    <constraint firstItem="DS3-Jm-OpE" firstAttribute="centerY" secondItem="dpV-nf-saF" secondAttribute="centerY" id="FJ1-aw-j5G"/>
+                                    <constraint firstItem="DS3-Jm-OpE" firstAttribute="centerX" secondItem="dpV-nf-saF" secondAttribute="centerX" id="ZpD-wf-Bf2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.1450980392" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dpV-nf-saF" secondAttribute="trailing" id="15r-w4-dmR"/>
+                            <constraint firstItem="dpV-nf-saF" firstAttribute="leading" secondItem="fJj-2f-bb8" secondAttribute="leading" id="7MT-yp-fPl"/>
+                            <constraint firstItem="CN0-kb-Xbx" firstAttribute="top" secondItem="dpV-nf-saF" secondAttribute="bottom" id="UIr-f5-oNX"/>
                             <constraint firstItem="8u6-gI-aB8" firstAttribute="bottom" secondItem="CN0-kb-Xbx" secondAttribute="top" constant="-10" id="VJ5-Cv-BdM"/>
                             <constraint firstItem="8u6-gI-aB8" firstAttribute="leading" secondItem="fJj-2f-bb8" secondAttribute="leading" constant="10" id="c7b-v4-veK"/>
                             <constraint firstItem="8u6-gI-aB8" firstAttribute="top" secondItem="fPx-41-rPS" secondAttribute="bottom" constant="10" id="ksH-0z-eAF"/>
+                            <constraint firstItem="dpV-nf-saF" firstAttribute="top" secondItem="fPx-41-rPS" secondAttribute="bottom" id="s5U-dJ-NQS"/>
                             <constraint firstItem="8u6-gI-aB8" firstAttribute="trailing" secondItem="fJj-2f-bb8" secondAttribute="trailing" constant="-10" id="sbZ-iM-Bab"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Download from" id="Ymo-Pu-ufe"/>
                     <connections>
                         <outlet property="collectionView" destination="8u6-gI-aB8" id="4cf-J7-6kS"/>
+                        <outlet property="emptyView" destination="dpV-nf-saF" id="jps-Uz-rs8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ifr-rF-OrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3657,6 +3701,9 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

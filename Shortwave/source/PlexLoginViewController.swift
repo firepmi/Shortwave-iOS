@@ -11,6 +11,7 @@ import SearchTextField
 import Alamofire
 import SwiftyXMLParser
 import Toast_Swift
+import JGProgressHUD
 
 class PlexLoginViewController: UIViewController {
     
@@ -26,6 +27,7 @@ class PlexLoginViewController: UIViewController {
     var plexLoginUrl = "https://plex.tv/users/sign_in.xml"
     var urlArray:[String] = []
     var completion = {}
+    var hud = JGProgressHUD(style: .extraLight)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,21 +68,27 @@ class PlexLoginViewController: UIViewController {
         if urlTextField.text!.count == 0 {
             urlTextField.text = "http://"
         }
+        
+        
     }
     func onLogin(){
         let loginString = String(format: "%@:%@", usernameTextField.text!, passwordTextField.text!)
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
-         
+        hud = JGProgressHUD(style: .extraLight)
+        hud.textLabel.text = "Please wait..."
+        hud.show(in: self.view)
         AF.request(plexLoginUrl, method: .post, parameters: nil,encoding: JSONEncoding.default, headers: [
             "Authorization":"Basic \(base64LoginString)",
             "X-Plex-Client-Identifier": UIDevice.current.identifierForVendor!.uuidString,
         ]).responseString { response in
+            self.hud.dismiss()
                 switch response.result {
                 case .success(let value):
 //                    print(value)
                     self.getToken(value)
                 case .failure(let error):
+                    self.hud.dismiss()
                     print(error.localizedDescription)
                     self.view.makeToast("Auth failed")
                 }
@@ -101,7 +109,7 @@ class PlexLoginViewController: UIViewController {
     }
     @IBAction func onConfirm(_ sender: Any) {
         onLogin()
-                    
+        
         let defaults: UserDefaults = UserDefaults.standard
         defaults.set(usernameTextField.text!, forKey: "plex_username")
         defaults.set(urlTextField.text!, forKey: "plex_url")

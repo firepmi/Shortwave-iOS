@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import JGProgressHUD
 
 class PlexItemsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -17,10 +18,13 @@ class PlexItemsViewController: UIViewController {
     var itemUrl = ""
     var libraries:[JSON] = []
     var completion = {}
+    @IBOutlet weak var emptyView: UIView!
+    var hud = JGProgressHUD(style: .extraLight)
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Plex Library"
+        emptyView.isHidden = true
     }
     override func viewDidAppear(_ animated: Bool) {
         let defaults: UserDefaults = UserDefaults.standard
@@ -37,10 +41,14 @@ class PlexItemsViewController: UIViewController {
     func getData(){
         let libraryUrl = "\(plexUrl)\(itemUrl)"
         print(libraryUrl)
+        hud = JGProgressHUD(style: .extraLight)
+        hud.textLabel.text = "Loading..."
+        hud.show(in: self.view)
         AF.request(libraryUrl, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
             "Accept":"application/json",
             "X-Plex-Token": Globals.plex_token,
         ]).responseJSON { response in
+            self.hud.dismiss()
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
@@ -52,6 +60,12 @@ class PlexItemsViewController: UIViewController {
                     }
                     
                     self.collectionView.reloadData()
+                    if self.libraries.count == 0 {
+                        self.emptyView.isHidden = false
+                    }
+                    else {
+                        self.emptyView.isHidden = true
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.view.makeToast(error.localizedDescription)
