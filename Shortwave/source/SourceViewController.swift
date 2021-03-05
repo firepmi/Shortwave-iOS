@@ -52,6 +52,13 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
             self.serverArray.append(plex)
             self.collectionView.reloadData()
         }
+        var calibre = JSON()
+        calibre["name"] = "Calibre"
+        self.serverArray.append(calibre)
+        var plex = JSON()
+        plex["name"] = "Plex"
+        self.serverArray.append(plex)
+        self.collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
