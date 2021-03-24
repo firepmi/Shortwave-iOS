@@ -42,7 +42,10 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
             Globals.getAutoGenreList()
         }
         Globals.getVirtualLibraries {
-            self.serverArray = [JSON()]
+            self.serverArray = []
+            var audiobooks = JSON()
+            audiobooks["name"] = "Audiobooks"
+            self.serverArray.append(audiobooks)
             self.serverArray.append(contentsOf: Globals.virtualLibraries)
             var calibre = JSON()
             calibre["name"] = "Calibre"
@@ -52,13 +55,22 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
             self.serverArray.append(plex)
             self.collectionView.reloadData()
         }
-        var calibre = JSON()
-        calibre["name"] = "Calibre"
-        self.serverArray.append(calibre)
-        var plex = JSON()
-        plex["name"] = "Plex"
-        self.serverArray.append(plex)
-        self.collectionView.reloadData()
+        var ok = true
+        for server in serverArray {
+            if(server["name"].stringValue == "Calibre") {
+                ok = false
+                break
+            }
+        }
+        if(ok) {
+            var calibre = JSON()
+            calibre["name"] = "Calibre"
+            self.serverArray.append(calibre)
+            var plex = JSON()
+            plex["name"] = "Plex"
+            self.serverArray.append(plex)
+            self.collectionView.reloadData()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,10 +97,10 @@ class SourceViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
 
         let icon = view?.viewWithTag(104) as! UIImageView
-        if indexPath.row == Globals.virtualLibraries.count + 1 {
+        if serverArray[indexPath.row]["name"].stringValue == "Calibre" {
             icon.image = UIImage(named: "icon_calibre.png")
         }
-        else if indexPath.row == Globals.virtualLibraries.count + 2 {
+        else if serverArray[indexPath.row]["name"].stringValue == "Plex" {
             icon.image = UIImage(named: "icon_plex.png")
         }
         else {

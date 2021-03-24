@@ -93,7 +93,6 @@ extension PlexLibrarySectionsViewController: UICollectionViewDelegate, UICollect
 //        }
 //        let yourWidth = collectionView.bounds.width/columnCount - 10
 //        let yourHeight = yourWidth * 2 / 3
-        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

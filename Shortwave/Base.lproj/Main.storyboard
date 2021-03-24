@@ -3654,19 +3654,11 @@ You can manage or turn off auto-renew in your Apple ID Account Settings any time
             <point key="canvasLocation" x="2638" y="1621"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="jDQ-kp-Eg6">
-            <size key="intrinsicContentSize" width="31.5" height="18"/>
-        </designable>
-        <designable name="wl3-k5-zZi">
-            <size key="intrinsicContentSize" width="49" height="18"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="aO2-Pb-JlT"/>
         <segue reference="65N-p2-GLp"/>
         <segue reference="6n2-a5-6PA"/>
-        <segue reference="IIa-F7-IAN"/>
+        <segue reference="fh9-3U-Wdd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20392156862745098" green="0.53333333333333333" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
     <resources>

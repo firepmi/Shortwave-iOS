@@ -418,7 +418,7 @@ extension SortByViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cover = cell.viewWithTag(102)!
 //        cover.applyGradient(withColours: [colors[indexPath.row % colors.count], UIColor.black, colors[indexPath.row % colors.count]])
         let gcolors = [colors[indexPath.row % colors.count], UIColor.black, colors[indexPath.row % colors.count]]
-        print(collectionView.bounds.width)
+//        print(collectionView.bounds.width)
         var columnCount:CGFloat = 2
         if collectionView.bounds.width > 374 {
             columnCount = 3
@@ -441,6 +441,7 @@ extension SortByViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 checkImage?.isHidden = false
             }
         }
+        print("index",indexPath.row)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
