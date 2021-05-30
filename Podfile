@@ -25,6 +25,8 @@ pod 'SearchTextField'
 pod 'AMProgressBar'
 pod 'Toast-Swift'
 pod 'SDWebImage'
+pod 'Lightbox'
+
 pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
   target 'ShortwaveTests' do
     inherit! :search_paths

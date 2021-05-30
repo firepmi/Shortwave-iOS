@@ -25,6 +25,7 @@ class ItemCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
     var collectionPosition = CGFloat(0)
     var section = 0
     var waiting = false
+    var byStr = "Title"
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: bounds, collectionViewLayout: layout)
@@ -60,12 +61,36 @@ class ItemCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.scrollDirection = direction
     }
-    public func sort(by:String){
+    public func sort(by:String, ascending: Bool){
         if by == "Title" {
-            categoryItemList = categoryItemList.sorted(by: { $0.bookId > $1.bookId })
+            categoryItemList = categoryItemList.sorted(by: {
+                if(ascending) {
+                    return $0.bookId > $1.bookId
+                }
+                else {
+                    return $0.bookId < $1.bookId
+                }
+            })
+        }
+        else if by == "Author" {
+            categoryItemList = categoryItemList.sorted(by: {
+                if(ascending) {
+                    return $0.author > $1.author
+                }
+                else {
+                    return $0.author < $1.author
+                }
+            })
         }
         else {
-            categoryItemList = categoryItemList.sorted(by: { $0.author > $1.author })
+            categoryItemList = categoryItemList.sorted(by: {
+                if(ascending) {
+                    return $0.completedDate ?? Date() < $1.completedDate ?? Date()
+                }
+                else {
+                    return $0.completedDate ?? Date() > $1.completedDate ?? Date()
+                }
+            })
         }
         collectionView.reloadData()
     }

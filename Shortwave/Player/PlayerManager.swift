@@ -30,7 +30,14 @@ class PlayerManager: NSObject {
 
     func load(_ books: [Book], completion:@escaping (Bool) -> Void) {
         guard let book = books.first else {
-            completion(false)
+            if books.count <= 1 {
+                completion(false)
+            }
+            else {
+                var newBooks = books
+                newBooks.removeFirst()
+                load(newBooks, completion: completion)
+            }
             return
         }
 

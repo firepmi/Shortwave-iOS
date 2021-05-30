@@ -68,6 +68,9 @@ class PlexLoginViewController: UIViewController {
         if urlTextField.text!.count == 0 {
             urlTextField.text = "http://"
         }
+        else if !(urlTextField.text?.starts(with: "http"))!{
+            urlTextField.text = "http://" + urlTextField.text!
+        }
         
         
     }
@@ -86,6 +89,7 @@ class PlexLoginViewController: UIViewController {
                 switch response.result {
                 case .success(let value):
 //                    print(value)
+                    print(value)
                     self.getToken(value)
                 case .failure(let error):
                     self.hud.dismiss()

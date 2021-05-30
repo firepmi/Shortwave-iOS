@@ -131,7 +131,6 @@ class BaseListViewController: UIViewController {
             }
         }
         else {
-
             guard let bookDetailVC = storyboard!.instantiateViewController(withIdentifier: "book_detail") as? BookDetailViewController else {
                 return
             }
@@ -217,7 +216,7 @@ class BaseListViewController: UIViewController {
         // Replace player with new one
         PlayerManager.shared.load(books) { (loaded) in
             guard loaded else {
-                self.showAlert("File error!", message: "This book's file couldn't be loaded. Make sure you're not using files with DRM protection (like .aax files)")
+                self.showAlert("Next player!", message: "Player at end of file. please select another genre")
                 return
             }
             self.showPlayerView(book: book)

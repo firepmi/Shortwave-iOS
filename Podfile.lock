@@ -3,10 +3,15 @@ PODS:
   - AlamofireImage (4.1.0):
     - Alamofire (~> 5.1)
   - AMProgressBar (0.1.0)
+  - Cache (6.0.0)
   - DeviceKit (3.2.0)
   - DirectoryWatcher (2.6.0)
   - IDZSwiftCommonCrypto (0.13.0)
+  - Imaginary (5.0.0):
+    - Cache (~> 6.0.0)
   - JGProgressHUD (2.1)
+  - Lightbox (2.5.0):
+    - Imaginary (~> 5.0.0)
   - MarqueeLabel/Swift (3.2.1)
   - SDWebImage (5.8.4):
     - SDWebImage/Core (= 5.8.4)
@@ -25,6 +30,7 @@ DEPENDENCIES:
   - DirectoryWatcher
   - IDZSwiftCommonCrypto
   - JGProgressHUD
+  - Lightbox
   - MarqueeLabel/Swift
   - SDWebImage
   - SearchTextField
@@ -38,10 +44,13 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - AMProgressBar
+    - Cache
     - DeviceKit
     - DirectoryWatcher
     - IDZSwiftCommonCrypto
+    - Imaginary
     - JGProgressHUD
+    - Lightbox
     - MarqueeLabel
     - SDWebImage
     - SearchTextField
@@ -62,10 +71,13 @@ SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   AMProgressBar: 3f4671c4af4cb4fc9864ddc0a688450c8c7d1561
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
   DeviceKit: d081659419cce07c0b5239dbc9fb39ed7413c7fe
   DirectoryWatcher: 094d59b8082c89be95a98754755b014f1470fbe8
   IDZSwiftCommonCrypto: 00dd37cdfbd149312a7e5a582cf9909f8b129f44
+  Imaginary: cf5e3a7dd6ab1dcbd47ba8ce5edf2307c4e99eb3
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
+  Lightbox: cc3d5124f024fa8197fd23f913160db1c61a1852
   MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
@@ -74,6 +86,6 @@ SPEC CHECKSUMS:
   SwiftyXMLParser: 23b5a9321a8adf72aae29046ea58c3d097b4ac17
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 452d911a30606e17d85da9a65e00a19cdd94c195
+PODFILE CHECKSUM: 0bae9337aca472d390e1154d33152b5b38f1fff3
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

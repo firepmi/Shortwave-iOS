@@ -28,6 +28,7 @@ class CategoryTableViewCell: UITableViewCell {
     
     var sortBy: String = "Title"
     var onArtworkTap: (() -> Void)?
+    var ascending = true
 
     var artwork: UIImage? {
         get {
@@ -150,13 +151,20 @@ class CategoryTableViewCell: UITableViewCell {
     @IBAction func onSortButtonClicked(_ sender: Any) {
         let pickerData = [
                 ["value": "Title", "display": "Title"],
-                ["value": "Author", "display": "Author"]
+                ["value": "Author", "display": "Author"],
+                ["value": "Date", "display": "Date"]
             ]
-        PickerDialog().show(title: "Sort By", options: pickerData, selected: "Title") {
+        PickerDialog().show(title: "Sort By", options: pickerData, selected: sortBy) {
             (value) -> Void in
+            if self.sortBy == value {
+                self.ascending = !self.ascending
+            }
+            else {
+                self.ascending = true
+            }
             self.sortBy = value
             self.sortButton.setTitle("Sort by: \(self.sortBy)", for: .normal)
-            self.itemCollectionView.sort(by: value)
+            self.itemCollectionView.sort(by: value, ascending: self.ascending)
         }
     }
     @IBAction func artworkButtonTapped(_ sender: Any) {

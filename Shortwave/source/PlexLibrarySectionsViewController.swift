@@ -49,21 +49,23 @@ class PlexLibrarySectionsViewController: UIViewController {
             "X-Plex-Token": Globals.plex_token,
         ]).responseJSON { response in
             self.hud.dismiss()
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)                    
-                    self.libraries = json["MediaContainer","Directory"].arrayValue
-                    self.collectionView.reloadData()
-                    if self.libraries.count == 0 {
-                        self.emptyView.isHidden = false
-                    }
-                    else {
-                        self.emptyView.isHidden = true
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    self.view.makeToast(error.localizedDescription)
+//            print(String(data: response.data!, encoding: String.Encoding.utf8))
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                self.libraries = json["MediaContainer","Directory"].arrayValue
+                self.collectionView.reloadData()
+                if self.libraries.count == 0 {
+                    self.emptyView.isHidden = false
                 }
+                else {
+                    self.emptyView.isHidden = true
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                let message = String(data: response.data!, encoding: String.Encoding.utf8)
+                self.view.makeToast(message?.html2String)
+            }
         }
     }
 }

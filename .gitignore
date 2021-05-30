@@ -88,3 +88,8 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+Pods/Cache
+Pods/Imaginary
+Pods/Lightbox
+Pods/Target Support Files

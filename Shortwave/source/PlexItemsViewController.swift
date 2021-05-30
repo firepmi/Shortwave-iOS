@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 import SDWebImage
 import JGProgressHUD
+import AVKit
+import Lightbox
 
 class PlexItemsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,7 +21,7 @@ class PlexItemsViewController: UIViewController {
     var libraries:[JSON] = []
     var completion = {}
     @IBOutlet weak var emptyView: UIView!
-    var hud = JGProgressHUD(style: .extraLight)
+//    var hud = JGProgressHUD(style: .extraLight)
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,19 +42,19 @@ class PlexItemsViewController: UIViewController {
     }
     func getData(){
         let libraryUrl = "\(plexUrl)\(itemUrl)"
-        print(libraryUrl)
-        hud = JGProgressHUD(style: .extraLight)
-        hud.textLabel.text = "Loading..."
-        hud.show(in: self.view)
+//        print(libraryUrl)
+//        hud = JGProgressHUD(style: .extraLight)
+//        hud.textLabel.text = "Loading..."
+//        hud.show(in: self.view)
         AF.request(libraryUrl, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: [
             "Accept":"application/json",
             "X-Plex-Token": Globals.plex_token,
         ]).responseJSON { response in
-            self.hud.dismiss()
-                switch response.result {
+//            self.hud.dismiss()
+            switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    print(json)
+//                    print(json)
                     self.libraries = json["MediaContainer","Metadata"].arrayValue
                     self.title = json["MediaContainer","title1"].stringValue
                     if self.title == "" {
@@ -129,7 +131,7 @@ extension PlexItemsViewController: UICollectionViewDelegate, UICollectionViewDat
 
         let bgImage = cell.viewWithTag(102) as! UIImageView
         let imgeUrl = "\(plexUrl)\(lib["thumb"].stringValue)?X-Plex-Token=\(Globals.plex_token)"
-        print(imgeUrl)
+//        print(imgeUrl)
         bgImage.sd_setImage(with: URL(string: imgeUrl), placeholderImage: UIImage(named: "default.jpg"))
         
 //        let cover = cell.viewWithTag(102)!
@@ -145,6 +147,7 @@ extension PlexItemsViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let lib = libraries[indexPath.row]
+        print(lib["type"].stringValue)
         if lib["type"].stringValue == "track" {
             var json = JSON()
             json["name"].string = "\(getFileName(lib["Media",0,"Part",0,"file"].stringValue))"
@@ -165,6 +168,42 @@ extension PlexItemsViewController: UICollectionViewDelegate, UICollectionViewDat
             default:
                 break
             }
+        }
+        else if lib["type"].stringValue == "episode" ||  lib["type"].stringValue == "movie" || lib["type"].stringValue == "clip" {
+            if let url = URL(string: "\(plexUrl)\(lib["Media",0,"Part",0,"key"].stringValue)?X-Plex-Token=\(Globals.plex_token)"){
+
+                print(url)
+                let player = AVPlayer(url: url)
+                let playerViewController = AVPlayerViewController()
+                playerViewController.player = player
+                self.present(playerViewController, animated: true) {
+                    playerViewController.player!.play()
+                }
+           }
+        }
+        else if lib["type"].stringValue == "photo" {
+            print(lib)
+            let url = "\(plexUrl)\(lib["Media",0,"Part",0,"key"].stringValue)?download=1&X-Plex-Token=\(Globals.plex_token)"
+            //"\(plexUrl)\(lib["thumb"].stringValue)?X-Plex-Token=\(Globals.plex_token)"
+            
+            let images = [
+                LightboxImage(imageURL: URL(string: url)!),
+            ]
+            
+            print(url)
+
+            // Create an instance of LightboxController.
+            let controller = LightboxController(images: images)
+            
+            // Set delegates.
+//            controller.pageDelegate = self
+//            controller.dismissalDelegate = self
+
+            // Use dynamic background.
+            controller.dynamicBackground = true
+
+            // Present your controller.
+            present(controller, animated: true, completion: nil)
         }
         else {
             let pvc = self.storyboard!.instantiateViewController(withIdentifier: "plex_item") as! PlexItemsViewController
